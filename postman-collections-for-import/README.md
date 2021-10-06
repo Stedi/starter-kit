@@ -1,6 +1,8 @@
 # Postman collections
 
-A repo with examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman. 
+A repo with examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
+
+[Documentation in Postman](https://documenter.getpostman.com/view/17436649/UUxzC8QX)
 
 ## How to use
 
