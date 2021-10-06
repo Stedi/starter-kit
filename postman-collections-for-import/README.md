@@ -1,6 +1,6 @@
 # Postman collections
 
-A repo with examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
+A repo with examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman. 
 
 ## How to use
 
@@ -11,11 +11,14 @@ A repo with examples and templates showing how to use [Stedi APIs](https://www.s
 5. Paste your key into the header replacing `<STEDI_API_KEY>`.
 6. Try out a request
 
+## EDI Core API
+<img src="https://user-images.githubusercontent.com/89091046/136258093-c3aba730-7109-4f64-acc0-46dda44043cb.png" width=50% height=50%>
+
 ## Example requests
 
 **EDI to JEDI**
-
-cURL
+<details>
+  <summary>cURL</summary>
 
 ```
 curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate' \
@@ -33,11 +36,12 @@ curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate'
     }
 }'
 ```
+</details> 
+    
+<details>
+  <summary>Python</summary>
 
-Python
-
-```
-import requests
+```import requests
 import json
 
 url = "https://edi-core.stedi.com/2021-06-05/translate"
@@ -62,11 +66,12 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
 ```
+</details> 
+    
+<details>
+  <summary>JavaScript - Fetch</summary>
 
-JavaScript - Fetch
-
-```
-var myHeaders = new Headers();
+```var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", "Key <STEDI_API_KEY>");
 
@@ -94,9 +99,11 @@ fetch("https://edi-core.stedi.com/2021-06-05/translate", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
-
-NodeJS - Axios
-
+</details> 
+    
+<details>
+  <summary> NodeJS - Axios</summary>
+ 
 ```
 var axios = require('axios');
 var data = JSON.stringify({
@@ -114,8 +121,8 @@ var data = JSON.stringify({
 var config = {
   method: 'post',
   url: 'https://edi-core.stedi.com/2021-06-05/translate',
-  headers: {
-    'Content-Type': 'application/json',
+  headers: { 
+    'Content-Type': 'application/json', 
     'Authorization': 'Key <STEDI_API_KEY>'
   },
   data : data
@@ -129,11 +136,13 @@ axios(config)
   console.log(error);
 });
 ```
+</details> 
+
 
 **validate against Mapping Guide**
-
-cURL
-
+    
+<details>
+  <summary>cURL</summary>
 ```
 curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate?Content-Type=application/json&Authorization=Key%20%3CSTEDI_API_KEY%3E' \
 --header 'Content-Type: application/json' \
@@ -148,8 +157,9 @@ curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate?
     }
 }'
 ```
-
-Python
+</details>
+    <details>
+  <summary>Python</summary>
 
 ```
 import requests
@@ -175,8 +185,9 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
 ```
-
-JavaScript - Fetch
+</details>
+    <details>
+  <summary>JavaScript - Fetch</summary>
 
 ```
 var myHeaders = new Headers();
@@ -205,9 +216,10 @@ fetch("https://edi-core.stedi.com/2021-06-05/translate?Content-Type=application/
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
-
-NodeJS - Axios
-
+</details>
+<details>
+  <summary> NodeJS - Axios</summary>
+ 
 ```
 var axios = require('axios');
 var data = JSON.stringify({
@@ -223,8 +235,8 @@ var data = JSON.stringify({
 var config = {
   method: 'post',
   url: 'https://edi-core.stedi.com/2021-06-05/translate?Content-Type=application/json&Authorization=Key <STEDI_API_KEY>',
-  headers: {
-    'Content-Type': 'application/json',
+  headers: { 
+    'Content-Type': 'application/json', 
     'Authorization': 'Key <STEDI_API_KEY>'
   },
   data : data
@@ -238,10 +250,13 @@ axios(config)
   console.log(error);
 });
 ```
+</details>
+
 
 **JSON to EDI**
 
-cURL
+<details>
+  <summary>cURL</summary>
 
 ```
 curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate' \
@@ -330,8 +345,9 @@ curl --location --request POST 'https://edi-core.stedi.com/2021-06-05/translate'
     }
 }'
 ```
-
-Python
+</details>
+    <details>
+  <summary>Python</summary>
 
 ```
 import requests
@@ -363,8 +379,9 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
 ```
-
-JavaScript - Fetch
+</details>
+    <details>
+  <summary>JavaScript - Fetch</summary>
 
 ```
 var myHeaders = new Headers();
@@ -399,8 +416,9 @@ fetch("https://edi-core.stedi.com/2021-06-05/translate", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
-
-NodeJS - Axios
+</details>
+    <details>
+  <summary> NodeJS - Axios</summary>
 
 ```
 var axios = require('axios');
@@ -423,8 +441,8 @@ var data = JSON.stringify({
 var config = {
   method: 'post',
   url: 'https://edi-core.stedi.com/2021-06-05/translate',
-  headers: {
-    'Content-Type': 'application/json',
+  headers: { 
+    'Content-Type': 'application/json', 
     'Authorization': 'Key <STEDI_API_KEY>'
   },
   data : data
@@ -438,3 +456,4 @@ axios(config)
   console.log(error);
 });
 ```
+</details>
