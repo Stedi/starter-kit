@@ -1,0 +1,807 @@
+{
+	"info": {
+		"_postman_id": "591dcbf2-06e3-4d07-8f68-a537f4d508ae",
+		"name": "Stedi Starter Pack",
+		"description": "A collection of Stedi API endpoints. Each endpoint request comes with an example request & response. \n\n## Getting started\n1. [Create a free Stedi account](https://terminal.stedi.com/sign-up) to access Terminal.\n2. [Create an API Key](https://www.stedi.com/docs/authentication)\n3. To try out a request, go to Headers and in Authorization row, paste your API Key replacing the example value 111222333444555666777888999000abc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EDI Core",
+			"item": [
+				{
+					"name": "EDI to JEDI",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Key 111222333444555666777888999000abc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{ \n    \"input_format\": \"edi\", \n    \"output_format\": \"jedi@2.0-beta\", \n    \"input\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~GS*IN*00*00*20210902*1200*987654321*X*004010~ST*810*0000~BIG*20210902*AB01010101~TDS*999~SE*4*0000~GE*1*987654321~IEA*1*123456789~\", \n    \"output_options\": {\n        \"include_trailing_newlines\": false\n    },\n    \"validation_options\": {\n        \"validation_type\": \"base\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ediCoreBaseUrl}}/translate",
+							"host": [
+								"{{ediCoreBaseUrl}}"
+							],
+							"path": [
+								"translate"
+							]
+						},
+						"description": "Translate between supported EDI formats (JSON and EDI X12)\n\nReview the *body* of POST call for guidance on how to use fields. If you have a specific use case in mind, go to examples where you'll find how to: \n\n* translate EDI to JEDI (JSON EDI)\n* translate JSON to EDI\n* translate and validate against a specific mapping guide\n\n**Notes** \n* it's okay if your EDI files contain `\\n` LF or `\\r\\n` CLRF, they will parse successfully. Check out our detailed instructions on how to format EDI file for Postman call [here](https://github.com/Stedi/api-starter-pack/tree/main/postman-collections-for-import). \n* browse our library of [EDI mapping guides](https://edi.stedi.com/mapping-guides) and use the guide version ID to validate EDI via the API"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{ \n    \"input_format\": \"edi\", \n    \"output_format\": \"jedi@2.0-beta\", \n    \"input\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~GS*IN*00*00*20210902*1200*987654321*X*004010~ST*810*0000~BIG*20210902*AB01010101~TDS*999~SE*4*0000~GE*1*987654321~IEA*1*123456789~\", \n    \"output_options\": {\n        \"include_trailing_newlines\": false\n    },\n    \"validation_options\": {\n        \"validation_type\": \"base\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2088"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 16:36:45 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "d46d24d8-0170-4e9d-91cd-9f742abc7139"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JRDIkEWtIAMFkAg="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d189d-2022d02b6010316a7a62e9af"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 9a422b66005dee194bd3c5edef0ce893.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YTO50-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "gLL5MfwH_ObJXt9t2kuUQWTfsyCj7zupFVhQZf8cgtHVqVG5mrmNLQ=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"valid\",\n    \"output\": {\n        \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ],\n        \"__version\": \"jedi@2.0-beta\"\n    }\n}"
+						},
+						{
+							"name": "error validation w. Mapping Guide",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{ \n    \"input_format\": \"edi\", \n    \"output_format\": \"jedi@2.0-beta\", \n    \"input\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~GS*IN*00*00*20210902*1200*987654321*X*004010~ST*810*0000~BIG*20210902*AB01010101~TDS*999~SE*4*0000~GE*1*987654321~IEA*1*123456789~\", \n    \"output_options\": {\n        \"include_trailing_newlines\": false\n    },\n    \"validation_options\": {\n    \"validation_type\": \"specification\",\n    \"validation_id\": \"01FAKTF92TMADV5CC1TWS8K8HB\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2324"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 16:43:36 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "b5a0a99c-f1fa-414e-99df-1f57e3f34794"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JREIdGNfoAMFm7g="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d1a35-750ec4ab1b9b4fb03a749d78"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 ab1abc326c36ea4cd78ce117e4c20e89.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YUL62-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "CB5ZXrqM-OVr_Au50prHPusR-BXkeu0GOVX5TzuLdviAzbVQ4DMmAw=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"invalid\",\n    \"output\": {\n        \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ],\n        \"__version\": \"jedi@2.0-beta\"\n    },\n    \"errors\": [\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"groups\",\n                \"0\",\n                \"transaction_sets\",\n                \"0\",\n                \"heading\",\n                \"beginning_segment_for_invoice_BIG\"\n            ],\n            \"message\": \"Mandatory element BIG-04 not specified in segment BIG\",\n            \"code\": \"element_required\",\n            \"severity\": \"error\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "validation w. Mapping Guide",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"input_format\": \"edi\",\n    \"output_format\": \"jedi@2.0-beta\",\n    \"input\": \"ISA*00*          *00*          *ZZ*CVS            *01*Vendor ID      *090915*1537*U*00401*000008513*0*P*^~GS*PO*CVS*Vendor ID*20090915*1537*1342*X*004010~ST*850*711002~BEG*00*DS*6375220**20090913~REF*VR*2A999~PER*DC**TE*(623) 933-7233~FOB*PO~ITD*01*15*****7***100~DTM*010*20090913~AMT*BAP*5081~N9*L1*PO COMMENTS~MSG*THIS PO SUBJECT TO THE TERMS AND CONDITIONS FOUND ON CVS SUPPLIERS WEBSTE~N1*ST**92*09999~N3*9901B W THUNDERBIRD BLVD~N4*SUN CITY*AZ*85351~N1*BT**92*09999~PO1**1*PC*63.9**PI*123456*UI*01235648937~PAM*01*63*ZZ~PO4*30~PO1**2*PC*52.94**PI*124536*UI*02235416897~PAM*01*105*ZZ~PO4*60~PO1**1*PC*52.94**PI*325678*UI*02145689730~PAM*01*52*ZZ~PO4*30~PO1**1*PC*55.64**PI*123567*UI*03124589763~PAM*01*55*ZZ~PO4*60~PO1**1*PC*55.64**PI*13564*UI*01235648972~PAM*01*55*ZZ~PO4*60~PO1**1*PC*55.64**PI*123456*UI*02820011234~PAM*01*55*ZZ~PO4*60~PO1**7*PC*55.64**PI*234567*UI*02820001234~PAM*01*389*ZZ~PO4*60~PO1**1*PC*47.04**PI*231456*UI*02040001234~PAM*01*47*ZZ~PO4*30~PO1**1*PC*59.24**PI*853124*UI*026100009637~PAM*01*59*ZZ~PO4*60~PO1**1*PC*49.54**PI*213546*UI*02720002315~PAM*01*49*ZZ~PO4*30~PO1**7*PC*49.54**PI*123546*UI*02720002563~PAM*01*346*ZZ~PO4*30~PO1**2*PC*49.54**PI*231567*UI*02720001253~PAM*01*99*ZZ~PO4*30~CTT*51*93~SE*167*711002~GE*2*1342~IEA*1*000008513~\",\n    \"validation_options\": {\n    \"validation_type\": \"specification\",\n    \"validation_id\": \"01FC7CS89MRVJ4E5NS8ZFJA20A\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2012"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 16:50:23 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "a9290964-7e37-4121-b133-48bffe72db30"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JRFIYFJCIAMFn4g="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "Accept-Encoding",
+									"value": "application/gzip"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d1bcf-302902471079224863dbc788"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 37504d411c7d230cb5e53aaf2809b805.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YUL62-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "O3tM6csq0hrVETF5hfMzPsce9TQ7DcgJpB_z3qzlyPLwwDC-XJC1gA=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"valid\",\n    \"output\": {\n        \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"CVS\",\n                    \"interchange_id_qualifier_07\": \"duns_dun_bradstreet_01\",\n                    \"interchange_receiver_id_08\": \"Vendor ID\",\n                    \"interchange_date_09\": \"090915\",\n                    \"interchange_time_10\": \"1537\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"000008513\",\n                    \"acknowledgment_requested_code_14\": \"no_acknowledgment_requested_0\",\n                    \"interchange_usage_indicator_code_15\": \"production_data_P\",\n                    \"component_element_separator_16\": \"^\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"purchase_order_850_PO\",\n                            \"application_senders_code_02\": \"CVS\",\n                            \"application_receivers_code_03\": \"Vendor ID\",\n                            \"date_04\": \"20090915\",\n                            \"time_05\": \"1537\",\n                            \"group_control_number_06\": \"1342\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"850\",\n                                        \"transaction_set_control_number_02\": \"711002\"\n                                    },\n                                    \"beginning_segment_for_purchase_order_BEG\": {\n                                        \"transaction_set_purpose_code_01\": \"original_00\",\n                                        \"purchase_order_type_code_02\": \"dropship_DS\",\n                                        \"purchase_order_number_03\": \"6375220\",\n                                        \"date_05\": \"20090913\"\n                                    },\n                                    \"reference_identification_REF\": [\n                                        {\n                                            \"reference_identification_qualifier_01\": \"vendor_id_number_VR\",\n                                            \"reference_identification_02\": \"2A999\"\n                                        }\n                                    ],\n                                    \"administrative_communications_contact_PER\": [\n                                        {\n                                            \"contact_function_code_01\": \"delivery_contact_DC\",\n                                            \"communication_number_qualifier_03\": \"telephone_TE\",\n                                            \"communication_number_04\": \"(623) 933-7233\"\n                                        }\n                                    ],\n                                    \"fob_related_instructions_FOB\": [\n                                        {\n                                            \"shipment_method_of_payment_01\": \"prepaid_only_PO\"\n                                        }\n                                    ],\n                                    \"terms_of_sale_deferred_terms_of_sale_ITD\": [\n                                        {\n                                            \"terms_type_code_01\": \"basic_01\",\n                                            \"terms_basis_date_code_02\": \"receipt_of_goods_15\",\n                                            \"terms_net_days_07\": \"7\",\n                                            \"deferred_amount_due_10\": \"100\"\n                                        }\n                                    ],\n                                    \"date_time_reference_DTM\": [\n                                        {\n                                            \"date_time_qualifier_01\": \"requested_ship_010\",\n                                            \"date_02\": \"20090913\"\n                                        }\n                                    ],\n                                    \"monetary_amount_AMT_loop\": [\n                                        {\n                                            \"monetary_amount_AMT\": {\n                                                \"amount_qualifier_code_01\": \"total_amount_due_BAP\",\n                                                \"monetary_amount_02\": \"5081\"\n                                            }\n                                        }\n                                    ],\n                                    \"reference_identification_N9_loop\": [\n                                        {\n                                            \"reference_identification_N9\": {\n                                                \"reference_identification_qualifier_01\": \"letters_or_notes_L1\",\n                                                \"reference_identification_02\": \"PO COMMENTS\"\n                                            },\n                                            \"message_text_MSG\": [\n                                                {\n                                                    \"free_form_message_text_01\": \"THIS PO SUBJECT TO THE TERMS AND CONDITIONS FOUND ON CVS SUPPLIERS WEBSTE\"\n                                                }\n                                            ]\n                                        }\n                                    ],\n                                    \"name_N1_loop\": [\n                                        {\n                                            \"name_N1\": {\n                                                \"entity_identifier_code_01\": \"ship_to_ST\",\n                                                \"identification_code_qualifier_03\": \"assigned_by_buyer_or_buyers_agent_92\",\n                                                \"identification_code_04\": \"09999\"\n                                            },\n                                            \"address_information_N3\": [\n                                                {\n                                                    \"address_information_01\": \"9901B W THUNDERBIRD BLVD\"\n                                                }\n                                            ],\n                                            \"geographic_location_N4\": [\n                                                {\n                                                    \"city_name_01\": \"SUN CITY\",\n                                                    \"state_or_province_code_02\": \"AZ\",\n                                                    \"postal_code_03\": \"85351\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"name_N1\": {\n                                                \"entity_identifier_code_01\": \"bill_to_party_BT\",\n                                                \"identification_code_qualifier_03\": \"assigned_by_buyer_or_buyers_agent_92\",\n                                                \"identification_code_04\": \"09999\"\n                                            }\n                                        }\n                                    ]\n                                },\n                                \"detail\": {\n                                    \"baseline_item_data_PO1_loop\": [\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"63.9\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"123456\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"01235648937\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"63\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"2\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"52.94\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"124536\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02235416897\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"105\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"52.94\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"325678\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02145689730\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"52\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"55.64\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"123567\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"03124589763\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"55\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"55.64\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"13564\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"01235648972\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"55\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"55.64\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"123456\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02820011234\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"55\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"7\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"55.64\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"234567\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02820001234\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"389\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"47.04\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"231456\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02040001234\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"47\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"59.24\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"853124\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"026100009637\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"59\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"60\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"1\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"49.54\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"213546\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02720002315\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"49\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"7\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"49.54\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"123546\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02720002563\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"346\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        },\n                                        {\n                                            \"baseline_item_data_PO1\": {\n                                                \"quantity_ordered_02\": \"2\",\n                                                \"unit_or_basis_for_measurement_code_03\": \"piece_PC\",\n                                                \"unit_price_04\": \"49.54\",\n                                                \"product_service_id_qualifier_06\": \"purchasers_item_code_PI\",\n                                                \"product_service_id_07\": \"231567\",\n                                                \"product_service_id_qualifier_08\": \"upc_consumer_package_code_1_5_5_UI\",\n                                                \"product_service_id_09\": \"02720001253\"\n                                            },\n                                            \"period_amount_PAM\": [\n                                                {\n                                                    \"quantity_qualifier_01\": \"discrete_quantity_01\",\n                                                    \"quantity_02\": \"99\",\n                                                    \"composite_unit_of_measure_03\": {\n                                                        \"unit_or_basis_for_measurement_code_01\": \"mutually_defined_ZZ\"\n                                                    }\n                                                }\n                                            ],\n                                            \"item_physical_details_PO4\": [\n                                                {\n                                                    \"pack_01\": \"30\"\n                                                }\n                                            ]\n                                        }\n                                    ]\n                                },\n                                \"summary\": {\n                                    \"transaction_totals_CTT_loop\": [\n                                        {\n                                            \"transaction_totals_CTT\": {\n                                                \"number_of_line_items_01\": \"51\",\n                                                \"hash_total_02\": \"93\"\n                                            }\n                                        }\n                                    ],\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"167\",\n                                        \"transaction_set_control_number_02\": \"711002\"\n                                    }\n                                },\n                                \"type\": \"850\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"2\",\n                            \"group_control_number_02\": \"1342\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"000008513\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \"^\"\n                }\n            }\n        ],\n        \"__version\": \"jedi@2.0-beta\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "JEDI to EDI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Key 111222333444555666777888999000abc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input_format\": \"jedi@2.0-beta\",\n    \"output_format\": \"edi\",\n    \"input\":{\n  \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ]\n},\n    \"output_options\": {\n        \"include_trailing_newlines\": true\n    },\n    \"validation_options\": {\n    \"validation_type\": \"specification\",\n    \"validation_id\": \"01FDN66H8SG2S3D9N9S2V4P8N2\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ediCoreBaseUrl}}/translate",
+							"host": [
+								"{{ediCoreBaseUrl}}"
+							],
+							"path": [
+								"translate"
+							]
+						},
+						"description": "Translate between supported EDI formats (JSON and EDI X12)\n\nReview the *body* of POST call for guidance on how to use fields. If you have a specific use case in mind, go to examples where you'll find how to: \n\n* translate EDI to JEDI (JSON EDI)\n* translate JSON to EDI\n* translate and validate against a specific Mapping guide"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"input_format\": \"jedi@2.0-beta\",\n    \"output_format\": \"edi\",\n    \"input\":{\n  \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ]\n},\n    \"output_options\": {\n        \"include_trailing_newlines\": true\n    },\n    \"validation_options\": {\n        \"validation_type\": \"base\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 16:52:32 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "86f7a253-8307-449a-a751-2ecbdb1ff4b7"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JRFciFBOoAMFcyQ="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d1c50-08e9bb7a27b3c41012b90071"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 37504d411c7d230cb5e53aaf2809b805.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YUL62-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "CTFNYP5yMvdGPFLN5pszys3KCmUvk3UnOe8J_n5anQzpmmfwNLbE0A=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"valid\",\n    \"output\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~\\nGS*IN*00*00*20210902*1200*987654321*X*004010~\\nST*810*0000~\\nBIG*20210902*AB01010101~\\nTDS*999~\\nSE*4*0000~\\nGE*1*987654321~\\nIEA*1*123456789~\\n\"\n}"
+						},
+						{
+							"name": "error validation w. Mapping Guide",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"input_format\": \"jedi@2.0-beta\",\n    \"output_format\": \"edi\",\n    \"input\":{\n  \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ]\n},\n    \"output_options\": {\n        \"include_trailing_newlines\": true\n    },\n    \"validation_options\": {\n    \"validation_type\": \"specification\",\n    \"validation_id\": \"01FAKTF92TMADV5CC1TWS8K8HB\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1413"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 16:58:45 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "7e1a72af-e411-428b-a42f-e6225eb14a0e"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JRGW2FfCoAMFodA="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d1dc5-0f7efd65312706fd44facc98"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 8628ab00b77c57209ad876418b745f6f.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YUL62-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "sPuLRisXOMA_MwAjKj_kQsK19OSEjCoct0ld2IYWbSsvsBQhviEvzw=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"invalid\",\n    \"output\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~\\nGS*IN*00*00*20210902*1200*987654321*X*004010~\\nST*810*0000~\\nBIG*20210902*AB01010101~\\nTDS*999~\\nSE*4*0000~\\nGE*1*987654321~\\nIEA*1*123456789~\\n\",\n    \"errors\": [\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"heading\",\n                \"value\",\n                \"020_BIG\"\n            ],\n            \"message\": \"Mandatory element BIG-04 not specified in segment BIG\",\n            \"code\": \"element_required\",\n            \"severity\": \"error\"\n        },\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"heading\",\n                \"value\"\n            ],\n            \"message\": \"Mandatory segment N1 not specified in heading\",\n            \"code\": \"segment_required\",\n            \"severity\": \"error\"\n        },\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"heading\",\n                \"value\"\n            ],\n            \"message\": \"Mandatory segment ITD not specified in heading\",\n            \"code\": \"segment_required\",\n            \"severity\": \"error\"\n        },\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"heading\",\n                \"value\"\n            ],\n            \"message\": \"Mandatory segment DTM not specified in heading\",\n            \"code\": \"segment_required\",\n            \"severity\": \"error\"\n        },\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"summary\",\n                \"value\"\n            ],\n            \"message\": \"Mandatory segment CAD not specified in summary\",\n            \"code\": \"segment_required\",\n            \"severity\": \"error\"\n        },\n        {\n            \"path\": [\n                \"interchanges\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"0\",\n                \"value\",\n                \"summary\",\n                \"value\"\n            ],\n            \"message\": \"Mandatory segment CTT not specified in summary\",\n            \"code\": \"segment_required\",\n            \"severity\": \"error\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "validation w. Mapping Guide",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Key 111222333444555666777888999000abc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"input_format\": \"jedi@2.0-beta\",\n    \"output_format\": \"edi\",\n    \"input\":{\n  \"interchanges\": [\n            {\n                \"interchange_control_header_ISA\": {\n                    \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n                    \"authorization_information_02\": \"\",\n                    \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n                    \"security_information_04\": \"\",\n                    \"interchange_id_qualifier_05\": \"mutually_defined_ZZ\",\n                    \"interchange_sender_id_06\": \"\",\n                    \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n                    \"interchange_receiver_id_08\": \"\",\n                    \"interchange_date_09\": \"210902\",\n                    \"interchange_time_10\": \"1200\",\n                    \"interchange_control_standards_identifier_11\": \"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\n                    \"interchange_control_version_number_code_12\": \"00401\",\n                    \"interchange_control_number_13\": \"123456789\",\n                    \"acknowledgment_requested_code_14\": \"interchange_acknowledgment_requested_1\",\n                    \"interchange_usage_indicator_code_15\": \"test_data_T\",\n                    \"component_element_separator_16\": \":\"\n                },\n                \"groups\": [\n                    {\n                        \"functional_group_header_GS\": {\n                            \"functional_identifier_code_01\": \"invoice_information_810819_IN\",\n                            \"application_senders_code_02\": \"00\",\n                            \"application_receivers_code_03\": \"00\",\n                            \"date_04\": \"20210902\",\n                            \"time_05\": \"1200\",\n                            \"group_control_number_06\": \"987654321\",\n                            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n                            \"version_release_industry_identifier_code_08\": \"004010\"\n                        },\n                        \"transaction_sets\": [\n                            {\n                                \"heading\": {\n                                    \"transaction_set_header_ST\": {\n                                        \"transaction_set_identifier_code_01\": \"810\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    },\n                                    \"beginning_segment_for_invoice_BIG\": {\n                                        \"date_01\": \"20210902\",\n                                        \"invoice_number_02\": \"AB01010101\"\n                                    }\n                                },\n                                \"summary\": {\n                                    \"total_monetary_value_summary_TDS\": {\n                                        \"amount_01\": \"999\"\n                                    },\n                                    \"transaction_set_trailer_SE\": {\n                                        \"number_of_included_segments_01\": \"4\",\n                                        \"transaction_set_control_number_02\": \"0000\"\n                                    }\n                                },\n                                \"type\": \"810\"\n                            }\n                        ],\n                        \"functional_group_trailer_GE\": {\n                            \"number_of_transaction_sets_included_01\": \"1\",\n                            \"group_control_number_02\": \"987654321\"\n                        }\n                    }\n                ],\n                \"interchange_control_trailer_IEA\": {\n                    \"number_of_included_functional_groups_01\": \"1\",\n                    \"interchange_control_number_02\": \"123456789\"\n                },\n                \"delimiters\": {\n                    \"element\": \"*\",\n                    \"segment\": \"~\",\n                    \"sub_element\": \":\"\n                }\n            }\n        ]\n},\n    \"output_options\": {\n        \"include_trailing_newlines\": true\n    },\n    \"validation_options\": {\n    \"validation_type\": \"specification\",\n    \"validation_id\": \"01FDN66H8SG2S3D9N9S2V4P8N2\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{ediCoreBaseUrl}}/translate",
+									"host": [
+										"{{ediCoreBaseUrl}}"
+									],
+									"path": [
+										"translate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 23 Nov 2021 17:02:12 GMT"
+								},
+								{
+									"key": "x-amzn-RequestId",
+									"value": "75848630-0878-444f-ba77-941a0adf4892"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with"
+								},
+								{
+									"key": "x-amz-apigw-id",
+									"value": "JRG3IGoaIAMFxhg="
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST,GET,OPTIONS"
+								},
+								{
+									"key": "X-Requested-With",
+									"value": "*"
+								},
+								{
+									"key": "X-Amzn-Trace-Id",
+									"value": "Root=1-619d1e93-5cce8e5f2f66c6b6698832ef"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "86400"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Miss from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 8628ab00b77c57209ad876418b745f6f.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "YUL62-C2"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "5WmMBW8_PsGoJj8Vqde08ciIxqJPmFa2jAZTHW8NeSTWPdpMWkSx5Q=="
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"valid\",\n    \"output\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~\\nGS*IN*00*00*20210902*1200*987654321*X*004010~\\nST*810*0000~\\nBIG*20210902*AB01010101~\\nTDS*999~\\nSE*4*0000~\\nGE*1*987654321~\\nIEA*1*123456789~\\n\"\n}"
+						}
+					]
+				}
+			],
+			"description": "EDI Core API [guide](https://www.stedi.com/docs/edi-core) and [API reference](https://www.stedi.com/docs/api/edi-core)",
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "<your-api-key>",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "STEDI_API_KEY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "stediApiKey",
+			"value": "<your-api-key>"
+		},
+		{
+			"key": "ediCoreBaseUrl",
+			"value": "https://edi-core.stedi.com/2021-06-05"
+		}
+	]
+}
