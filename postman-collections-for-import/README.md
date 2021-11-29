@@ -33,4 +33,4 @@ Raw EDI files contain whitespaces at the end of each line. You'll need to conver
 ## EDI Core API
 <img src="https://user-images.githubusercontent.com/89091046/136258093-c3aba730-7109-4f64-acc0-46dda44043cb.png" width=50% height=50%>
 
-[Documentation in Postman](https://documenter.getpostman.com/view/17436649/UVJbGHLL)
+For examples in curl and other languages, check out [documentation in Postman](https://documenter.getpostman.com/view/17436649/UVJbGHLL)
