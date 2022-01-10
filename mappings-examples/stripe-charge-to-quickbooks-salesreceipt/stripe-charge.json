@@ -1,0 +1,82 @@
+{
+  "id": "ch_3K6oPh2eZvKYlo2C1hQrP9K2",
+  "object": "charge",
+  "amount": 100,
+  "amount_captured": 0,
+  "amount_refunded": 0,
+  "application": null,
+  "application_fee": null,
+  "application_fee_amount": null,
+  "balance_transaction": "txn_1032HU2eZvKYlo2CEPtcnUvl",
+  "billing_details": {
+    "address": {
+      "city": null,
+      "country": null,
+      "line1": null,
+      "line2": null,
+      "postal_code": null,
+      "state": null
+    },
+    "email": null,
+    "name": "Jenny Rosen",
+    "phone": null
+  },
+  "calculated_statement_descriptor": null,
+  "captured": false,
+  "created": 1639539861,
+  "currency": "usd",
+  "customer": null,
+  "description": "My First Test Charge (created for API docs)",
+  "disputed": false,
+  "failure_code": null,
+  "failure_message": null,
+  "fraud_details": {},
+  "invoice": null,
+  "livemode": false,
+  "metadata": {},
+  "on_behalf_of": null,
+  "order": null,
+  "outcome": null,
+  "paid": true,
+  "payment_intent": null,
+  "payment_method": "card_19yUNL2eZvKYlo2CNGsN6EWH",
+  "payment_method_details": {
+    "card": {
+      "brand": "visa",
+      "checks": {
+        "address_line1_check": null,
+        "address_postal_code_check": null,
+        "cvc_check": "unchecked"
+      },
+      "country": "US",
+      "exp_month": 12,
+      "exp_year": 2020,
+      "fingerprint": "Xt5EWLLDS7FJjR1c",
+      "funding": "credit",
+      "installments": null,
+      "last4": "4242",
+      "network": "visa",
+      "three_d_secure": null,
+      "wallet": null
+    },
+    "type": "card"
+  },
+  "receipt_email": null,
+  "receipt_number": null,
+  "receipt_url": "https://pay.stripe.com/receipts/acct_xxx/ch_xxx/rcpt_xxx",
+  "refunded": false,
+  "refunds": {
+    "object": "list",
+    "data": [],
+    "has_more": false,
+    "url": "/v1/charges/ch_xxx/refunds"
+  },
+  "review": null,
+  "shipping": null,
+  "source_transfer": null,
+  "statement_descriptor": null,
+  "statement_descriptor_suffix": null,
+  "status": "succeeded",
+  "transfer_data": null,
+  "transfer_group": null
+}

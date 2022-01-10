@@ -1,0 +1,5 @@
+{
+  "name": "Stripe Charge → QuickBooks SalesReceipt",
+  "type": "only_mapped_keys",
+  "mapping": "{\n\t\"Line\":[{\n\t\"Description\":description,\n\t\"DetailType\":\"SalesItemLineDetail\",\n\t\"SalesItemLineDetail\":{\n\t\"TaxCodeRef\":{\n\t\"value\":\"TEST\"\n},\n\t\"Qty\":1,\n\t\"UnitPrice\":amount\n},\n\t\"LineNum\":1,\n\t\"Amount\":amount\n}]\n}"
+}

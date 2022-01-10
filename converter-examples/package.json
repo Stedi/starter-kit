@@ -1,0 +1,35 @@
+{
+  "name": "@stedi/example-converter",
+  "description": "Stedi Converter Example",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stedi/example-converter.git"
+  },
+  "license": "ISC",
+  "author": "engineering@stedi.com",
+  "scripts": {
+    "csv-to-json": "npx ts-node src/csv-to-json.ts",
+    "json-to-csv": "npx ts-node src/json-to-csv.ts",
+    "xml-to-json": "npx ts-node src/xml-to-json.ts",
+    "compressed-payload": "npx ts-node src/compressed-payload.ts",
+    "fix": "prettier -w .",
+    "check": "tsc --noEmit && prettier -c ."
+  },
+  "dependencies": {
+    "@stedi/sdk-converter-node": "^1.20.0",
+    "axios": "^0.24.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "volta": {
+    "node": "16.11.1",
+    "npm": "8.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "prettier": "^2.5.1"
+  }
+}
