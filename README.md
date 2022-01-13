@@ -17,4 +17,4 @@ There is some minor setup you must do.
 
 Now you are ready to use the postman collection. In all API calls to Stedi you must include the API key as a Header such as `"Authorization" : "Key <STEDI_API_KEY>"`.
 
-For a more comprehensive look into Stedi, take a gander over to [Introduction to Stedi](https://www.stedi.com/docs/fundamentals/introduction-to-stedi)
+For a more comprehensive look into Stedi, take a look at the [Introduction to Stedi](https://www.stedi.com/docs/fundamentals/introduction-to-stedi)
