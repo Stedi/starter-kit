@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "fields": {
+        "customerName": "John Doe",
+        "customerChannel": "Dropship",
+        "purchaseOrderNumber": "DKqHPDX9k",
+        "customerAddress": "123 Main St",
+        "customerCity": "Seattle",
+        "customerState": "WA",
+        "customerZip": 98121,
+        "customerCountry": "US",
+        "currency": "USD",
+        "lineItems": [
+          {
+            "sku": 1234,
+            "quantity": 1,
+            "unitPrice": 22.99
+          }
+        ]
+      }
+    }
+  ]
+}

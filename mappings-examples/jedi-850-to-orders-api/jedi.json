@@ -1,0 +1,300 @@
+{
+  "interchanges": [
+    {
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "mutually_defined_ZZ",
+        "interchange_sender_id_06": "AMAZONDS",
+        "interchange_id_qualifier_07": "duns_dun_bradstreet_01",
+        "interchange_receiver_id_08": "TESTID",
+        "interchange_date_09": "070808",
+        "interchange_time_10": "1310",
+        "interchange_control_standards_identifier_11": "us_edi_community_of_asc_x12_tdcc_and_ucs_U",
+        "interchange_control_version_number_12": "00401",
+        "interchange_control_number_13": "000000043",
+        "acknowledgment_requested_14": "interchange_acknowledgment_requested_1",
+        "usage_indicator_15": "test_data_T",
+        "component_element_separator_16": "+"
+      },
+      "groups": [
+        {
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "purchase_order_850_PO",
+            "application_senders_code_02": "ATFDS",
+            "application_receivers_code_03": "AMAZONDS",
+            "date_04": "20070911",
+            "time_05": "2001",
+            "group_control_number_06": "95",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "004010"
+          },
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "850",
+                  "transaction_set_control_number_02": "0010"
+                },
+                "beginning_segment_for_purchase_order_BEG": {
+                  "transaction_set_purpose_code_01": "original_00",
+                  "purchase_order_type_code_02": "dropship_DS",
+                  "purchase_order_number_03": "TesT0008596",
+                  "date_05": "20070808"
+                },
+                "currency_CUR": {
+                  "entity_identifier_code_01": "bill_to_party_BT",
+                  "currency_code_02": "USD"
+                },
+                "reference_identification_REF": [
+                  {
+                    "reference_identification_qualifier_01": "order_number_OQ",
+                    "reference_identification_02": "X"
+                  },
+                  {
+                    "reference_identification_qualifier_01": "store_number_ST",
+                    "reference_identification_02": "1"
+                  }
+                ],
+                "reference_identification_N9_loop": [
+                  {
+                    "reference_identification_N9": {
+                      "reference_identification_qualifier_01": "mutually_defined_ZZ",
+                      "reference_identification_02": "01"
+                    },
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "This shipment completes your order."
+                      }
+                    ]
+                  },
+                  {
+                    "reference_identification_N9": {
+                      "reference_identification_qualifier_01": "mutually_defined_ZZ",
+                      "reference_identification_02": "06"
+                    },
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "For detailed information about your orders, please visit Your Account. You can also print invoices, change your e-mail address and payment settings, alter your communication preferences, and much more-24 hours a day-at http://www.amazon.com/your-account."
+                      }
+                    ]
+                  },
+                  {
+                    "reference_identification_N9": {
+                      "reference_identification_qualifier_01": "mutually_defined_ZZ",
+                      "reference_identification_02": "07"
+                    },
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "Visit http://www.amazon.com/returns to return any item-including gifts-in unopened or original condition within 30 days for a full refund(other restrictions apply). Please have your order ID ready. Thanks for shopping at Amazon.com, and please come again!"
+                      }
+                    ]
+                  }
+                ],
+                "name_N1_loop": [
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "bill_to_party_BT",
+                      "name_02": "Amazon.com.kydc,Inc.",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "KYDC"
+                    }
+                  },
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "ship_from_SF",
+                      "name_02": "WHSE",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "WHSE"
+                    }
+                  },
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "ship_to_ST",
+                      "name_02": "Charlie Dinkins"
+                    },
+                    "additional_name_information_N2": [
+                      {
+                        "name_01": "Darla Dinkins"
+                      }
+                    ],
+                    "address_information_N3": [
+                      {
+                        "address_information_01": "11254 Main St",
+                        "address_information_02": "Suite 112"
+                      }
+                    ],
+                    "geographic_location_N4": [
+                      {
+                        "city_name_01": "Seattle",
+                        "state_or_province_code_02": "WA",
+                        "postal_code_03": "98104",
+                        "country_code_04": "US",
+                        "location_qualifier_05": "country_CC",
+                        "location_identifier_06": "United States"
+                      }
+                    ],
+                    "carrier_details_routing_sequence_transit_time_TD5": [
+                      {
+                        "identification_code_qualifier_02": "assigned_by_buyer_or_buyers_agent_92",
+                        "identification_code_03": "UPS_GR_RES",
+                        "location_qualifier_07": "mutually_defined_ZZ",
+                        "location_identifier_08": "RES"
+                      }
+                    ]
+                  },
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "customer_LW",
+                      "name_02": "Amber Baker"
+                    },
+                    "address_information_N3": [
+                      {
+                        "address_information_01": "123 Anderson Avenue"
+                      }
+                    ],
+                    "geographic_location_N4": [
+                      {
+                        "city_name_01": "Seattle",
+                        "state_or_province_code_02": "WA",
+                        "postal_code_03": "98103",
+                        "country_code_04": "US"
+                      }
+                    ],
+                    "administrative_communications_contact_PER": [
+                      {
+                        "contact_function_code_01": "mutually_defined_ZZ",
+                        "communication_number_qualifier_05": "telephone_TE",
+                        "communication_number_06": "206-555-1212"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "detail": {
+                "baseline_item_data_PO1_loop": [
+                  {
+                    "baseline_item_data_PO1": {
+                      "assigned_identification_01": "1",
+                      "quantity_ordered_02": "3",
+                      "unit_or_basis_for_measurement_code_03": "each_EA",
+                      "unit_price_04": "18.04",
+                      "basis_of_unit_price_code_05": "net_NT",
+                      "product_service_id_qualifier_06": "stock_keeping_unit_sku_SK",
+                      "product_service_id_07": "1617",
+                      "product_service_id_qualifier_12": "brand_label_BL",
+                      "product_service_id_13": "1",
+                      "product_service_id_qualifier_14": "mutually_defined_ZZ",
+                      "product_service_id_15": "Amazon.com"
+                    },
+                    "pricing_information_CTP_loop": [
+                      {
+                        "pricing_information_CTP": {
+                          "price_identifier_code_02": "purchase_PUR",
+                          "unit_price_03": "19.99"
+                        }
+                      }
+                    ],
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "Wide Tracker Activity Walker"
+                      }
+                    ]
+                  },
+                  {
+                    "baseline_item_data_PO1": {
+                      "assigned_identification_01": "2",
+                      "quantity_ordered_02": "2",
+                      "unit_or_basis_for_measurement_code_03": "each_EA",
+                      "unit_price_04": "54.42",
+                      "basis_of_unit_price_code_05": "net_NT",
+                      "product_service_id_qualifier_06": "stock_keeping_unit_sku_SK",
+                      "product_service_id_07": "4927",
+                      "product_service_id_qualifier_12": "brand_label_BL",
+                      "product_service_id_13": "1",
+                      "product_service_id_qualifier_14": "mutually_defined_ZZ",
+                      "product_service_id_15": "Amazon.com"
+                    },
+                    "pricing_information_CTP_loop": [
+                      {
+                        "pricing_information_CTP": {
+                          "price_identifier_code_02": "purchase_PUR",
+                          "unit_price_03": "59.99"
+                        }
+                      }
+                    ],
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "Deluxe Cozy Convertible"
+                      }
+                    ]
+                  },
+                  {
+                    "baseline_item_data_PO1": {
+                      "assigned_identification_01": "3",
+                      "quantity_ordered_02": "1",
+                      "unit_or_basis_for_measurement_code_03": "each_EA",
+                      "unit_price_04": "21.9",
+                      "basis_of_unit_price_code_05": "net_NT",
+                      "product_service_id_qualifier_06": "stock_keeping_unit_sku_SK",
+                      "product_service_id_07": "1682",
+                      "product_service_id_qualifier_12": "brand_label_BL",
+                      "product_service_id_13": "1",
+                      "product_service_id_qualifier_14": "mutually_defined_ZZ",
+                      "product_service_id_15": "Amazon.com"
+                    },
+                    "pricing_information_CTP_loop": [
+                      {
+                        "pricing_information_CTP": {
+                          "price_identifier_code_02": "purchase_PUR",
+                          "unit_price_03": "25.99"
+                        }
+                      }
+                    ],
+                    "message_text_MSG": [
+                      {
+                        "free_form_message_text_01": "DiscoverSounds Workshop"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "summary": {
+                "transaction_totals_CTT_loop": [
+                  {
+                    "transaction_totals_CTT": {
+                      "number_of_line_items_01": "6",
+                      "hash_total_02": "43"
+                    }
+                  }
+                ],
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "33",
+                  "transaction_set_control_number_02": "0010"
+                }
+              },
+              "set": "850"
+            }
+          ],
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "1",
+            "group_control_number_02": "43"
+          },
+          "release": "004010"
+        }
+      ],
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "000000043"
+      },
+      "delimiters": {
+        "element": "*",
+        "segment": "~",
+        "sub_element": "+"
+      }
+    }
+  ],
+  "__version": "jedi@2.0"
+}
