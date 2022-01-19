@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://stedi.com">
-    <img src = "./images/stedi-logo.svg" height = 50px>
+    <img src = "./images/stedi-logo.svg" width = 200px>
   </a>
 </p>
 
