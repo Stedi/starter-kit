@@ -5,9 +5,7 @@ Welcome to Stedi Postman Collection guide - a quick and easy way to send API req
 ## First things first  
 
 1. [Create a free Stedi account](https://terminal.stedi.com/sign-up) to get an [API Key](https://www.stedi.com/docs/authentication) you'll use in Postman
-2. Click the "Run in Postman" button below 
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/163cc4c44cd91bc02ee6?action=collection%2Fimport)
+2. Import the 'Stedi.postman_collection.json' file to your Postman workspace.
 
 ## Configuration
 Once the collection has been imported into Postman, go through the steps below to configure API Keys and start making your first API requests. 
@@ -33,4 +31,3 @@ Raw EDI files contain whitespaces at the end of each line. You'll need to conver
 ## EDI Core API
 <img src="https://user-images.githubusercontent.com/89091046/136258093-c3aba730-7109-4f64-acc0-46dda44043cb.png" width=50% height=50%>
 
-For examples in curl and other languages, check out [documentation in Postman](https://documenter.getpostman.com/view/17436649/UVJbGHLL)

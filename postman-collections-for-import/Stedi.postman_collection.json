@@ -23,7 +23,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Key <change this to your key>",
+								"value": "Key 111222333444555666777888999000abc",
 								"type": "text"
 							}
 						],
@@ -60,7 +60,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Key <change this to your key>",
+								"value": "Key 111222333444555666777888999000abc",
 								"type": "text"
 							}
 						],
