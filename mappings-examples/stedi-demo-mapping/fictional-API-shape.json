@@ -1,0 +1,26 @@
+{
+  "records": [
+    {
+      "fields": {
+        "customerName": "John Doe",
+        "purchaseOrderNumber": "DKqHPDX9k",
+        "purchaseOrderDetails": [
+          {
+            "itemName": "goods",
+            "Qty": 1,
+            "unitMeasurement": "Each",
+            "unitPrice": 291.22,
+            "totalCost": 291.22
+          }
+        ],
+        "purchaseOrderTotals": {
+          "totalLineItems": 2,
+          "totalUnits": 3,
+          "totalCost": 100.32
+        },
+        "customerEmail": "customer@customer.com",
+        "orderDate": "2021-09-19"
+      }
+    }
+  ]
+}
