@@ -1,0 +1,35 @@
+{
+  "content": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"inventory_item_id\":{\"type\":\"number\"},\"location_id\":{\"type\":\"number\"},\"available\":{\"type\":\"number\"}}},\"default\":[{\"inventory_item_id\":808950810,\"location_id\":655441491,\"available\":6},{\"inventory_item_id\":808950810,\"location_id\":655441491,\"available\":6}]}",
+  "type": "jsonschema@2020-12",
+  "name": "target document",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "inventory_item_id": {
+          "type": "number"
+        },
+        "location_id": {
+          "type": "number"
+        },
+        "available": {
+          "type": "number"
+        }
+      }
+    },
+    "default": [
+      {
+        "inventory_item_id": 808950810,
+        "location_id": 655441491,
+        "available": 6
+      },
+      {
+        "inventory_item_id": 808950810,
+        "location_id": 655441491,
+        "available": 6
+      }
+    ]
+  }
+}

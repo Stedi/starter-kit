@@ -1,0 +1,3 @@
+# JEDI 846 -> Shopify InventoryLevel API
+
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-846-->-shopify-inventorylevel-api/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-846-->-shopify-inventorylevel-api/jedi_846.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-846-->-shopify-inventorylevel-api/shopify_inventorylevel.json)
