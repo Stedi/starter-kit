@@ -1,0 +1,3 @@
+# STEDI-DEMO-MAPPING
+
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/stedi-demo-mapping/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/stedi-demo-mapping/jedi-850.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/stedi-demo-mapping/fictional-API-shape.json)
