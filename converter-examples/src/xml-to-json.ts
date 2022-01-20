@@ -10,6 +10,8 @@ const exampleFn = async () => {
       input_xml: input,
       options: {
         attribute_name_prefix: "abc",
+        ignore_attributes: false,
+        convert_attribute_types: true,
       },
     });
     const output = JSON.stringify(response.output_json, null, 2);

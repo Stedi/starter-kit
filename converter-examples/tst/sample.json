@@ -174,8 +174,8 @@
     "Metafield Key": "dry",
     "Metafield Value": "tumble_dry",
     "Metafield Value Type": "string"
-},
-{
+  },
+  {
     "Name": "#MA-3098",
     "Email": "jane.doe@acme.com",
     "Financial Status": "refunded",
