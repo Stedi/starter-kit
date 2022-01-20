@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "1a21aa82-1dbf-4b93-8130-5947dbaf975b",
+		"_postman_id": "591dcbf2-06e3-4d07-8f68-a537f4d508ae",
 		"name": "Stedi Starter Pack",
-		"description": "A collection of Stedi API endpoints. Each endpoint request comes with an example request & response. \n\n## Getting started\n1. [Create a free Stedi account](https://terminal.stedi.com/sign-up) to access Terminal.\n2. [Create an API Key](https://www.stedi.com/docs/authentication)\n3. To try out a request, go to Headers and in Authorization row, paste your API Key replacing the example value 111222333444555666777888999000abc",
+		"description": "A collection of Stedi API requests you can use to work with EDI Core. Each API request comes with an example request and response. We have two example request included:\n\n*   Convert a EDI document to JSON EDI (JEDI)\n*   Convert a JSON EDI (JEDI) document to EDI\n    \n\nBoth examples are populated with sample data so you can easily try a request. You can try to do a conversion using your own documents using this collection too.\n\n## Getting started\n\n1.  [Create or login to your Stedi account](https://terminal.stedi.com/sign-up) using Terminal.\n2.  [Create an API Key](https://www.stedi.com/docs/authentication) in Terminal.\n3.  Set the Postman environment variable `stediApiKey` with your API key.\n4.  You can now send API requests to Stedi by pressing \"send request\".",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -23,13 +23,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Key 111222333444555666777888999000abc",
+								"value": "Key {{stediApiKey}}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\n{ \n    \"input_format\": \"edi\", \n    \"output_format\": \"jedi@2.0-beta\", \n    \"input\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~GS*IN*00*00*20210902*1200*987654321*X*004010~ST*810*0000~BIG*20210902*AB01010101~TDS*999~SE*4*0000~GE*1*987654321~IEA*1*123456789~\", \n    \"output_options\": {\n        \"include_trailing_newlines\": false\n    },\n    \"validation_options\": {\n        \"validation_type\": \"base\"\n    }\n}",
+							"raw": "{\n    \"input_format\": \"edi\",\n    \"output_format\": \"jedi@2.0-beta\",\n    \"input\": \"ISA*00*          *00*          *ZZ*               *ZZ*               *210902*1200*U*00401*123456789*1*T*:~GS*IN*00*00*20210902*1200*987654321*X*004010~ST*810*0000~BIG*20210902*AB01010101~TDS*999~SE*4*0000~GE*1*987654321~IEA*1*123456789~\",\n    \"output_options\": {\n        \"include_trailing_newlines\": false\n    },\n    \"validation_options\": {\n        \"validation_type\": \"base\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 								"translate"
 							]
 						},
-						"description": "Translate between supported EDI formats (JSON and EDI X12)\n\nReview the *body* of POST call for guidance on how to use fields. If you have a specific use case in mind, go to examples where you'll find how to: \n\n* translate EDI to JEDI (JSON EDI)\n* translate JSON to EDI\n* translate and validate against a specific mapping guide\n\n**Notes** \n* it's okay if your EDI files contain `\\n` LF or `\\r\\n` CLRF, they will parse successfully. Check out our detailed instructions on how to format EDI file for Postman call [here](https://github.com/Stedi/api-starter-pack/tree/main/postman-collections-for-import). \n* browse our library of [EDI mapping guides](https://edi.stedi.com/mapping-guides) and use the guide version ID to validate EDI via the API"
+						"description": "Translate between supported EDI formats (JSON and EDI X12)\n\nReview the *body* of POST call for guidance on how to use fields. If you have a specific use case in mind, go to examples where you'll find how to:\n\n*   translate EDI to JEDI (JSON EDI)\n*   translate JSON to EDI\n*   translate and validate against a specific mapping guide\n    \n\n**Notes**\n\n*   it's okay if your EDI files contain `\\n` LF or `\\r\\n` CLRF, they will parse successfully. Check out our detailed instructions on how to format EDI file for Postman call [here](https://github.com/Stedi/api-starter-pack/tree/main/postman-collections-for-import).\n*   browse our library of [EDI mapping guides](https://edi.stedi.com/mapping-guides) and use the guide version ID to validate EDI via the API"
 					},
 					"response": [
 						{
@@ -387,7 +387,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Key 111222333444555666777888999000abc",
+								"value": "Key {{stediApiKey}}",
 								"type": "text"
 							}
 						],
@@ -733,7 +733,7 @@
 					]
 				}
 			],
-			"description": "EDI Core API [guide](https://www.stedi.com/docs/edi-core) and [API reference](https://www.stedi.com/docs/api/edi-core)",
+			"description": "Take a look at the EDI Core API [guide](https://www.stedi.com/docs/edi-core) and [API reference](https://www.stedi.com/docs/api/edi-core) for more details.",
 			"auth": {
 				"type": "noauth"
 			},
