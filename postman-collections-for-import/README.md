@@ -49,9 +49,10 @@ tr -d '\n' < edifile.txt > edifile-no-newline.txt
 
 In your favourite text editor, replace the `\n` characters with a space. If you are using VS Code, you can do this with the following replacement command, which you can access through `Edit > Replace`:
 
-<img src = "../images/edi-core/replace-newline.png">
+<img src = "../images/edi-core/replace-newline-before.png">
 
 Enter `\n` in the first field of the replace command and a space in the second field.
 
+After the replacement is completed, the file should look as follows:
 
-After the replace is done in either way, you can put this converted string in the `'input'` body value of the 'EDI to JEDI' request and send the API request. In the API response, you will see if the EDI file was valid and what the JEDI response is. 
+<img src = "../images/edi-core/replace-newline-after.png">
