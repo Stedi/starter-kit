@@ -17,11 +17,11 @@ Once the collection has been imported into Postman, we need to configure a Stedi
 
 Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the 'Environment Variables' tab on the left hand side of Postman. 
 
-<img src = "../images/edi-core/environment-variable.png">
+<img src = "https://github.com/Stedi/starter-kit/raw/marek-postman/images/edi-core/environment-variable.png">
 
 Once the key is set, you can send API requests to Stedi. Make sure that the correct Postman environment variable is set in the top right corner of the screen ('Stedi API' in this case).
 
-<img src = "../images/edi-core/send-request.png">
+<img src = "https://github.com/Stedi/starter-kit/raw/marek-postman/images/edi-core/send-request.png">
 
 For more details, please review our API documentation [on Documenter](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
 
@@ -48,10 +48,10 @@ tr -d '\n' < edifile.txt > edifile-no-newline.txt
 
 In your favourite text editor, replace the `\n` characters with a space. If you are using VS Code, you can do this with the following replacement command, which you can access through `Edit > Replace`:
 
-<img src = "../images/edi-core/replace-newline-before.png">
+<img src = "https://github.com/Stedi/starter-kit/raw/marek-postman/images/edi-core//replace-newline-before.png">
 
 Enter `\n` in the first field of the replace command and a space in the second field.
 
 After the replacement is completed, the file should look as follows:
 
-<img src = "../images/edi-core/replace-newline-after.png">
+<img src = "https://github.com/Stedi/starter-kit/raw/marek-postman/images/edi-core/replace-newline-after.png">
