@@ -1,0 +1,5 @@
+{
+  "name": "jedi-846-shopify-inventorylevel",
+  "type": "only_mapped_keys",
+  "mapping": "interchanges[0].groups[0].transaction_sets[0].detail.item_identification_LIN_loop.{\n\t\"inventory_item_id\":$number(item_identification_LIN.product_service_id_03),\n\t\"location_id\":$number($$.interchanges[0].groups[0].transaction_sets[0].heading.party_identification_N1_loop[0].party_identification_N1.name_02),\n\t\"available\":$number(quantity_information_QTY_loop[0].quantity_information_QTY.quantity_02)\n}[]"
+}
