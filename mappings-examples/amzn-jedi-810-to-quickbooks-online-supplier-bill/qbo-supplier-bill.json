@@ -1,0 +1,138 @@
+{
+  "content": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"VendorRef\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}},\"DocNumber\":{\"type\":\"string\"},\"TxnDate\":{\"type\":\"string\"},\"PrivateNote\":{\"type\":\"string\"},\"SalesTermRef\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"}}},\"CurrencyRef\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}},\"Line\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"Id\":{\"type\":\"string\"},\"Amount\":{\"type\":\"number\"},\"DetailType\":{\"type\":\"string\"},\"Description\":{\"type\":\"string\"},\"ItemBasedExpenseLineDetail\":{\"type\":\"object\",\"properties\":{\"Qty\":{\"type\":\"number\"},\"UnitPrice\":{\"type\":\"number\"},\"ItemRef\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"}}}}}}}}},\"default\":{\"VendorRef\":{\"value\":\"58\",\"name\":\"Amazon\"},\"DocNumber\":\"8\",\"TxnDate\":\"2022-01-12\",\"PrivateNote\":\"Welcome to demo day!\",\"SalesTermRef\":{\"value\":\"3\"},\"CurrencyRef\":{\"value\":\"USD\",\"name\":\"United States Dollar\"},\"Line\":[{\"Id\":\"1\",\"Amount\":250,\"DetailType\":\"ItemBasedExpenseLineDetail\",\"Description\":\"Test WidgetA Description\",\"ItemBasedExpenseLineDetail\":{\"Qty\":10,\"UnitPrice\":25,\"ItemRef\":{\"value\":\"19\",\"name\":\"WidgetA\"}}},{\"Id\":\"2\",\"Amount\":150,\"DetailType\":\"ItemBasedExpenseLineDetail\",\"Description\":\"Test WidgetB Description\",\"ItemBasedExpenseLineDetail\":{\"Qty\":5,\"UnitPrice\":75,\"ItemRef\":{\"value\":\"20\",\"name\":\"WidgetB\"}}}]}}",
+  "type": "jsonschema@2020-12",
+  "name": "target document",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "VendorRef": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "DocNumber": {
+        "type": "string"
+      },
+      "TxnDate": {
+        "type": "string"
+      },
+      "PrivateNote": {
+        "type": "string"
+      },
+      "SalesTermRef": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CurrencyRef": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Line": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "Id": {
+              "type": "string"
+            },
+            "Amount": {
+              "type": "number"
+            },
+            "DetailType": {
+              "type": "string"
+            },
+            "Description": {
+              "type": "string"
+            },
+            "ItemBasedExpenseLineDetail": {
+              "type": "object",
+              "properties": {
+                "Qty": {
+                  "type": "number"
+                },
+                "UnitPrice": {
+                  "type": "number"
+                },
+                "ItemRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "default": {
+      "VendorRef": {
+        "value": "58",
+        "name": "Amazon"
+      },
+      "DocNumber": "8",
+      "TxnDate": "2022-01-12",
+      "PrivateNote": "Welcome to demo day!",
+      "SalesTermRef": {
+        "value": "3"
+      },
+      "CurrencyRef": {
+        "value": "USD",
+        "name": "United States Dollar"
+      },
+      "Line": [
+        {
+          "Id": "1",
+          "Amount": 250,
+          "DetailType": "ItemBasedExpenseLineDetail",
+          "Description": "Test WidgetA Description",
+          "ItemBasedExpenseLineDetail": {
+            "Qty": 10,
+            "UnitPrice": 25,
+            "ItemRef": {
+              "value": "19",
+              "name": "WidgetA"
+            }
+          }
+        },
+        {
+          "Id": "2",
+          "Amount": 150,
+          "DetailType": "ItemBasedExpenseLineDetail",
+          "Description": "Test WidgetB Description",
+          "ItemBasedExpenseLineDetail": {
+            "Qty": 5,
+            "UnitPrice": 75,
+            "ItemRef": {
+              "value": "20",
+              "name": "WidgetB"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

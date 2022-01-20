@@ -1,0 +1,3 @@
+# Amazon JEDI 810 -> QuickBooks Online Supplier Bill
+
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/amazon-jedi-810-->-quickbooks-online-supplier-bill/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/amazon-jedi-810-->-quickbooks-online-supplier-bill/amzn-jedi-810.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/amazon-jedi-810-->-quickbooks-online-supplier-bill/qbo-supplier-bill.json)

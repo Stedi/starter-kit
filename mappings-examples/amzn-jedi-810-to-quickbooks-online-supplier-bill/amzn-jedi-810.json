@@ -1,0 +1,533 @@
+{
+  "content": "{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"interchanges\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"interchange_control_header_ISA\":{\"type\":\"object\",\"properties\":{\"authorization_information_qualifier_01\":{\"type\":\"string\"},\"authorization_information_02\":{\"type\":\"string\"},\"security_information_qualifier_03\":{\"type\":\"string\"},\"security_information_04\":{\"type\":\"string\"},\"interchange_id_qualifier_05\":{\"type\":\"string\"},\"interchange_sender_id_06\":{\"type\":\"string\"},\"interchange_id_qualifier_07\":{\"type\":\"string\"},\"interchange_receiver_id_08\":{\"type\":\"string\"},\"interchange_date_09\":{\"type\":\"string\"},\"interchange_time_10\":{\"type\":\"string\"},\"interchange_control_standards_identifier_11\":{\"type\":\"string\"},\"interchange_control_version_number_12\":{\"type\":\"string\"},\"interchange_control_number_13\":{\"type\":\"string\"},\"acknowledgment_requested_14\":{\"type\":\"string\"},\"usage_indicator_15\":{\"type\":\"string\"},\"component_element_separator_16\":{\"type\":\"string\"}}},\"groups\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"functional_group_header_GS\":{\"type\":\"object\",\"properties\":{\"functional_identifier_code_01\":{\"type\":\"string\"},\"application_senders_code_02\":{\"type\":\"string\"},\"application_receivers_code_03\":{\"type\":\"string\"},\"date_04\":{\"type\":\"string\"},\"time_05\":{\"type\":\"string\"},\"group_control_number_06\":{\"type\":\"string\"},\"responsible_agency_code_07\":{\"type\":\"string\"},\"version_release_industry_identifier_code_08\":{\"type\":\"string\"}}},\"transaction_sets\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"heading\":{\"type\":\"object\",\"properties\":{\"transaction_set_header_ST\":{\"type\":\"object\",\"properties\":{\"transaction_set_identifier_code_01\":{\"type\":\"string\"},\"transaction_set_control_number_02\":{\"type\":\"string\"}}},\"beginning_segment_for_invoice_BIG\":{\"type\":\"object\",\"properties\":{\"date_01\":{\"type\":\"string\"},\"invoice_number_02\":{\"type\":\"string\"},\"date_03\":{\"type\":\"string\"},\"transaction_type_code_07\":{\"type\":\"string\"}}},\"currency_CUR\":{\"type\":\"object\",\"properties\":{\"entity_identifier_code_01\":{\"type\":\"string\"},\"currency_code_02\":{\"type\":\"string\"}}},\"name_N1_loop\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name_N1\":{\"type\":\"object\",\"properties\":{\"entity_identifier_code_01\":{\"type\":\"string\"},\"name_02\":{\"type\":\"string\"},\"identification_code_qualifier_03\":{\"type\":\"string\"},\"identification_code_04\":{\"type\":\"string\"}}},\"address_information_N3\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"address_information_01\":{\"type\":\"string\"}}}},\"geographic_location_N4\":{\"type\":\"object\",\"properties\":{\"city_name_01\":{\"type\":\"string\"},\"state_or_province_code_02\":{\"type\":\"string\"},\"postal_code_03\":{\"type\":\"string\"},\"country_code_04\":{\"type\":\"string\"}}}}}},\"terms_of_sale_deferred_terms_of_sale_ITD\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"terms_type_code_01\":{\"type\":\"string\"},\"terms_basis_date_code_02\":{\"type\":\"string\"},\"terms_net_days_07\":{\"type\":\"string\"},\"description_12\":{\"type\":\"string\"}}}}}},\"detail\":{\"type\":\"object\",\"properties\":{\"baseline_item_data_invoice_IT1_loop\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"baseline_item_data_invoice_IT1\":{\"type\":\"object\",\"properties\":{\"assigned_identification_01\":{\"type\":\"string\"},\"quantity_invoiced_02\":{\"type\":\"string\"},\"unit_or_basis_for_measurement_code_03\":{\"type\":\"string\"},\"unit_price_04\":{\"type\":\"string\"},\"basis_of_unit_price_code_05\":{\"type\":\"string\"},\"product_service_id_qualifier_06\":{\"type\":\"string\"},\"product_service_id_07\":{\"type\":\"string\"},\"product_service_id_qualifier_08\":{\"type\":\"string\"},\"product_service_id_09\":{\"type\":\"string\"},\"product_service_id_qualifier_10\":{\"type\":\"string\"},\"product_service_id_11\":{\"type\":\"string\"},\"product_service_id_qualifier_12\":{\"type\":\"string\"},\"product_service_id_13\":{\"type\":\"string\"}}}}}}}},\"summary\":{\"type\":\"object\",\"properties\":{\"total_monetary_value_summary_TDS\":{\"type\":\"object\",\"properties\":{\"amount_01\":{\"type\":\"string\"}}},\"transaction_totals_CTT\":{\"type\":\"object\",\"properties\":{\"number_of_line_items_01\":{\"type\":\"string\"},\"hash_total_02\":{\"type\":\"string\"}}},\"transaction_set_trailer_SE\":{\"type\":\"object\",\"properties\":{\"number_of_included_segments_01\":{\"type\":\"string\"},\"transaction_set_control_number_02\":{\"type\":\"string\"}}}}},\"set\":{\"type\":\"string\"}}}},\"functional_group_trailer_GE\":{\"type\":\"object\",\"properties\":{\"number_of_transaction_sets_included_01\":{\"type\":\"string\"},\"group_control_number_02\":{\"type\":\"string\"}}},\"release\":{\"type\":\"string\"}}}},\"interchange_control_trailer_IEA\":{\"type\":\"object\",\"properties\":{\"number_of_included_functional_groups_01\":{\"type\":\"string\"},\"interchange_control_number_02\":{\"type\":\"string\"}}},\"delimiters\":{\"type\":\"object\",\"properties\":{\"element\":{\"type\":\"string\"},\"segment\":{\"type\":\"string\"},\"sub_element\":{\"type\":\"string\"}}}}}},\"__version\":{\"type\":\"string\"}},\"default\":{\"interchanges\":[{\"interchange_control_header_ISA\":{\"authorization_information_qualifier_01\":\"no_authorization_information_present_no_meaningful_information_in_i02_00\",\"authorization_information_02\":\"\",\"security_information_qualifier_03\":\"no_security_information_present_no_meaningful_information_in_i04_00\",\"security_information_04\":\"\",\"interchange_id_qualifier_05\":\"mutually_defined_ZZ\",\"interchange_sender_id_06\":\"ATFDS\",\"interchange_id_qualifier_07\":\"mutually_defined_ZZ\",\"interchange_receiver_id_08\":\"AMAZONDS\",\"interchange_date_09\":\"070830\",\"interchange_time_10\":\"1634\",\"interchange_control_standards_identifier_11\":\"us_edi_community_of_asc_x12_tdcc_and_ucs_U\",\"interchange_control_version_number_12\":\"00401\",\"interchange_control_number_13\":\"000000088\",\"acknowledgment_requested_14\":\"no_acknowledgment_requested_0\",\"usage_indicator_15\":\"test_data_T\",\"component_element_separator_16\":\">\"},\"groups\":[{\"functional_group_header_GS\":{\"functional_identifier_code_01\":\"invoice_information_810819_IN\",\"application_senders_code_02\":\"ATFDS\",\"application_receivers_code_03\":\"AMAZONDS\",\"date_04\":\"20070911\",\"time_05\":\"2001\",\"group_control_number_06\":\"95\",\"responsible_agency_code_07\":\"accredited_standards_committee_x12_X\",\"version_release_industry_identifier_code_08\":\"004010\"},\"transaction_sets\":[{\"heading\":{\"transaction_set_header_ST\":{\"transaction_set_identifier_code_01\":\"810\",\"transaction_set_control_number_02\":\"000000001\"},\"beginning_segment_for_invoice_BIG\":{\"date_01\":\"20220822\",\"invoice_number_02\":\"SINV00070492\",\"date_03\":\"20220805\",\"transaction_type_code_07\":\"consolidated_invoice_CI\"},\"currency_CUR\":{\"entity_identifier_code_01\":\"bill_to_party_BT\",\"currency_code_02\":\"USD\"},\"name_N1_loop\":[{\"name_N1\":{\"entity_identifier_code_01\":\"remit_to_RI\",\"name_02\":\"TEST VENDOR\",\"identification_code_qualifier_03\":\"assigned_by_buyer_or_buyers_agent_92\",\"identification_code_04\":\"PAYE1\"},\"address_information_N3\":[{\"address_information_01\":\"705 5TH AVE S\"}],\"geographic_location_N4\":{\"city_name_01\":\"SEATTLE\",\"state_or_province_code_02\":\"WA\",\"postal_code_03\":\"981044425\",\"country_code_04\":\"US\"}},{\"name_N1\":{\"entity_identifier_code_01\":\"ship_from_SF\",\"name_02\":\"WHSE\",\"identification_code_qualifier_03\":\"assigned_by_buyer_or_buyers_agent_92\",\"identification_code_04\":\"WHSE\"}}],\"terms_of_sale_deferred_terms_of_sale_ITD\":[{\"terms_type_code_01\":\"basic_01\",\"terms_basis_date_code_02\":\"invoice_date_3\",\"terms_net_days_07\":\"30\",\"description_12\":\"NET 30\"}]},\"detail\":{\"baseline_item_data_invoice_IT1_loop\":[{\"baseline_item_data_invoice_IT1\":{\"assigned_identification_01\":\"1\",\"quantity_invoiced_02\":\"2\",\"unit_or_basis_for_measurement_code_03\":\"each_EA\",\"unit_price_04\":\"18.04\",\"basis_of_unit_price_code_05\":\"net_NT\",\"product_service_id_qualifier_06\":\"stock_keeping_unit_sku_SK\",\"product_service_id_07\":\"1617\",\"product_service_id_qualifier_08\":\"purchase_order_number_PO\",\"product_service_id_09\":\"PO12345\",\"product_service_id_qualifier_10\":\"vendors_order_number_VO\",\"product_service_id_11\":\"SO00095341\",\"product_service_id_qualifier_12\":\"customer_order_number_ON\",\"product_service_id_13\":\"X\"}},{\"baseline_item_data_invoice_IT1\":{\"assigned_identification_01\":\"2\",\"quantity_invoiced_02\":\"3\",\"unit_or_basis_for_measurement_code_03\":\"each_EA\",\"unit_price_04\":\"54.42\",\"basis_of_unit_price_code_05\":\"net_NT\",\"product_service_id_qualifier_06\":\"stock_keeping_unit_sku_SK\",\"product_service_id_07\":\"4927\",\"product_service_id_qualifier_08\":\"purchase_order_number_PO\",\"product_service_id_09\":\"PO12345\",\"product_service_id_qualifier_10\":\"vendors_order_number_VO\",\"product_service_id_11\":\"SO00095342\",\"product_service_id_qualifier_12\":\"customer_order_number_ON\",\"product_service_id_13\":\"X\"}}]},\"summary\":{\"total_monetary_value_summary_TDS\":{\"amount_01\":\"199.34\"},\"transaction_totals_CTT\":{\"number_of_line_items_01\":\"1\",\"hash_total_02\":\"3\"},\"transaction_set_trailer_SE\":{\"number_of_included_segments_01\":\"12\",\"transaction_set_control_number_02\":\"000000001\"}},\"set\":\"810\"}],\"functional_group_trailer_GE\":{\"number_of_transaction_sets_included_01\":\"1\",\"group_control_number_02\":\"88\"},\"release\":\"004010\"}],\"interchange_control_trailer_IEA\":{\"number_of_included_functional_groups_01\":\"1\",\"interchange_control_number_02\":\"000000088\"},\"delimiters\":{\"element\":\"*\",\"segment\":\"\\n\",\"sub_element\":\">\"}}],\"__version\":\"jedi@2.0\"}}",
+  "type": "jsonschema@2020-12",
+  "name": "source document",
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "interchanges": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "interchange_control_header_ISA": {
+              "type": "object",
+              "properties": {
+                "authorization_information_qualifier_01": {
+                  "type": "string"
+                },
+                "authorization_information_02": {
+                  "type": "string"
+                },
+                "security_information_qualifier_03": {
+                  "type": "string"
+                },
+                "security_information_04": {
+                  "type": "string"
+                },
+                "interchange_id_qualifier_05": {
+                  "type": "string"
+                },
+                "interchange_sender_id_06": {
+                  "type": "string"
+                },
+                "interchange_id_qualifier_07": {
+                  "type": "string"
+                },
+                "interchange_receiver_id_08": {
+                  "type": "string"
+                },
+                "interchange_date_09": {
+                  "type": "string"
+                },
+                "interchange_time_10": {
+                  "type": "string"
+                },
+                "interchange_control_standards_identifier_11": {
+                  "type": "string"
+                },
+                "interchange_control_version_number_12": {
+                  "type": "string"
+                },
+                "interchange_control_number_13": {
+                  "type": "string"
+                },
+                "acknowledgment_requested_14": {
+                  "type": "string"
+                },
+                "usage_indicator_15": {
+                  "type": "string"
+                },
+                "component_element_separator_16": {
+                  "type": "string"
+                }
+              }
+            },
+            "groups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "functional_group_header_GS": {
+                    "type": "object",
+                    "properties": {
+                      "functional_identifier_code_01": {
+                        "type": "string"
+                      },
+                      "application_senders_code_02": {
+                        "type": "string"
+                      },
+                      "application_receivers_code_03": {
+                        "type": "string"
+                      },
+                      "date_04": {
+                        "type": "string"
+                      },
+                      "time_05": {
+                        "type": "string"
+                      },
+                      "group_control_number_06": {
+                        "type": "string"
+                      },
+                      "responsible_agency_code_07": {
+                        "type": "string"
+                      },
+                      "version_release_industry_identifier_code_08": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "transaction_sets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "heading": {
+                          "type": "object",
+                          "properties": {
+                            "transaction_set_header_ST": {
+                              "type": "object",
+                              "properties": {
+                                "transaction_set_identifier_code_01": {
+                                  "type": "string"
+                                },
+                                "transaction_set_control_number_02": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "beginning_segment_for_invoice_BIG": {
+                              "type": "object",
+                              "properties": {
+                                "date_01": {
+                                  "type": "string"
+                                },
+                                "invoice_number_02": {
+                                  "type": "string"
+                                },
+                                "date_03": {
+                                  "type": "string"
+                                },
+                                "transaction_type_code_07": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "currency_CUR": {
+                              "type": "object",
+                              "properties": {
+                                "entity_identifier_code_01": {
+                                  "type": "string"
+                                },
+                                "currency_code_02": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "name_N1_loop": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "name_N1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "entity_identifier_code_01": {
+                                        "type": "string"
+                                      },
+                                      "name_02": {
+                                        "type": "string"
+                                      },
+                                      "identification_code_qualifier_03": {
+                                        "type": "string"
+                                      },
+                                      "identification_code_04": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  },
+                                  "address_information_N3": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "address_information_01": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "geographic_location_N4": {
+                                    "type": "object",
+                                    "properties": {
+                                      "city_name_01": {
+                                        "type": "string"
+                                      },
+                                      "state_or_province_code_02": {
+                                        "type": "string"
+                                      },
+                                      "postal_code_03": {
+                                        "type": "string"
+                                      },
+                                      "country_code_04": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "terms_of_sale_deferred_terms_of_sale_ITD": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "terms_type_code_01": {
+                                    "type": "string"
+                                  },
+                                  "terms_basis_date_code_02": {
+                                    "type": "string"
+                                  },
+                                  "terms_net_days_07": {
+                                    "type": "string"
+                                  },
+                                  "description_12": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "detail": {
+                          "type": "object",
+                          "properties": {
+                            "baseline_item_data_invoice_IT1_loop": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "baseline_item_data_invoice_IT1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "assigned_identification_01": {
+                                        "type": "string"
+                                      },
+                                      "quantity_invoiced_02": {
+                                        "type": "string"
+                                      },
+                                      "unit_or_basis_for_measurement_code_03": {
+                                        "type": "string"
+                                      },
+                                      "unit_price_04": {
+                                        "type": "string"
+                                      },
+                                      "basis_of_unit_price_code_05": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_qualifier_06": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_07": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_qualifier_08": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_09": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_qualifier_10": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_11": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_qualifier_12": {
+                                        "type": "string"
+                                      },
+                                      "product_service_id_13": {
+                                        "type": "string"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "summary": {
+                          "type": "object",
+                          "properties": {
+                            "total_monetary_value_summary_TDS": {
+                              "type": "object",
+                              "properties": {
+                                "amount_01": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "transaction_totals_CTT": {
+                              "type": "object",
+                              "properties": {
+                                "number_of_line_items_01": {
+                                  "type": "string"
+                                },
+                                "hash_total_02": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "transaction_set_trailer_SE": {
+                              "type": "object",
+                              "properties": {
+                                "number_of_included_segments_01": {
+                                  "type": "string"
+                                },
+                                "transaction_set_control_number_02": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "set": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "functional_group_trailer_GE": {
+                    "type": "object",
+                    "properties": {
+                      "number_of_transaction_sets_included_01": {
+                        "type": "string"
+                      },
+                      "group_control_number_02": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "release": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "interchange_control_trailer_IEA": {
+              "type": "object",
+              "properties": {
+                "number_of_included_functional_groups_01": {
+                  "type": "string"
+                },
+                "interchange_control_number_02": {
+                  "type": "string"
+                }
+              }
+            },
+            "delimiters": {
+              "type": "object",
+              "properties": {
+                "element": {
+                  "type": "string"
+                },
+                "segment": {
+                  "type": "string"
+                },
+                "sub_element": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "__version": {
+        "type": "string"
+      }
+    },
+    "default": {
+      "interchanges": [
+        {
+          "interchange_control_header_ISA": {
+            "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+            "authorization_information_02": "",
+            "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+            "security_information_04": "",
+            "interchange_id_qualifier_05": "mutually_defined_ZZ",
+            "interchange_sender_id_06": "ATFDS",
+            "interchange_id_qualifier_07": "mutually_defined_ZZ",
+            "interchange_receiver_id_08": "AMAZONDS",
+            "interchange_date_09": "070830",
+            "interchange_time_10": "1634",
+            "interchange_control_standards_identifier_11": "us_edi_community_of_asc_x12_tdcc_and_ucs_U",
+            "interchange_control_version_number_12": "00401",
+            "interchange_control_number_13": "000000088",
+            "acknowledgment_requested_14": "no_acknowledgment_requested_0",
+            "usage_indicator_15": "test_data_T",
+            "component_element_separator_16": ">"
+          },
+          "groups": [
+            {
+              "functional_group_header_GS": {
+                "functional_identifier_code_01": "invoice_information_810819_IN",
+                "application_senders_code_02": "ATFDS",
+                "application_receivers_code_03": "AMAZONDS",
+                "date_04": "20070911",
+                "time_05": "2001",
+                "group_control_number_06": "95",
+                "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+                "version_release_industry_identifier_code_08": "004010"
+              },
+              "transaction_sets": [
+                {
+                  "heading": {
+                    "transaction_set_header_ST": {
+                      "transaction_set_identifier_code_01": "810",
+                      "transaction_set_control_number_02": "000000001"
+                    },
+                    "beginning_segment_for_invoice_BIG": {
+                      "date_01": "20220822",
+                      "invoice_number_02": "SINV00070492",
+                      "date_03": "20220805",
+                      "transaction_type_code_07": "consolidated_invoice_CI"
+                    },
+                    "currency_CUR": {
+                      "entity_identifier_code_01": "bill_to_party_BT",
+                      "currency_code_02": "USD"
+                    },
+                    "name_N1_loop": [
+                      {
+                        "name_N1": {
+                          "entity_identifier_code_01": "remit_to_RI",
+                          "name_02": "TEST VENDOR",
+                          "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                          "identification_code_04": "PAYE1"
+                        },
+                        "address_information_N3": [
+                          {
+                            "address_information_01": "705 5TH AVE S"
+                          }
+                        ],
+                        "geographic_location_N4": {
+                          "city_name_01": "SEATTLE",
+                          "state_or_province_code_02": "WA",
+                          "postal_code_03": "981044425",
+                          "country_code_04": "US"
+                        }
+                      },
+                      {
+                        "name_N1": {
+                          "entity_identifier_code_01": "ship_from_SF",
+                          "name_02": "WHSE",
+                          "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                          "identification_code_04": "WHSE"
+                        }
+                      }
+                    ],
+                    "terms_of_sale_deferred_terms_of_sale_ITD": [
+                      {
+                        "terms_type_code_01": "basic_01",
+                        "terms_basis_date_code_02": "invoice_date_3",
+                        "terms_net_days_07": "30",
+                        "description_12": "NET 30"
+                      }
+                    ]
+                  },
+                  "detail": {
+                    "baseline_item_data_invoice_IT1_loop": [
+                      {
+                        "baseline_item_data_invoice_IT1": {
+                          "assigned_identification_01": "1",
+                          "quantity_invoiced_02": "2",
+                          "unit_or_basis_for_measurement_code_03": "each_EA",
+                          "unit_price_04": "18.04",
+                          "basis_of_unit_price_code_05": "net_NT",
+                          "product_service_id_qualifier_06": "stock_keeping_unit_sku_SK",
+                          "product_service_id_07": "1617",
+                          "product_service_id_qualifier_08": "purchase_order_number_PO",
+                          "product_service_id_09": "PO12345",
+                          "product_service_id_qualifier_10": "vendors_order_number_VO",
+                          "product_service_id_11": "SO00095341",
+                          "product_service_id_qualifier_12": "customer_order_number_ON",
+                          "product_service_id_13": "X"
+                        }
+                      },
+                      {
+                        "baseline_item_data_invoice_IT1": {
+                          "assigned_identification_01": "2",
+                          "quantity_invoiced_02": "3",
+                          "unit_or_basis_for_measurement_code_03": "each_EA",
+                          "unit_price_04": "54.42",
+                          "basis_of_unit_price_code_05": "net_NT",
+                          "product_service_id_qualifier_06": "stock_keeping_unit_sku_SK",
+                          "product_service_id_07": "4927",
+                          "product_service_id_qualifier_08": "purchase_order_number_PO",
+                          "product_service_id_09": "PO12345",
+                          "product_service_id_qualifier_10": "vendors_order_number_VO",
+                          "product_service_id_11": "SO00095342",
+                          "product_service_id_qualifier_12": "customer_order_number_ON",
+                          "product_service_id_13": "X"
+                        }
+                      }
+                    ]
+                  },
+                  "summary": {
+                    "total_monetary_value_summary_TDS": {
+                      "amount_01": "199.34"
+                    },
+                    "transaction_totals_CTT": {
+                      "number_of_line_items_01": "1",
+                      "hash_total_02": "3"
+                    },
+                    "transaction_set_trailer_SE": {
+                      "number_of_included_segments_01": "12",
+                      "transaction_set_control_number_02": "000000001"
+                    }
+                  },
+                  "set": "810"
+                }
+              ],
+              "functional_group_trailer_GE": {
+                "number_of_transaction_sets_included_01": "1",
+                "group_control_number_02": "88"
+              },
+              "release": "004010"
+            }
+          ],
+          "interchange_control_trailer_IEA": {
+            "number_of_included_functional_groups_01": "1",
+            "interchange_control_number_02": "000000088"
+          },
+          "delimiters": {
+            "element": "*",
+            "segment": "\n",
+            "sub_element": ">"
+          }
+        }
+      ],
+      "__version": "jedi@2.0"
+    }
+  }
+}
