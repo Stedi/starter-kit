@@ -1,7 +1,7 @@
 # JEDI 850 -> Orders API
 
 ## Summary
-This Mapping shows how a `JEDI 850 Purchase Order` can be mapped to a fictional `orders` API endpoint. 
+This Mapping shows how a `JEDI 850 Purchase Order` can be mapped to a fictional `orders` API shape. 
 
 More detail about how this Mapping was created can be found in the blog post [EDI for developers: turn EDI into JSON](https://www.stedi.com/blog/edi-for-developers-turn-edi-into-json). 
 
