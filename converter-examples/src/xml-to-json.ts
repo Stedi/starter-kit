@@ -1,7 +1,7 @@
-import { OpenAPI, Service as Converter } from "@stedi/sdk-converter-node";
+import {OpenAPI, Service as Converter} from "@stedi/sdk-converter-node";
 import fs from "fs";
 
-OpenAPI.HEADERS = { Authorization: `Key ${process.env.STEDI_API_KEY}` };
+OpenAPI.HEADERS = {Authorization: `Key ${process.env.STEDI_API_KEY}`};
 
 const exampleFn = async () => {
   try {
@@ -10,6 +10,8 @@ const exampleFn = async () => {
       input_xml: input,
       options: {
         attribute_name_prefix: "abc",
+        ignore_attributes: false,
+        convert_attribute_types: true
       },
     });
     const output = JSON.stringify(response.output_json, null, 2);

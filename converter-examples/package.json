@@ -16,7 +16,7 @@
     "check": "tsc --noEmit && prettier -c ."
   },
   "dependencies": {
-    "@stedi/sdk-converter-node": "^1.30.0",
+    "@stedi/sdk-converter-node": "^1.32.0",
     "axios": "^0.25.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
