@@ -1,0 +1,46 @@
+{
+  "VendorRef": {
+    "value": "58",
+    "name": "Amazon"
+  },
+  "DocNumber": "8",
+  "TxnDate": "2022-01-12",
+  "PrivateNote": "Welcome to demo day!",
+  "SalesTermRef": {
+    "value": "3"
+  },
+  "CurrencyRef": {
+    "value": "USD",
+    "name": "United States Dollar"
+  },
+  "Line": [
+    {
+      "Id": "1",
+      "Amount": 250,
+      "DetailType": "ItemBasedExpenseLineDetail",
+      "Description": "Test WidgetA Description",
+      "ItemBasedExpenseLineDetail": {
+        "Qty": 10,
+        "UnitPrice": 25,
+        "ItemRef": {
+          "value": "19",
+          "name": "WidgetA"
+        }
+      }
+    },
+    {
+      "Id": "2",
+      "Amount": 150,
+      "DetailType": "ItemBasedExpenseLineDetail",
+      "Description": "Test WidgetB Description",
+      "ItemBasedExpenseLineDetail": {
+        "Qty": 5,
+        "UnitPrice": 75,
+        "ItemRef": {
+          "value": "20",
+          "name": "WidgetB"
+        }
+      }
+    }
+  ]
+}
