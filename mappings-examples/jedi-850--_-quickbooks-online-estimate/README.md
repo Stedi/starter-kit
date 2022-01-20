@@ -1,3 +1,0 @@
-# JEDI 850 -> QuickBooks Online Estimate
-
-[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-->-quickbooks-online-estimate/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-->-quickbooks-online-estimate/source-document.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-->-quickbooks-online-estimate/target-document.json)
