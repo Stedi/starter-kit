@@ -2,6 +2,8 @@
 
 Welcome to Stedi Postman Collection guide - a quick and easy way to send API requests without code. In this repository, you will find examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
 
+We currently include requests to EDI Core and will be adding requests for other Stedi services shortly. 
+
 ## First things first  
 
 To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and create a [Stedi API Key](https://www.stedi.com/docs/authentication). 
@@ -14,22 +16,24 @@ Next, import the Postman collection to your workspace using the button below.
 ## API key configuration
 Once the collection has been imported into Postman, we need to configure a Stedi API key. 
 
-Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the `Environment Variables` tab on the left hand side. 
+Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the `Environment Variables` tab on the left hand side of Postman. 
 
 <img src = "../images/edi-core/environment-variable.png">
 
-You can now send requests to Stedi by pressing "send request". 
+Once the key is set, you can send API requests to Stedi.
+
+<img src = "../images/edi-core/send-request.png">
 
 For more details, please review our API documentation [on Documenter](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
 
-## How to format EDI files for Postman calls 
+## How to format EDI files for Postman requests 
 
 Raw EDI files contain multiple whitespaces at the end of each line. We need to remove these newline characters (`\n`) before sending them in an API request to Stedi.
 
-There are two ways to do this manually:
+There are two ways to achieve this:
 
 1. You can use a Bash command to remove the newline characters directly from a file. 
-2. If you are uncomfortable using Bash, you can use a text or code editor to remove the newline characters.
+2. You can use a text editor like VS Code to remove the characters.
 
 
 ### Removing newlines from EDI files using a Bash command
@@ -43,5 +47,11 @@ tr -d '\n' < edifile.txt > edifile-no-newline.txt
 
 ### Removing newlines from EDI files using a text editor
 
+In your favourite text editor, replace the `\n` characters with a space. If you are using VS Code, you can do this with the following replacement command, which you can access through `Edit > Replace`:
+
+<img src = "../images/edi-core/replace-newline.png">
+
+Enter `\n` in the first field of the replace command and a space in the second field.
 
 
+After the replace is done in either way, you can put this converted string in the `'input'` body value of the 'EDI to JEDI' request and send the API request. In the API response, you will see if the EDI file was valid and what the JEDI response is. 
