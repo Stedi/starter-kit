@@ -10,6 +10,9 @@ const exampleFn = async () => {
       input_csv: input,
       options: {
         trim: true,
+        has_header: true,
+        delimiter: ",",
+        convert_types: true,
       },
     });
     const output = JSON.stringify(response.output_json, null, 2);
