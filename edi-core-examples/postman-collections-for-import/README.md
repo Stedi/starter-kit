@@ -10,8 +10,7 @@ To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and 
 
 Next, import the Postman collection to your workspace using the button below.
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.postman.co/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
-
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
 
 ## API key configuration
 Once the collection has been imported into Postman, we need to configure a Stedi API key. 
