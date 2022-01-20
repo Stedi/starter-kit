@@ -3,7 +3,7 @@
   "description": "Stedi Converter Example",
   "repository": {
     "type": "git",
-    "url": "git://github.com/stedi/example-converter.git"
+    "url": "git://github.com/stedi/starter-kit.git"
   },
   "license": "ISC",
   "author": "engineering@stedi.com",
