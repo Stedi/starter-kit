@@ -14,6 +14,7 @@ const exampleFn = async () => {
         delimiter: ",",
         convert_types: true,
         quote: '"',
+        on_duplicate_headers: "fail",
       },
     });
     const output = JSON.stringify(response.output_json, null, 2);
