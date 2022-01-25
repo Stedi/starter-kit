@@ -46,7 +46,7 @@ Terraform is an Infrastructure-as-Code (IaC) tool that allows you to manage infr
 
 AWS can be intimidating. Let’s make it easier by illustrating what we’re trying to accomplish.
 
-![inbound-step-by-step](images/frame46.jpg)
+![inbound-step-by-step](images/frame52.jpg)
 
 We’re passing an 850 EDI file into an S3 bucket folder called `inbound/`. The S3 bucket triggers a Lambda that comes and gets the 850 EDI file. The Lambda then calls Stedi’s `/translate` API with the EDI 850 file, which returns an 850 JEDI file to the Lambda.
 
@@ -56,7 +56,7 @@ Then the Lambda calls Stedi’s `/map` API with the JEDI 850 which returns the t
 
 We have several things to create in AWS. I’ll describe them here, but we’ll use Terraform to define them and deploy them to the AWS account.
 
-<img src="images/frame47.jpg" alt="inbound-infra-components" width="500"/>
+<img src="images/frame53.jpg" alt="inbound-infra-components" width="500"/>
 
 This is a quick breakdown. All of the above is defined in Terraform in `main.tf`.
 
