@@ -7,7 +7,7 @@ const exampleFn = async () => {
   try {
     const input = fs.readFileSync("tst/sample.csv", "utf8");
     const response = await Converter.convertCsvToJson({
-      input_csv: input,
+      input,
       options: {
         trim: true,
         has_header: true,
@@ -17,7 +17,7 @@ const exampleFn = async () => {
         on_duplicate_headers: "fail",
       },
     });
-    const output = JSON.stringify(response.output_json, null, 2);
+    const output = JSON.stringify(response.output, null, 2);
     console.log(output);
   } catch (e) {
     console.log(e);

@@ -7,12 +7,12 @@ const exampleFn = async () => {
   try {
     const input = JSON.parse(fs.readFileSync("tst/sample.json", "utf8"));
     const response = await Converter.convertJsonToCsv({
-      input_json: input,
+      input,
       options: {
         delimiter: ",",
       },
     });
-    const output = response.output_csv;
+    const output = response.output;
     console.log(output);
   } catch (e) {
     console.log(e);
