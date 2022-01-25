@@ -6,7 +6,7 @@ import axios, { AxiosRequestConfig } from "axios";
 const exampleFn = async () => {
   const input = fs.readFileSync("tst/sample.csv", "utf8");
   // gzip payload before sending it
-  const payloadGzipped = gzipSync(JSON.stringify({ input_csv: input }));
+  const payloadGzipped = gzipSync(JSON.stringify({ input }));
   const config: AxiosRequestConfig = {
     method: "post",
     url: OpenAPI.BASE + "/convert_csv_to_json",
