@@ -21,7 +21,7 @@ const exampleFn = async () => {
       },
       config
     );
-    const output = JSON.stringify(response.data, null, 2);
+    const output = response.data.output;
     console.log(output);
   } catch (e) {
     console.log(e);
