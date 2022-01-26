@@ -1,20 +1,29 @@
-import { OpenAPI, Service as Converter } from "@stedi/sdk-converter-node";
 import fs from "fs";
-
-OpenAPI.HEADERS = { Authorization: `Key ${process.env.STEDI_API_KEY}` };
+import axios, { AxiosRequestConfig } from "axios";
 
 const exampleFn = async () => {
+  const config: AxiosRequestConfig = {
+    headers: {
+      Authorization: `Key ${process.env.STEDI_API_KEY}`,
+    },
+  };
+
+  const input = fs.readFileSync("tst/sample.xml", "utf8");
+
   try {
-    const input = fs.readFileSync("tst/sample.xml", "utf8");
-    const response = await Converter.convertXmlToJson({
-      input,
-      options: {
-        attribute_name_prefix: "abc",
-        ignore_attributes: false,
-        convert_attribute_types: true,
+    const response = await axios.post(
+      "https://converter.stedi.com/2021-10-01/xml_to_json",
+      {
+        input,
+        options: {
+          attribute_name_prefix: "abc",
+          ignore_attributes: false,
+          convert_attribute_types: true,
+        },
       },
-    });
-    const output = JSON.stringify(response.output, null, 2);
+      config
+    );
+    const output = JSON.stringify(response.data, null, 2);
     console.log(output);
   } catch (e) {
     console.log(e);

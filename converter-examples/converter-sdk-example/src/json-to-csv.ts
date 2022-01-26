@@ -1,18 +1,27 @@
-import { OpenAPI, Service as Converter } from "@stedi/sdk-converter-node";
 import fs from "fs";
-
-OpenAPI.HEADERS = { Authorization: `Key ${process.env.STEDI_API_KEY}` };
+import axios, { AxiosRequestConfig } from "axios";
 
 const exampleFn = async () => {
+  const config: AxiosRequestConfig = {
+    headers: {
+      Authorization: `Key ${process.env.STEDI_API_KEY}`,
+    },
+  };
+
+  const input = JSON.parse(fs.readFileSync("tst/sample.json", "utf8"));
+
   try {
-    const input = JSON.parse(fs.readFileSync("tst/sample.json", "utf8"));
-    const response = await Converter.convertJsonToCsv({
-      input,
-      options: {
-        delimiter: ",",
+    const response = await axios.post(
+      "https://converter.stedi.com/2021-10-01/json_to_csv",
+      {
+        input,
+        options: {
+          delimiter: ",",
+        },
       },
-    });
-    const output = response.output;
+      config
+    );
+    const output = JSON.stringify(response.data, null, 2);
     console.log(output);
   } catch (e) {
     console.log(e);
