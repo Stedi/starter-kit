@@ -30,6 +30,8 @@ For more details, please review our API documentation [on Documenter](https://do
 
 Converter is a collection of serverless APIs that provide a simple and convenient way of converting files into different formats.
 
+We include prepopulated examples of how you can use the service to convert XML, JSON or CSV files in the Postman collection. 
+
 You can find the API documentation for the Converter service [here](https://www.stedi.com/docs/api/converter). 
 
 
@@ -37,10 +39,27 @@ You can find the API documentation for the Converter service [here](https://www.
 
 EDI Core translates X12 EDI documents to JSON and vice versa. Stedi has its own JSON representation of EDI, called JEDI. JEDI is easier to work with than X12 EDI because most modern programming languages and tools have built-in support for JSON.
 
+Our Postman examples contain prepopulated EDI and JEDI documents that you can use for testing. 
+
 You can find the API documentation for the EDI Core service [here](https://www.stedi.com/docs/api/edi-core). 
 
 
-### Formatting EDI files for EDI to JEDI requests with EDI Core
+## Mappings
+
+Mappings lets you map JSON documents from one schema to another, using [JSONata](https://docs.jsonata.org/overview.html) for its mapping expressions.
+
+In order to map JSON documents using the API, you need to create a mapping first. Click the button below to create a new example mapping in your Stedi account. 
+
+<a href="https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/mapping.json&amp;source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850.json&amp;target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate.json" style="display:flex;justify-content:center" target="\_blank"><picture><img alt="" src="https://stedi.com/images/blog/complex-data-transformations-made-simple-with-mappings/run_on_stedi.svg" style="width:200px"></picture></a>
+
+Once the mapping is created, replace the mapping ID in the API URL with your mapping ID. You can retrieve this ID from the Stedi terminal from the [mappings overview page](https://terminal.stedi.com/mappings). 
+
+Finally, you can find the API documentation for the Mappings service [here](https://www.stedi.com/docs/api/mappings). 
+
+
+### Formatting EDI files for EDI to JEDI requests 
+
+If you want to use your own EDI files with EDI Core, you need to follow an additional step. 
 
 Raw EDI files contain multiple whitespaces at the end of each line. We need to remove these newline characters (`\n`) before sending them in an API request to Stedi.
 

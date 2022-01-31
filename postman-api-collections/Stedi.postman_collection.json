@@ -930,6 +930,58 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Mappings",
+			"item": [
+				{
+					"name": "Map request",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"interchanges\": [\n    {\n      \"interchange_control_header_ISA\": {\n        \"authorization_information_qualifier_01\": \"no_authorization_information_present_no_meaningful_information_in_i02_00\",\n        \"authorization_information_02\": \"\",\n        \"security_information_qualifier_03\": \"no_security_information_present_no_meaningful_information_in_i04_00\",\n        \"security_information_04\": \"\",\n        \"interchange_id_qualifier_05\": \"duns_dun_bradstreet_01\",\n        \"interchange_sender_id_06\": \"040132628\",\n        \"interchange_id_qualifier_07\": \"mutually_defined_ZZ\",\n        \"interchange_receiver_id_08\": \"012550194U\",\n        \"interchange_date_09\": \"220114\",\n        \"interchange_time_10\": \"0656\",\n        \"repetition_separator_11\": \"U\",\n        \"interchange_control_version_number_12\": \"00501\",\n        \"interchange_control_number_13\": \"000016214\",\n        \"acknowledgment_requested_14\": \"no_interchange_acknowledgment_requested_0\",\n        \"interchange_usage_indicator_15\": \"production_data_P\",\n        \"component_element_separator_16\": \">\"\n      },\n      \"groups\": [\n        {\n          \"functional_group_header_GS\": {\n            \"functional_identifier_code_01\": \"purchase_order_850_PO\",\n            \"application_senders_code_02\": \"040132628\",\n            \"application_receivers_code_03\": \"012550194U\",\n            \"date_04\": \"20220114\",\n            \"time_05\": \"0656\",\n            \"group_control_number_06\": \"000016214\",\n            \"responsible_agency_code_07\": \"accredited_standards_committee_x12_X\",\n            \"version_release_industry_identifier_code_08\": \"005010\"\n          },\n          \"transaction_sets\": [\n            {\n              \"heading\": {\n                \"transaction_set_header_ST\": {\n                  \"transaction_set_identifier_code_01\": \"850\",\n                  \"transaction_set_control_number_02\": \"0001\"\n                },\n                \"beginning_segment_for_purchase_order_BEG\": {\n                  \"transaction_set_purpose_code_01\": \"original_00\",\n                  \"purchase_order_type_code_02\": \"dropship_DS\",\n                  \"purchase_order_number_03\": \"2583033\",\n                  \"date_05\": \"20220114\"\n                },\n                \"administrative_communications_contact_PER\": [\n                  {\n                    \"contact_function_code_01\": \"order_contact_OC\",\n                    \"name_02\": \"John Doe\",\n                    \"communication_number_qualifier_03\": \"telephone_TE\",\n                    \"communication_number_04\": \"111-222-7475\",\n                    \"communication_number_qualifier_05\": \"electronic_mail_EM\",\n                    \"communication_number_06\": \"johndoe-fake@gmail.com\"\n                  }\n                ],\n                \"carrier_details_routing_sequence_transit_time_TD5\": [\n                  {\n                    \"transportation_method_type_code_04\": \"mutually_defined_ZZ\",\n                    \"routing_05\": \"FHD\"\n                  }\n                ],\n                \"party_identification_N1_loop\": [\n                  {\n                    \"party_identification_N1\": {\n                      \"entity_identifier_code_01\": \"ship_to_ST\",\n                      \"name_02\": \"Ben Ford\",\n                      \"identification_code_qualifier_03\": \"assigned_by_buyer_or_buyers_agent_92\",\n                      \"identification_code_04\": \"DROPSHIP CUSTOMER\"\n                    },\n                    \"party_location_N3\": [\n                      {\n                        \"address_information_01\": \"2113 Anywhere St\"\n                      }\n                    ],\n                    \"geographic_location_N4\": [\n                      {\n                        \"city_name_01\": \"Pasadena\",\n                        \"state_or_province_code_02\": \"TX\",\n                        \"postal_code_03\": \"77502\",\n                        \"country_code_04\": \"US\"\n                      }\n                    ]\n                  }\n                ]\n              },\n              \"detail\": {\n                \"baseline_item_data_PO1_loop\": [\n                  {\n                    \"baseline_item_data_PO1\": {\n                      \"assigned_identification_01\": \"1\",\n                      \"quantity_02\": \"0001\",\n                      \"unit_or_basis_for_measurement_code_03\": \"each_EA\",\n                      \"unit_price_04\": \"0626.6\",\n                      \"product_service_id_qualifier_06\": \"vendors_sellers_catalog_number_VC\",\n                      \"product_service_id_07\": \"80310\",\n                      \"product_service_id_qualifier_08\": \"stock_keeping_unit_sku_SK\",\n                      \"product_service_id_09\": \"SKU12345\"\n                    },\n                    \"product_item_description_PID_loop\": [\n                      {\n                        \"product_item_description_PID\": {\n                          \"item_description_type_01\": \"free_form_F\",\n                          \"description_05\": \"Ocho's Octopus Chips\"\n                        }\n                      },\n                      {\n                        \"product_item_description_PID\": {\n                          \"item_description_type_01\": \"free_form_F\",\n                          \"description_05\": \"Great flavor\"\n                        }\n                      }\n                    ]\n                  }\n                ]\n              },\n              \"summary\": {\n                \"transaction_totals_CTT_loop\": [\n                  {\n                    \"transaction_totals_CTT\": {\n                      \"number_of_line_items_01\": \"1\"\n                    },\n                    \"monetary_amount_information_AMT\": {\n                      \"amount_qualifier_code_01\": \"total_transaction_amount_TT\",\n                      \"monetary_amount_02\": \"626.6\"\n                    }\n                  }\n                ],\n                \"transaction_set_trailer_SE\": {\n                  \"number_of_included_segments_01\": \"13\",\n                  \"transaction_set_control_number_02\": \"0001\"\n                }\n              },\n              \"set\": \"850\"\n            }\n          ],\n          \"functional_group_trailer_GE\": {\n            \"number_of_transaction_sets_included_01\": \"1\",\n            \"group_control_number_02\": \"000016214\"\n          },\n          \"release\": \"005010\"\n        }\n      ],\n      \"interchange_control_trailer_IEA\": {\n        \"number_of_included_functional_groups_01\": \"1\",\n        \"interchange_control_number_02\": \"000016214\"\n      },\n      \"delimiters\": {\n        \"element\": \"*\",\n        \"segment\": \"~\",\n        \"sub_element\": \">\"\n      }\n    }\n  ],\n  \"__version\": \"jedi@2.0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://mappings.stedi.com/2021-06-01/mappings/01FTEJDXA6VW78H0Q39EH23VG5/map",
+							"protocol": "https",
+							"host": [
+								"mappings",
+								"stedi",
+								"com"
+							],
+							"path": [
+								"2021-06-01",
+								"mappings",
+								"01FTEJDXA6VW78H0Q39EH23VG5",
+								"map"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
