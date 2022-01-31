@@ -1,15 +1,10 @@
 # Stedi Converter Example Project
 
-This project provides a small example on how to use the Stedi Converter SDK. The SDK is available in
-[NPM](https://www.npmjs.com/package/@stedi/sdk-converter-node), and there's an example on how to use it in `/src`
-. `/tst` provides a test file to convert.
-
-- Disclaimer: the API and SDK are still classed as Developer Preview, and under active development - therefore subject
-  to change.
+This project provides a small example on how to use the Stedi Converter API. Example code is in `/src`, and `/tst` provides test files to convert.
 
 ## Install
 
-Change directory so your root is `converter-examples` then run:
+Change directory so your root is `converter-sdk-example` then run:
 
 ```shell
 npm ci

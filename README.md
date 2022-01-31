@@ -12,6 +12,7 @@ The Stedi starter kit contains a number of resources to help you get started bui
 - [Converter examples](https://github.com/Stedi/starter-kit/tree/main/converter-examples): a small example on how to use the [Stedi Converter SDK](https://www.stedi.com/docs/converter).
 - [Postman collection](https://github.com/Stedi/starter-kit/tree/main/postman-api-collections): a collection of examples and templates on how to use the Stedi APIs using Postman
 
+
 ## Authenticating with Stedi
 
 1. Go to [Terminal](https://terminal.stedi.com/) and create a user for login. Complete the signup flow by naming your account and uploading an (optional) logo.

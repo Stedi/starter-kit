@@ -1,0 +1,19 @@
+name: check
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+      - run: volta list
+        working-directory: ./converter-examples/converter-axios-example
+      - run: npm ci
+        working-directory: ./converter-examples/converter-axios-example
+      - run: npm run check
+        working-directory: ./converter-examples/converter-axios-example
