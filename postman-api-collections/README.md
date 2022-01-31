@@ -2,9 +2,15 @@
 
 Welcome to Stedi Postman Collection guide - a quick and easy way to send API requests without code. In this repository, you will find examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
 
-We currently include API requests for the EDI Core and Converter service. We will be adding requests for other Stedi services as they get released. 
+We include API requests for the following Stedi services:
 
-## First things first  
+- Converter
+- EDI Core
+- Mappings
+
+We will be adding requests for other Stedi services as they get released. 
+
+## Getting started
 
 To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and create a [Stedi API Key](https://www.stedi.com/docs/authentication). 
 
@@ -13,7 +19,7 @@ Next, import the Postman collection to your workspace using the button below.
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
 
 ### API key configuration
-Once the collection has been imported into Postman, we need to configure a Stedi API key. 
+Once the collection has been imported into Postman, we need to configure a Stedi API key for authentication. 
 
 Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the 'Environment Variables' tab on the left hand side of Postman. 
 
@@ -25,7 +31,7 @@ Once the key is set, you can send API requests to Stedi. Make sure that the corr
 
 For more details, please review our API documentation [on Documenter](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
 
-
+# Stedi services
 ## Converters
 
 Converter is a collection of serverless APIs that provide a simple and convenient way of converting files into different formats.
