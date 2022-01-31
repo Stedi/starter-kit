@@ -2,7 +2,7 @@
 
 Welcome to Stedi Postman Collection guide - a quick and easy way to send API requests without code. In this repository, you will find examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
 
-We currently include requests to EDI Core and will be adding requests for other Stedi services shortly. 
+We currently include API requests for the EDI Core and Converter service. We will be adding requests for other Stedi services as they get released. 
 
 ## First things first  
 
@@ -12,7 +12,7 @@ Next, import the Postman collection to your workspace using the button below.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
 
-## API key configuration
+### API key configuration
 Once the collection has been imported into Postman, we need to configure a Stedi API key. 
 
 Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the 'Environment Variables' tab on the left hand side of Postman. 
@@ -25,7 +25,22 @@ Once the key is set, you can send API requests to Stedi. Make sure that the corr
 
 For more details, please review our API documentation [on Documenter](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
 
-### Formatting EDI files for EDI to JEDI requests 
+
+## Converters
+
+Converter is a collection of serverless APIs that provide a simple and convenient way of converting files into different formats.
+
+You can find the API documentation for the Converter service [here](https://www.stedi.com/docs/api/converter). 
+
+
+## EDI Core
+
+EDI Core translates X12 EDI documents to JSON and vice versa. Stedi has its own JSON representation of EDI, called JEDI. JEDI is easier to work with than X12 EDI because most modern programming languages and tools have built-in support for JSON.
+
+You can find the API documentation for the EDI Core service [here](https://www.stedi.com/docs/api/edi-core). 
+
+
+### Formatting EDI files for EDI to JEDI requests with EDI Core
 
 Raw EDI files contain multiple whitespaces at the end of each line. We need to remove these newline characters (`\n`) before sending them in an API request to Stedi.
 

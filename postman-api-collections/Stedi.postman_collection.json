@@ -13,7 +13,19 @@
 					"name": "EDI to JEDI",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -379,6 +391,21 @@
 				{
 					"name": "JEDI to EDI",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -757,23 +784,154 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Converter",
+			"item": [
+				{
+					"name": "JSON to CSV",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Key {{stediApiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": [\n        {\n            \"h1\": \"r1c1\",\n            \"h2\": \"r1c2\",\n            \"h3\": \"r1c3\"\n        },\n        {\n            \"h1\": \"r2c1\",\n            \"h2\": \"r2c2\",\n            \"h3\": \"r2c3\"\n        }\n    ],\n    \"options\": {\n        \"flatten\": true,\n        \"newline\": \"\\r\\n\",\n        \"delimiter\": \",\",\n        \"include_header\": true\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://converter.stedi.com/2021-10-01/json_to_csv",
+							"protocol": "https",
+							"host": [
+								"converter",
+								"stedi",
+								"com"
+							],
+							"path": [
+								"2021-10-01",
+								"json_to_csv"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CSV to JSON",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": \"heading1,heading2,heading3\\nrow1col1,row1col2,row1col3\\nrow2col1,row2col2,row2col3\",\n    \"options\": {\n        \"trim\": false,\n        \"quote\": \"\\\"\",\n        \"delimiter\": \",\",\n        \"has_header\": true,\n        \"convert_types\": true,\n        \"on_duplicate_headers\": \"fail\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://converter.stedi.com/2021-10-01/csv_to_json",
+							"protocol": "https",
+							"host": [
+								"converter",
+								"stedi",
+								"com"
+							],
+							"path": [
+								"2021-10-01",
+								"csv_to_json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "XML to JSON",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Key {{stediApiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"input\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><order_purchase><item><name>item1</name><quantity>5</quantity></item><item><name>item2</name><quantity>9</quantity></item></order_purchase>\",\n    \"options\": {\n        \"text_node_name\": \"#text\",\n        \"ignore_attributes\": true,\n        \"remove_namespaces\": true,\n        \"convert_node_types\": true,\n        \"attribute_name_prefix\": \"@_\",\n        \"convert_attribute_types\": true\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://converter.stedi.com/2021-10-01/xml_to_json",
+							"protocol": "https",
+							"host": [
+								"converter",
+								"stedi",
+								"com"
+							],
+							"path": [
+								"2021-10-01",
+								"xml_to_json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
-	"auth": {
-		"type": "apikey",
-		"apikey": [
-			{
-				"key": "value",
-				"value": "<your-api-key>",
-				"type": "string"
-			},
-			{
-				"key": "key",
-				"value": "STEDI_API_KEY",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",

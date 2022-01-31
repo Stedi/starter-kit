@@ -10,7 +10,7 @@ The Stedi starter kit contains a number of resources to help you get started bui
 ## Starter kit resources
 - [Mappings examples](https://github.com/Stedi/starter-kit/tree/main/mappings-examples): a curated collection of prebuilt [Mappings](https://www.stedi.com/docs/mappings) that you can import and run on Stedi with a single click.
 - [Converter examples](https://github.com/Stedi/starter-kit/tree/main/converter-examples): a small example on how to use the [Stedi Converter SDK](https://www.stedi.com/docs/converter).
-- [Postman collection](https://github.com/Stedi/starter-kit/tree/main/postman-collections-for-import): a collection of examples and templates on how to use the Stedi APIs using Postman
+- [Postman collection](https://github.com/Stedi/starter-kit/tree/main/postman-api-collections): a collection of examples and templates on how to use the Stedi APIs using Postman
 
 ## Authenticating with Stedi
 
