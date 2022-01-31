@@ -4,9 +4,9 @@ Welcome to Stedi Postman Collection guide - a quick and easy way to send API req
 
 We include API requests for the following Stedi services:
 
-- Converter
-- EDI Core
-- Mappings
+- [Converter](#converter)
+- [EDI Core](#edi-core)
+- [Mappings](#mappings)
 
 We will be adding requests for other Stedi services as they get released. 
 
@@ -33,7 +33,7 @@ For more details, please review our API documentation [on Documenter](https://do
 
 # Stedi services
 
-## Converters
+## Converter
 
 Converter is a collection of serverless APIs that provide a simple and convenient way of converting files into different formats.
 
