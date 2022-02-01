@@ -4,7 +4,7 @@ This project provides a small example on how to use the Stedi Converter API. Exa
 
 ## Install
 
-Change directory so your root is `converter-sdk-example` then run:
+Change directory so your root is `converter-axios-example` then run:
 
 ```shell
 npm ci
