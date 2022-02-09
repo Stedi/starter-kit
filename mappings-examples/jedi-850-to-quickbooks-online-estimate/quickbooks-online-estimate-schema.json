@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "TxnDate": {
+      "type": "string"
+    },
+    "TxnStatus": {
+      "type": "string"
+    },
+    "Line": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "string"
+          },
+          "LineNum": {
+            "type": "number"
+          },
+          "Amount": {
+            "type": "number"
+          },
+          "DetailType": {
+            "type": "string"
+          },
+          "SalesItemLineDetail": {
+            "type": "object",
+            "properties": {
+              "ItemRef": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "UnitPrice": {
+                "type": "number"
+              },
+              "Qty": {
+                "type": "number"
+              },
+              "ItemAccountRef": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "TaxCodeRef": {
+                "type": "object",
+                "properties": {
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "TxnTaxDetail": {
+      "type": "object",
+      "properties": {
+        "TotalTax": {
+          "type": "number"
+        }
+      }
+    },
+    "CustomerRef": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CustomerMemo": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "ShipAddr": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Line1": {
+          "type": "string"
+        },
+        "Line2": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "CountrySubDivisionCode": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        }
+      }
+    },
+    "TotalAmt": {
+      "type": "number"
+    },
+    "ApplyTaxAfterDiscount": {
+      "type": "boolean"
+    },
+    "PrintStatus": {
+      "type": "string"
+    },
+    "EmailStatus": {
+      "type": "string"
+    }
+  },
+  "default": {
+    "TxnDate": "2022-01-14",
+    "TxnStatus": "Accepted",
+    "Line": [
+      {
+        "Id": "1",
+        "LineNum": 1,
+        "Amount": 0,
+        "DetailType": "SalesItemLineDetail",
+        "SalesItemLineDetail": {
+          "ItemRef": {
+            "value": "21",
+            "name": "Tonneau Cover"
+          },
+          "UnitPrice": 0,
+          "Qty": 1,
+          "ItemAccountRef": {
+            "value": "79",
+            "name": "Sales of Product Income"
+          },
+          "TaxCodeRef": {
+            "value": "NON"
+          }
+        }
+      },
+      {
+        "Amount": 35,
+        "DetailType": "SubTotalLineDetail",
+        "SubTotalLineDetail": {}
+      }
+    ],
+    "TxnTaxDetail": {
+      "TotalTax": 0
+    },
+    "CustomerRef": {
+      "value": "3",
+      "name": "Cool Cars"
+    },
+    "CustomerMemo": {
+      "value": "Thank you for your business and have a great day!"
+    },
+    "ShipAddr": {
+      "Id": "100",
+      "Line1": "Test Name",
+      "Line2": "Line2",
+      "City": "City",
+      "CountrySubDivisionCode": "PA",
+      "PostalCode": "16066"
+    },
+    "TotalAmt": 35,
+    "ApplyTaxAfterDiscount": false,
+    "PrintStatus": "NeedToPrint",
+    "EmailStatus": "NotSet"
+  }
+}
