@@ -36,7 +36,7 @@ Stedi has two components we need: EDI Core (the service that translates EDI file
 
 To interact with Lambda, we need a way to send requests to it over the network - so we’ll connect S3 for storage together with Lambda. When an EDI file appears in the S3 bucket, it will trigger the Lambda that will get the file, transform it, and place it back in S3.
 
-![inbound-edi-architeture](images/frame41.jpg)
+![inbound-edi-architeture](images/frame41-dark.png)
 
 ### IIa. Why Terraform when we’re deploying to AWS?
 
@@ -46,7 +46,7 @@ Terraform is an Infrastructure-as-Code (IaC) tool that allows you to manage infr
 
 AWS can be intimidating. Let’s make it easier by illustrating what we’re trying to accomplish.
 
-![inbound-step-by-step](images/frame52.jpg)
+![inbound-step-by-step](images/frame52-dark.png)
 
 We’re passing an 850 EDI file into an S3 bucket folder called `inbound/`. The S3 bucket triggers a Lambda that comes and gets the 850 EDI file. The Lambda then calls Stedi’s `/translate` API with the EDI 850 file, which returns an 850 JEDI file to the Lambda.
 
@@ -56,7 +56,7 @@ Then the Lambda calls Stedi’s `/map` API with the JEDI 850 which returns the t
 
 We have several things to create in AWS. I’ll describe them here, but we’ll use Terraform to define them and deploy them to the AWS account.
 
-<img src="images/frame53.jpg" alt="inbound-infra-components" width="500"/>
+<img src="images/frame53-dark.png" alt="inbound-infra-components"/>
 
 This is a quick breakdown. All of the above is defined in Terraform in `main.tf`.
 
