@@ -11,7 +11,7 @@ This Mapping shows how a `JEDI 850 Purchase Order` can be mapped to the QuickBoo
 
 Once you have created a [Stedi account](https://terminal.stedi.com/sign-up?email=), you can deploy this Mapping by clicking on the button below:
 
-[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate.json)
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate.json)
 
 ## Build your own Mapping
 
@@ -19,14 +19,14 @@ Once you have created a [Stedi account](https://terminal.stedi.com/sign-up?email
 
 You can create a Mapping targeting JEDI 850 by clicking on one of the buttons below:
 
-[![Map from this schema](./../MapFromThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-jedi-850-mapping.json&source_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850-schema.json)
+[![Map from this schema](./../MapFromThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-jedi-850-mapping.json&source_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850-schema.json)
 
-[![Map to this schema](./../MapToThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-jedi-850-mapping.json&target_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850-schema.json)
+[![Map to this schema](./../MapToThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-jedi-850-mapping.json&target_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850-schema.json)
 
 ### QuickBooks Online Estimate
 
 You can create a Mapping targeting QuickBooks Online Estimate by clicking on one of the buttons below:
 
-[![Map from this schema](./../MapFromThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-quickbooks-online-estimate-mapping.josn&source_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate-schema.json)
+[![Map from this schema](./../MapFromThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-quickbooks-online-estimate-mapping.json&source_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate-schema.json)
 
-[![Map to this schema](./../MapToThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-quickbooks-online-estimate-mapping.josn&target_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate-schema.json)
+[![Map to this schema](./../MapToThisSchema.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/empty-quickbooks-online-estimate-mapping.json&target_json_schema=https://raw.githubusercontent.com/Stedi/starter-kit/asennikov/json-schemas/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate-schema.json)
