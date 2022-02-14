@@ -601,15 +601,11 @@ You can get the API key from terminal.stedi.com/o/?/apikeys:
 ![image2](images/image2.png)
 
 \
-**To create a Mapping, and get the ID.**
+**To create a Mapping, and get the ID:**
 
-1. Navigate to terminal.stedi.com > Mappings
+1. Now we will map this JSON to an output shape. We have created a pre-built Mapping with the JSON from your /translate call above, which you can [add to your account via this link](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/source-JEDI.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/target-JSON.json). Click `Proceed with import` to begin using this Mapping in your account. 
 
-2. Click ‘Create Mapping’ to begin the wizard.
-
-3. For the Source Schema: Copy-and-paste the output JSON from the /translate call shown above in** IVb.)**
-
-4. For the Target Schema: Copy-and-paste the following
+2. Every Mapping requires a `source JSON` file and a `target JSON` file. The `source JSON` in this Mapping is the JEDI 850 from the /translate call show above. The `target JSON` is a sample request shape for a fictious Orders API (see below). Each key in the `target JSON` is then mapped to a path in the `source JSON` to define the transformation logic.  
 
 ```js
 {
@@ -619,27 +615,7 @@ You can get the API key from terminal.stedi.com/o/?/apikeys:
 }
 ```
 
-5. For “Add Keys to Target Map”: Select all keys.
-
-6. For the “po_number” mapping:
-
-```
-output.interchanges[0].groups[0].transaction_sets[0].heading.beginning_segment_for_purchase_order_BEG.purchase_order_number_03
-```
-
-7. For the “sender_id” mapping:
-
-```
-output.interchanges[0].interchange_control_header_ISA.interchange_sender_id_06
-```
-
-8. For the “interchange_receiver_id_08” mapping:
-
-```
-output.interchanges[0].interchange_control_header_ISA.interchange_receiver_id_08
-```
-
-9. Save the mapping, and get the Mapping ID from
+3. Now, save the mapping, and get the Mapping ID (see below) so that the Mapping can be called programatically. 
 
 ![image11](images/image11.png)
 
