@@ -1,0 +1,3 @@
+# netsuite-sales-order-to-jedi-940
+
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/netsuite-sales-order-to-jedi-940/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/netsuite-sales-order-to-jedi-940/netsuite-sales-order.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/netsuite-sales-order-to-jedi-940/jedi-940.json)

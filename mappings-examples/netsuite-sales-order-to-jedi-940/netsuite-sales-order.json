@@ -1,0 +1,488 @@
+{
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesOrder/3195175?expandSubResources=true"
+    }
+  ],
+  "altShippingCost": 0,
+  "billingAddress": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/billingAddress"
+      }
+    ],
+    "addr1": "some address",
+    "addrText": "United States",
+    "country": {
+      "id": "US",
+      "refName": "United States"
+    },
+    "override": false
+  },
+  "canBeUnapproved": false,
+  "createdDate": "2022-01-07T15:26:00Z",
+  "currency": {
+    "links": [],
+    "id": "1",
+    "refName": "USA"
+  },
+  "custbody17": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/custbody17"
+      }
+    ],
+    "count": 0,
+    "hasMore": false,
+    "items": [],
+    "offset": 0,
+    "totalResults": 0
+  },
+  "custbody_cust_priority": 50,
+  "custbody_fmt_finance_app": false,
+  "custbody_fmt_finance_declined": false,
+  "custbody_fmt_req_financial_app": false,
+  "custbody_fmt_req_sales_manager_app": false,
+  "custbody_fmt_sales_manager_app": false,
+  "custbody_fmt_sales_manager_declined": false,
+  "custbody_fmt_senior_exec_declined": false,
+  "custbody_fmt_senior_executive_app": false,
+  "custbody_promisedate": "2019-04-22",
+  "custbody_promisedate_2": "2022-01-11",
+  "customForm": {
+    "id": "174",
+    "refName": "Z - HM Sales Order Form"
+  },
+  "defaultILShipMethKey": 2,
+  "entity": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/customer/1387"
+      }
+    ],
+    "id": "1387",
+    "refName": "test"
+  },
+  "estGrossProfit": 1038.31,
+  "estGrossProfitPercent": 53.5214,
+  "exchangeRate": 1,
+  "excludeCommission": false,
+  "handlingCost": 0,
+  "id": "3195175",
+  "isMultiShipTo": false,
+  "item": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item"
+      }
+    ],
+    "items": [
+      {
+        "links": [
+          {
+            "rel": "self",
+            "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/1"
+          }
+        ],
+        "amount": 1380,
+        "commitInventory": {
+          "id": "1",
+          "refName": "1"
+        },
+        "costEstimate": 601.68,
+        "costEstimateRate": 100.28,
+        "costEstimateType": {
+          "id": "AVGCOST",
+          "refName": "AVGCOST"
+        },
+        "createdPo": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/purchaseorder/3195176"
+            }
+          ],
+          "id": "3195176",
+          "refName": "PUR00285089"
+        },
+        "createPo": {
+          "id": "DropShip",
+          "refName": "Drop Shipment"
+        },
+        "custcol_pfc_pfconfigurator": false,
+        "description": "A quality 6 button control panel with a 2 line display",
+        "fromJob": false,
+        "inventoryDetail": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/1/inventoryDetail"
+            }
+          ],
+          "inventoryassignment": {
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/1/inventoryDetail/inventoryassignment"
+              }
+            ],
+            "items": [],
+            "totalResults": 0
+          }
+        },
+        "isClosed": false,
+        "isEstimate": false,
+        "isOpen": true,
+        "item": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/inventoryitem/503"
+            }
+          ],
+          "id": "503",
+          "refName": "HDW00002"
+        },
+        "itemType": {
+          "id": "InvtPart",
+          "refName": "InvtPart"
+        },
+        "line": 1,
+        "linked": true,
+        "marginal": false,
+        "poRate": 59.33,
+        "poVendor": {
+          "links": [],
+          "id": "1305",
+          "refName": "1305"
+        },
+        "price": {
+          "links": [],
+          "id": "1",
+          "refName": "List Price"
+        },
+        "printItems": false,
+        "quantity": 6,
+        "quantityAvailable": 6,
+        "quantityOnHand": 58,
+        "rate": 230,
+        "rateSchedule": 230,
+        "units": "1"
+      },
+      {
+        "links": [
+          {
+            "rel": "self",
+            "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/2"
+          }
+        ],
+        "amount": 180,
+        "commitInventory": {
+          "id": "1",
+          "refName": "1"
+        },
+        "costEstimate": 100,
+        "costEstimateRate": 50,
+        "costEstimateType": {
+          "id": "AVGCOST",
+          "refName": "AVGCOST"
+        },
+        "createdPo": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/purchaseorder/3195176"
+            }
+          ],
+          "id": "3195176",
+          "refName": "PUR00285089"
+        },
+        "createPo": {
+          "id": "DropShip",
+          "refName": "Drop Shipment"
+        },
+        "custcol_pfc_pfconfigurator": false,
+        "description": "Tripod for Canon Camera",
+        "fromJob": false,
+        "inventoryDetail": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/2/inventoryDetail"
+            }
+          ],
+          "inventoryassignment": {
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/2/inventoryDetail/inventoryassignment"
+              }
+            ],
+            "items": [],
+            "totalResults": 0
+          }
+        },
+        "isClosed": false,
+        "isEstimate": false,
+        "isOpen": true,
+        "item": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/inventoryitem/692"
+            }
+          ],
+          "id": "692",
+          "refName": "TRI00001"
+        },
+        "itemType": {
+          "id": "InvtPart",
+          "refName": "InvtPart"
+        },
+        "line": 2,
+        "linked": true,
+        "marginal": false,
+        "poRate": 49,
+        "poVendor": {
+          "links": [],
+          "id": "1305",
+          "refName": "1305"
+        },
+        "price": {
+          "links": [],
+          "id": "1",
+          "refName": "List Price"
+        },
+        "printItems": false,
+        "quantity": 2,
+        "quantityAvailable": 2,
+        "quantityOnHand": 0,
+        "rate": 90,
+        "rateSchedule": 90,
+        "units": "1"
+      },
+      {
+        "links": [
+          {
+            "rel": "self",
+            "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/3"
+          }
+        ],
+        "amount": 379.99,
+        "commitInventory": {
+          "id": "1",
+          "refName": "1"
+        },
+        "costEstimate": 200,
+        "costEstimateRate": 200,
+        "costEstimateType": {
+          "id": "AVGCOST",
+          "refName": "AVGCOST"
+        },
+        "createdPo": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/purchaseorder/3195176"
+            }
+          ],
+          "id": "3195176",
+          "refName": "PUR00285089"
+        },
+        "createPo": {
+          "id": "DropShip",
+          "refName": "Drop Shipment"
+        },
+        "custcol_pfc_pfconfigurator": false,
+        "description": "A great phone with 24 programmable feature buttons",
+        "fromJob": false,
+        "inventoryDetail": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/3/inventoryDetail"
+            }
+          ],
+          "inventoryassignment": {
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/item/3/inventoryDetail/inventoryassignment"
+              }
+            ],
+            "items": [],
+            "totalResults": 0
+          }
+        },
+        "isClosed": false,
+        "isEstimate": false,
+        "isOpen": true,
+        "item": {
+          "links": [
+            {
+              "rel": "self",
+              "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/inventoryitem/505"
+            }
+          ],
+          "id": "505",
+          "refName": "ACC00005"
+        },
+        "itemType": {
+          "id": "InvtPart",
+          "refName": "InvtPart"
+        },
+        "line": 3,
+        "linked": true,
+        "marginal": false,
+        "poRate": 199,
+        "poVendor": {
+          "links": [],
+          "id": "1305",
+          "refName": "1305"
+        },
+        "price": {
+          "links": [],
+          "id": "1",
+          "refName": "List Price"
+        },
+        "printItems": false,
+        "quantity": 1,
+        "quantityAvailable": 1,
+        "quantityOnHand": 43,
+        "rate": 379.99,
+        "rateSchedule": 379.99,
+        "units": "1"
+      }
+    ],
+    "totalResults": 3
+  },
+  "lastModifiedDate": "2022-01-07T15:30:00Z",
+  "leadSource": {
+    "links": [],
+    "id": "100014",
+    "refName": "Impressivo 1500 Special"
+  },
+  "linkedTrackingNumbers": "b360f48e-2957-4224-836a-a7b523570244",
+  "location": {
+    "links": [],
+    "id": "2",
+    "refName": "01: San Francisco"
+  },
+  "message": "The author and publisher disclaim any warranties (express or implied), merchantability, or fitness for any particular purpose. The author and publisher shall in no event be held liable to any party for any direct, indirect, punitive, special, incidental or other consequential damages arising directly or indirectly from any use of this material, which is provided “as is”, and without warranties.",
+  "nextBill": "2020-10-08",
+  "orderStatus": {
+    "id": "F",
+    "refName": "Pending Billing"
+  },
+  "originator": "webServices",
+  "prevDate": "2020-10-08",
+  "prevRep": 1008,
+  "salesEffectiveDate": "2020-10-08",
+  "salesRep": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/employee/1008"
+      }
+    ],
+    "id": "1008",
+    "refName": "Mary Redding"
+  },
+  "shipAddress": "test\n123 test st\nNewport Beach CA 92660\nUnited States",
+  "shipComplete": false,
+  "shipDate": "2020-10-10",
+  "shipGroup": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/shipGroup"
+      }
+    ],
+    "items": [
+      {
+        "links": [
+          {
+            "rel": "self",
+            "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/shipGroup/1"
+          }
+        ],
+        "destinationAddress": "123 test st Newport Beach CA 92660 United States",
+        "handlingRate": 0,
+        "id": 1,
+        "shippingMethod": "FedEx 2Day®",
+        "shippingRate": 0,
+        "weight": 10.6
+      }
+    ],
+    "totalResults": 1
+  },
+  "shipIsResidential": false,
+  "shipMethod": {
+    "links": [],
+    "id": "830",
+    "refName": "FedEx 2Day®"
+  },
+  "shipOverride": true,
+  "shippingAddress": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/salesorder/3195175/shippingAddress"
+      }
+    ],
+    "addr1": "123 test st",
+    "addressee": "test",
+    "addrText": "test\n123 test st\nNewport Beach CA 92660\nUnited States",
+    "city": "Newport Beach",
+    "country": {
+      "id": "US",
+      "refName": "United States"
+    },
+    "override": true,
+    "state": "CA",
+    "zip": "92660"
+  },
+  "shippingAddress_text": "test\n123 test st\nNewport Beach CA 92660\nUnited States",
+  "shippingCost": 0,
+  "shippingCostOverridden": true,
+  "source": {
+    "id": "Web Services",
+    "refName": "Web Services"
+  },
+  "status": {
+    "id": "F",
+    "refName": "Pending Billing"
+  },
+  "storeOrder": "F",
+  "subsidiary": {
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://tstdrv1982068.suitetalk.api.netsuite.com/services/rest/record/v1/subsidiary/1"
+      }
+    ],
+    "id": "1",
+    "refName": "Honeycomb Mfg."
+  },
+  "subtotal": 1939.99,
+  "suppressUserEventsAndEmails": "F",
+  "terms": {
+    "links": [],
+    "id": "2",
+    "refName": "Net 30"
+  },
+  "toBeEmailed": false,
+  "toBeFaxed": false,
+  "toBePrinted": false,
+  "total": 2100.04,
+  "totalCostEstimate": 901.68,
+  "tranDate": "2020-10-08",
+  "tranId": "SLS00272178",
+  "updateDropshipOrderQty": "T",
+  "webStore": "F"
+}

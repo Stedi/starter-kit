@@ -1,0 +1,291 @@
+{
+  "interchanges": [
+    {
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "duns_dun_bradstreet_01",
+        "interchange_sender_id_06": "Interchange Sen",
+        "interchange_id_qualifier_07": "mutually_defined_ZZ",
+        "interchange_receiver_id_08": "Interchange Rec",
+        "interchange_date_09": "200730",
+        "interchange_time_10": "1336",
+        "repetition_separator_11": "^",
+        "interchange_control_version_number_12": "00501",
+        "interchange_control_number_13": "000000001",
+        "acknowledgment_requested_14": "no_interchange_acknowledgment_requested_0",
+        "interchange_usage_indicator_15": "production_data_P",
+        "component_element_separator_16": "+"
+      },
+      "groups": [
+        {
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "warehouse_shipping_order_940_OW",
+            "application_senders_code_02": "Application Sen",
+            "application_receivers_code_03": "Application Rec",
+            "date_04": "20200730",
+            "time_05": "1336",
+            "group_control_number_06": "1",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "005010"
+          },
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "940",
+                  "transaction_set_control_number_02": "0001"
+                },
+                "shipping_order_identification_W05": {
+                  "order_status_code_01": "original_N",
+                  "depositor_order_number_02": "SLS00272178",
+                  "purchase_order_number_03": "PUR00285089"
+                },
+                "party_identification_N1_loop": [
+                  {
+                    "party_identification_N1": {
+                      "entity_identifier_code_01": "ship_to_ST",
+                      "name_02": "test",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "NA"
+                    },
+                    "additional_name_information_N2": [
+                      {
+                        "name_01": "Name"
+                      }
+                    ],
+                    "party_location_N3": [
+                      {
+                        "address_information_01": "123 test st",
+                        "address_information_02": "Address Information"
+                      }
+                    ],
+                    "geographic_location_N4": {
+                      "city_name_01": "Newport Beach",
+                      "state_or_province_code_02": "CA",
+                      "postal_code_03": "92660",
+                      "country_code_04": "COU"
+                    },
+                    "administrative_communications_contact_PER": [
+                      {
+                        "contact_function_code_01": "order_contact_OC",
+                        "name_02": "Name",
+                        "communication_number_qualifier_03": "electronic_mail_EM",
+                        "communication_number_04": "Communication Number",
+                        "communication_number_qualifier_05": "electronic_mail_EM",
+                        "communication_number_06": "Communication Number",
+                        "communication_number_qualifier_07": "electronic_mail_EM",
+                        "communication_number_08": "Communication Number",
+                        "contact_inquiry_reference_09": "Contact Inquiry Refe"
+                      }
+                    ]
+                  },
+                  {
+                    "party_identification_N1": {
+                      "entity_identifier_code_01": "bill_to_party_BT",
+                      "name_02": "Name",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "NA"
+                    },
+                    "additional_name_information_N2": [
+                      {
+                        "name_01": "Name"
+                      }
+                    ],
+                    "party_location_N3": [
+                      {
+                        "address_information_01": "some address",
+                        "address_information_02": "Address Information"
+                      }
+                    ],
+                    "geographic_location_N4": {
+                      "city_name_01": "City Name",
+                      "state_or_province_code_02": "ST",
+                      "postal_code_03": "POSTAL CODE",
+                      "country_code_04": "COU"
+                    },
+                    "administrative_communications_contact_PER": [
+                      {
+                        "contact_function_code_01": "order_contact_OC",
+                        "name_02": "Name",
+                        "communication_number_qualifier_03": "electronic_mail_EM",
+                        "communication_number_04": "Communication Number",
+                        "communication_number_qualifier_05": "electronic_mail_EM",
+                        "communication_number_06": "Communication Number",
+                        "communication_number_qualifier_07": "electronic_mail_EM",
+                        "communication_number_08": "Communication Number",
+                        "contact_inquiry_reference_09": "Contact Inquiry Refe"
+                      }
+                    ]
+                  }
+                ],
+                "extended_reference_information_N9": [
+                  {
+                    "reference_identification_qualifier_01": "tracking_number_2I",
+                    "reference_identification_02": "Reference Identification"
+                  }
+                ],
+                "date_time_G62": [
+                  {
+                    "date_qualifier_01": "ship_not_before_date_37",
+                    "date_02": "20201010",
+                    "time_qualifier_03": "actual_delivery_time_9",
+                    "time_04": "1336",
+                    "time_code_05": "greenwich_mean_time_GM"
+                  }
+                ],
+                "note_special_instruction_NTE": [
+                  {
+                    "note_reference_code_01": "bill_of_lading_note_BOL",
+                    "description_02": "Description"
+                  }
+                ],
+                "equipment_and_temperature_W09": {
+                  "equipment_description_code_01": "frozen_food_trailer_FF",
+                  "temperature_02": "69",
+                  "unit_or_basis_for_measurement_code_03": "centigrade_celsius_CE"
+                },
+                "warehouse_carrier_information_W66": {
+                  "shipment_method_of_payment_01": "prepaid_by_seller_PP",
+                  "transportation_method_type_code_02": "motor_common_carrier_M",
+                  "pallet_exchange_code_03": "no_exchange_no_return_1",
+                  "unit_load_option_code_04": "palletized_01",
+                  "routing_05": "FedEx 2Day",
+                  "fob_point_code_06": "destination_02",
+                  "standard_carrier_alpha_code_10": "STAN"
+                },
+                "special_handling_information_W6": [
+                  {
+                    "special_handling_code_01": "case_label_bar_code_CBC",
+                    "special_handling_code_02": "case_label_bar_code_CBC",
+                    "special_handling_code_03": "case_label_bar_code_CBC",
+                    "special_handling_code_04": "case_label_bar_code_CBC"
+                  }
+                ]
+              },
+              "detail": {
+                "transaction_set_line_number_LX_loop": [
+                  {
+                    "transaction_set_line_number_LX": {
+                      "assigned_number_01": "1"
+                    },
+                    "line_item_detail_warehouse_W01_loop": [
+                      {
+                        "line_item_detail_warehouse_W01": {
+                          "quantity_01": "6",
+                          "unit_or_basis_for_measurement_code_02": "each_EA",
+                          "upc_case_code_03": "U.P.C. CaseX",
+                          "product_service_id_qualifier_04": "stock_keeping_unit_sku_SK",
+                          "product_service_id_05": "HDW00002",
+                          "product_service_id_qualifier_06": "brand_label_BL",
+                          "product_service_id_07": "Product/Service ID"
+                        },
+                        "line_item_detail_description_G69": [
+                          {
+                            "free_form_description_01": "A quality 6 button control"
+                          }
+                        ],
+                        "extended_reference_information_N9": [
+                          {
+                            "reference_identification_qualifier_01": "tracking_number_2I",
+                            "reference_identification_02": "Reference Identification"
+                          }
+                        ],
+                        "note_special_instruction_NTE": [
+                          {
+                            "note_reference_code_01": "bill_of_lading_note_BOL",
+                            "description_02": "Description"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "transaction_set_line_number_LX": {
+                      "assigned_number_01": "2"
+                    },
+                    "line_item_detail_warehouse_W01_loop": [
+                      {
+                        "line_item_detail_warehouse_W01": {
+                          "quantity_01": "7",
+                          "unit_or_basis_for_measurement_code_02": "each_EA",
+                          "upc_case_code_03": "U.P.C. CaseX",
+                          "product_service_id_qualifier_04": "stock_keeping_unit_sku_SK",
+                          "product_service_id_05": "TRI00001",
+                          "product_service_id_qualifier_06": "brand_label_BL",
+                          "product_service_id_07": "Product/Service ID"
+                        },
+                        "line_item_detail_description_G69": [
+                          {
+                            "free_form_description_01": "Tripod for Canon Camera"
+                          }
+                        ],
+                        "extended_reference_information_N9": [
+                          {
+                            "reference_identification_qualifier_01": "tracking_number_2I",
+                            "reference_identification_02": "Reference Identification2"
+                          }
+                        ],
+                        "note_special_instruction_NTE": [
+                          {
+                            "note_reference_code_01": "bill_of_lading_note_BOL",
+                            "description_02": "Description"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "transaction_set_line_number_LX": {
+                      "assigned_number_01": "3"
+                    },
+                    "line_item_detail_warehouse_W01_loop": [
+                      {
+                        "line_item_detail_warehouse_W01": {
+                          "quantity_01": "1",
+                          "unit_or_basis_for_measurement_code_02": "each_EA",
+                          "product_service_id_qualifier_04": "stock_keeping_unit_sku_SK",
+                          "product_service_id_05": "ACC00005"
+                        },
+                        "line_item_detail_description_G69": [
+                          {
+                            "free_form_description_01": "A great phone with 24 programmable"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "summary": {
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "29",
+                  "transaction_set_control_number_02": "0001"
+                }
+              },
+              "set": "940"
+            }
+          ],
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "1",
+            "group_control_number_02": "1"
+          },
+          "release": "005010"
+        }
+      ],
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "000000001"
+      },
+      "delimiters": {
+        "element": "*",
+        "segment": "\n",
+        "sub_element": "+",
+        "repetition": "^"
+      }
+    }
+  ],
+  "__version": "jedi@2.0"
+}
