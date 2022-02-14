@@ -1,0 +1,5 @@
+{
+  "name": "starter_kit_mapping",
+  "type": "only_mapped_keys",
+  "mapping": "{\n  \"po_number\": interchanges[0].groups[0].transaction_sets[0].heading.beginning_segment_for_purchase_order_BEG.purchase_order_number_03,\n  \"sender_id\": interchanges[0].interchange_control_header_ISA.interchange_sender_id_06,\n  \"interchange_receiver_id_08\": interchanges[0].interchange_control_header_ISA.interchange_receiver_id_08\n}"
+}
