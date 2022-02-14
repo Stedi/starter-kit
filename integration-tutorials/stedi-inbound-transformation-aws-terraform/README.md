@@ -605,7 +605,7 @@ You can get the API key from terminal.stedi.com/o/?/apikeys:
 
 1. Now we will map this JSON to an output shape. We have created a pre-built Mapping with the JSON from your /translate call above, which you can [add to your account via this link](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/source-JEDI.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter_kit_mapping/target-JSON.json). Click `Proceed with import` to begin using this Mapping in your account. 
 
-2. Every Mapping requires a `source JSON` file and a `target JSON` file. The `source JSON` in this Mapping is the JEDI 850 from the /translate call show above. The `target JSON` is a sample request shape for a fictious Orders API (see below). Each key in the `target JSON` is then mapped to a path in the `source JSON` to define the transformation logic.  
+2. Every Mapping requires a `source JSON` file and a `target JSON` file. The `source JSON` in this Mapping is the JEDI 850 from the /translate call shown above. The `target JSON` is a sample request shape for a fictious Orders API (see below). Each key in the `target JSON` is then mapped to a path in the `source JSON` to define the transformation logic.  
 
 ```js
 {
