@@ -14,22 +14,25 @@ We will be adding requests for other Stedi services as they get released.
 
 To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and create a [Stedi API Key](https://www.stedi.com/docs/authentication). 
 
-Next, import the Postman collection to your workspace using the button below.
+Next, import the Postman collection to your workspace. Copy [this URL](https://raw.githubusercontent.com/Stedi/starter-kit/main/postman-api-collections/Stedi.postman_collection.json) to your clipboard click 'Collections > Import Collection' within Postman. Now paste the URL and click 'continue' to import the collection. 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
+<img src = "https://raw.githubusercontent.com/Stedi/starter-kit/main/images/edi-core/import-postman.png">
+
+
+You an review the API collection online  [on Postman's Documenter page](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
+ 
 
 ### API key configuration
-Once the collection has been imported into Postman, we need to configure a Stedi API key for authentication. 
+Once the collection has been imported, we need to configure a Stedi API key for authentication. 
 
-Configure the Postman environment variable `stediApiKey` with your API key. You can configure this setting under the 'Environment Variables' tab on the left hand side of Postman. 
+Configure the Postman environment variable `stediApiKey` with your API key. If you plan to use Stedi Mappings, you can enter the `stediMappingId` here as well. You can configure this setting under the 'Environment Variables' tab on the left hand side of Postman. Once you edit the values, make sure to press 'save' to store the new values. 
 
 <img src = "https://raw.githubusercontent.com/Stedi/starter-kit/main/images/edi-core/environment-variable.png">
 
-Once the key is set, you can send API requests to Stedi. Make sure that the correct Postman environment variable is set in the top right corner of the screen ('Stedi API' in this case).
+Now you can send API requests to Stedi. Make sure that the correct Postman environment variable is set in the top right corner of the screen ('Stedi API' in this case).
 
 <img src = "https://raw.githubusercontent.com/Stedi/starter-kit/main/images/edi-core/send-request.png">
 
-For more details, please review our API documentation [on Documenter](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
 
 # Stedi services
 
@@ -59,7 +62,7 @@ In order to map JSON documents using the API, you need to create a mapping first
 
 <a href="https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/mapping.json&amp;source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/jedi-850.json&amp;target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-quickbooks-online-estimate/quickbooks-online-estimate.json" style="display:flex;justify-content:center" target="\_blank"><picture><img alt="" src="https://stedi.com/images/blog/complex-data-transformations-made-simple-with-mappings/run_on_stedi.svg" style="width:200px"></picture></a>
 
-Once the mapping is created, replace the mapping ID in the API URL with your mapping ID. You can retrieve this ID from the Stedi terminal from the [mappings overview page](https://terminal.stedi.com/mappings). It should look similar to `01FTEJDXA6VW78H0Q39EH23VG5`.
+Once the Stedi mapping is created, make sure that your Postman environment variable is configured with your mapping ID. You can retrieve this ID from the Stedi terminal on the [mappings overview page](https://terminal.stedi.com/mappings). It should look similar to a value like `01FTEJDXA6VW78H0Q39EH23VG5`.
 
 Finally, you can find the API documentation for the Mappings service [here](https://www.stedi.com/docs/api/mappings). 
 

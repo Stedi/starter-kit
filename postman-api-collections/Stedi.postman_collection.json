@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "591dcbf2-06e3-4d07-8f68-a537f4d508ae",
 		"name": "Stedi Starter Pack",
-		"description": "A collection of Stedi API requests you can use to work with EDI Core. Each API request comes with an example request and response. We have two example request included:\n\n*   Convert a EDI document to JSON EDI (JEDI)\n*   Convert a JSON EDI (JEDI) document to EDI\n    \n\nBoth examples are populated with sample data so you can easily try a request. You can try to do a conversion using your own documents using this collection too.\n\n## Getting started\n\n1.  [Create or login to your Stedi account](https://terminal.stedi.com/sign-up) using Terminal.\n2.  [Create an API Key](https://www.stedi.com/docs/authentication) in Terminal.\n3.  Set the Postman environment variable `stediApiKey` with your API key.\n4.  You can now send API requests to Stedi by pressing \"send request\".",
+		"description": "A collection of Stedi API requests you can use to work with EDI Core. Each API request comes with an example request and response. We have two example request included:\n\n*   Convert a EDI document to JSON EDI (JEDI)\n*   Convert a JSON EDI (JEDI) document to EDI\n    \n\nBoth examples are populated with sample data so you can easily try a request. You can try to do a conversion using your own documents using this collection too.\n\n## Getting started\n\n1.  [Create or login to your Stedi account](https://terminal.stedi.com/sign-up) using Terminal.\n2.  [Create an API Key](https://www.stedi.com/docs/authentication) in Terminal.\n3.  Set the Postman environment variable `stediApiKey` with your API key. If you plan to use Stedi mappings, set the `stediMappingId` as well.\n4.  You can now send API requests to Stedi by pressing \"send request\".",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -964,7 +964,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://mappings.stedi.com/2021-06-01/mappings/01FTEJDXA6VW78H0Q39EH23VG5/map",
+							"raw": "https://mappings.stedi.com/2021-06-01/mappings/{{stediMappingId}}/map",
 							"protocol": "https",
 							"host": [
 								"mappings",
@@ -974,7 +974,7 @@
 							"path": [
 								"2021-06-01",
 								"mappings",
-								"01FTEJDXA6VW78H0Q39EH23VG5",
+								"{{stediMappingId}}",
 								"map"
 							]
 						}
@@ -1012,6 +1012,11 @@
 		{
 			"key": "ediCoreBaseUrl",
 			"value": "https://edi-core.stedi.com/2021-06-05"
+		},
+		{
+			"key": "stediMappingId",
+			"value": "01FTEJDXA6VW78H0Q39EH23VG5",
+			"type": "string"
 		}
 	]
 }
