@@ -1,6 +1,6 @@
 # Stedi Postman collection
 
-Welcome to Stedi Postman Collection guide - a quick and easy way to send API requests without code. In this repository, you will find examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
+Welcome to Stedi Postman Collection - a quick and easy way to send API requests without code. In this repository, you will find examples and templates showing how to use [Stedi APIs](https://www.stedi.com/docs) using Postman.
 
 We include API requests for the following Stedi services:
 
@@ -14,12 +14,13 @@ We will be adding requests for other Stedi services as they get released.
 
 To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and create a [Stedi API Key](https://www.stedi.com/docs/authentication). 
 
-Next, import the Postman collection to your workspace. Copy [this URL](https://raw.githubusercontent.com/Stedi/starter-kit/main/postman-api-collections/Stedi.postman_collection.json) to your clipboard click 'Collections > Import Collection' within Postman. Now paste the URL and click 'continue' to import the collection. 
-
-<img src = "https://raw.githubusercontent.com/Stedi/starter-kit/main/images/edi-core/import-postman.png">
+Next, you can view and import the Postman collection to start accessing the API. By clicking on the button below, you can import it in your Postman workspace (either online or with your local client). 
 
 
-You an review the API collection online  [on Postman's Documenter page](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0bca9666a7bb162b59b2?action=collection%2Fimport)
+
+
+You can also review the API collection online  [on Postman's Documenter page](https://documenter.getpostman.com/view/17436649/UVJbGHLL).
  
 
 ### API key configuration
