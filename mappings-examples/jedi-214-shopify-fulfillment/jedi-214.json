@@ -1,0 +1,160 @@
+{
+  "interchanges": [
+    {
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "mutually_defined_ZZ",
+        "interchange_sender_id_06": "FEDEX",
+        "interchange_id_qualifier_07": "mutually_defined_ZZ",
+        "interchange_receiver_id_08": "SHOPFULFL",
+        "interchange_date_09": "220221",
+        "interchange_time_10": "0801",
+        "interchange_control_standards_identifier_11": "us_edi_community_of_asc_x12_tdcc_and_ucs_U",
+        "interchange_control_version_number_12": "00401",
+        "interchange_control_number_13": "000022007",
+        "acknowledgment_requested_14": "no_acknowledgment_requested_0",
+        "usage_indicator_15": "production_data_P",
+        "component_element_separator_16": "^"
+      },
+      "groups": [
+        {
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "transportation_carrier_shipment_status_message_214_QM",
+            "application_senders_code_02": "FEDEX",
+            "application_receivers_code_03": "SHOPFULFL",
+            "date_04": "20220221",
+            "time_05": "0801",
+            "group_control_number_06": "22007",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "004010"
+          },
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "214",
+                  "transaction_set_control_number_02": "220070188"
+                },
+                "beginning_segment_for_transportation_carrier_shipment_status_message_B10": {
+                  "reference_identification_01": "332813219648668",
+                  "shipment_identification_number_02": "1321974",
+                  "standard_carrier_alpha_code_03": "FDEG"
+                },
+                "business_instructions_and_reference_number_L11": [
+                  {
+                    "reference_identification_01": "2601647",
+                    "reference_identification_qualifier_02": "purchase_order_number_PO"
+                  }
+                ],
+                "remarks_K1": [
+                  {
+                    "free_form_message_01": "850"
+                  }
+                ],
+                "name_N1_loop": [
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "ship_from_SF",
+                      "name_02": "Shipping Department"
+                    },
+                    "address_information_N3": [
+                      {
+                        "address_information_01": "2209 Kellen Drive"
+                      }
+                    ],
+                    "geographic_location_N4": {
+                      "city_name_01": "Yankton",
+                      "state_or_province_code_02": "SD",
+                      "postal_code_03": "57078",
+                      "country_code_04": "US"
+                    },
+                    "date_time_G62": {
+                      "date_qualifier_01": "shipped_on_this_date_11",
+                      "date_02": "20220218"
+                    }
+                  },
+                  {
+                    "name_N1": {
+                      "entity_identifier_code_01": "ship_to_ST",
+                      "name_02": "Matt Link"
+                    },
+                    "address_information_N3": [
+                      {
+                        "address_information_01": "54 S Ryan St"
+                      }
+                    ],
+                    "geographic_location_N4": {
+                      "city_name_01": "New York",
+                      "state_or_province_code_02": "NY",
+                      "postal_code_03": "14210",
+                      "country_code_04": "US"
+                    }
+                  }
+                ],
+                "assigned_number_LX_loop": [
+                  {
+                    "assigned_number_LX": {
+                      "assigned_number_01": "1"
+                    },
+                    "shipment_status_details_AT7_loop": [
+                      {
+                        "shipment_status_details_AT7": {
+                          "shipment_status_code_01": "completed_unloading_at_delivery_location_D1",
+                          "shipment_status_or_appointment_reason_code_02": "normal_status_NS",
+                          "date_05": "20220221",
+                          "time_06": "0849",
+                          "time_code_07": "universal_time_coordinate_UT"
+                        }
+                      }
+                    ],
+                    "business_instructions_and_reference_number_L11": [
+                      {
+                        "reference_identification_01": "Signature Not Req",
+                        "reference_identification_qualifier_02": "receiving_company_identifier_8N"
+                      },
+                      {
+                        "reference_identification_01": "1321974",
+                        "reference_identification_qualifier_02": "customer_reference_number_CR"
+                      }
+                    ],
+                    "shipment_weight_packaging_and_quantity_data_AT8": [
+                      {
+                        "weight_qualifier_01": "gross_weight_G",
+                        "weight_unit_code_02": "pounds_L",
+                        "weight_03": "29",
+                        "lading_quantity_04": "1"
+                      }
+                    ]
+                  }
+                ],
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "22",
+                  "transaction_set_control_number_02": "220070188"
+                }
+              },
+              "set": "214"
+            }
+          ],
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "226",
+            "group_control_number_02": "22007"
+          },
+          "release": "004010"
+        }
+      ],
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "000022007"
+      },
+      "delimiters": {
+        "element": "*",
+        "segment": "~",
+        "sub_element": "^"
+      }
+    }
+  ],
+  "__version": "jedi@2.0"
+}
