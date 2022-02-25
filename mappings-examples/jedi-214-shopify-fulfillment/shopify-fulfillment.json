@@ -1,0 +1,27 @@
+{
+  "fulfillment": {
+    "address1": "3575 Boul. Saint-Laurent",
+    "city": "Montreal",
+    "country": "Canada",
+    "created_at": "2012-03-13T16:09:54-04:00",
+    "estimated_delivery_at": "2014-04-13T16:09:54-04:00",
+    "fulfillment_id": 450789469,
+    "happened_at": "2012-03-13T16:09:54-04:00",
+    "id": 255858046,
+    "latitude": 45.5017,
+    "longitude": 73.5673,
+    "message": "IN_TRANSIT",
+    "order_id": 3183479,
+    "province": "QC",
+    "shop_id": 255858046,
+    "status": "in_transit",
+    "updated_at": "2012-03-15T16:09:54-04:00",
+    "zip": "H2X 2R7",
+    "location_id": 655441491,
+    "tracking_numbers": [
+      "88b451840563b72cc15d3fcb6179f302",
+      "aee587edbd98ad725d27974c808ec7d6",
+      "94e71192ecf091ea5c25b69c385c2b1b"
+    ]
+  }
+}
