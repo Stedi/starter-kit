@@ -5,7 +5,7 @@
 </p>
 
 
-The Stedi starter kit contains a number of resources to help you get started building your own custom EDI solutions and B2B integrations on Stedi. We are going to be shipping new examples and resources weekly, so please [contact us](mailto:team@stedi.con) if you have any requests.
+The Stedi starter kit contains a number of resources to help you get started building your own custom EDI solutions and B2B integrations on Stedi. We are going to be shipping new examples and resources weekly, so please [contact us](mailto:team@stedi.com) if you have any requests.
 
 ## Starter kit resources
 - [Mappings examples](https://github.com/Stedi/starter-kit/tree/main/mappings-examples): a curated collection of prebuilt [Mappings](https://www.stedi.com/docs/mappings) that you can import and run on Stedi with a single click.
