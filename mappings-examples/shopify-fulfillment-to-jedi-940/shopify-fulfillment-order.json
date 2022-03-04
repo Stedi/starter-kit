@@ -1,0 +1,80 @@
+{
+  "assigned_location_id": 3183479,
+  "destination": {
+    "id": 54433189,
+    "zip": "K2P0V6",
+    "city": "Ottawa",
+    "email": "bob@customer.com",
+    "phone": "(555)555-5555",
+    "company": "",
+    "country": "Canada",
+    "address1": "123 Amoebobacterieae St",
+    "address2": "Unit 806",
+    "province": "Ontario",
+    "last_name": "Bobsen",
+    "first_name": "Bob"
+  },
+  "delivery_method": {
+    "id": 64434189,
+    "method_type": "local"
+  },
+  "fulfill_at": "2021-01-01",
+  "fulfillment_holds": [
+    {
+      "reason": "incorrect_address",
+      "reason_notes": "the apartment number is missing."
+    }
+  ],
+  "id": 255858046,
+  "international_duties": {
+    "incoterm": "DAP"
+  },
+  "line_items": [
+    {
+      "id": 123456789987,
+      "shop_id": 3998762,
+      "quantity": 1,
+      "variant_id": 2385087,
+      "line_item_id": 466157049,
+      "inventory_item_id": 123456789987,
+      "fulfillable_quantity": 1,
+      "fulfillment_order_id": 1568020,
+      "token": "",
+      "position": 2
+    }
+  ],
+  "order_id": 3183479,
+  "request_status": "unsubmitted",
+  "shop_id": 255858046,
+  "status": "open",
+  "supported_actions": [
+    "create_fulfillment",
+    "request_fulfillment",
+    "cancel_fulfillment_order",
+    "request_cancellation"
+  ],
+  "merchant_requests": [
+    {
+      "kind": "fulfillment_request",
+      "message": "Hello, World!",
+      "request_options": {
+        "date": "2019-08-13T16:09:58-04:00",
+        "note": "handle with care",
+        "shipping_method": "pidgeon carrier"
+      }
+    }
+  ],
+  "assigned_location": {
+    "zip": "K2P0V6",
+    "city": "Ottawa",
+    "name": "Bob Bobsen",
+    "phone": "(555)555-5555",
+    "address1": "123 Amoebobacterieae St",
+    "address2": "Unit 806",
+    "province": "Ontario",
+    "location_id": 17232953366,
+    "country_code": "CA"
+  },
+  "token": "",
+  "position": 2
+}

@@ -1,0 +1,127 @@
+{
+  "interchanges": [
+    {
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "mutually_defined_ZZ",
+        "interchange_sender_id_06": "Matt",
+        "interchange_id_qualifier_07": "mutually_defined_ZZ",
+        "interchange_receiver_id_08": "Stedidemos",
+        "interchange_date_09": "201108",
+        "interchange_time_10": "1318",
+        "repetition_separator_11": "^",
+        "interchange_control_version_number_12": "00501",
+        "interchange_control_number_13": "000575106",
+        "acknowledgment_requested_14": "no_interchange_acknowledgment_requested_0",
+        "interchange_usage_indicator_15": "production_data_P",
+        "component_element_separator_16": "+"
+      },
+      "groups": [
+        {
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "warehouse_shipping_order_940_OW",
+            "application_senders_code_02": "Matt",
+            "application_receivers_code_03": "Stedidemos",
+            "date_04": "20201108",
+            "time_05": "131803",
+            "group_control_number_06": "575103",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "005010"
+          },
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "940",
+                  "transaction_set_control_number_02": "0001"
+                },
+                "shipping_order_identification_W05": {
+                  "order_status_code_01": "original_N",
+                  "depositor_order_number_02": "0080215659",
+                  "purchase_order_number_03": "4000207344"
+                },
+                "party_identification_N1_loop": [
+                  {
+                    "party_identification_N1": {
+                      "entity_identifier_code_01": "ship_to_ST",
+                      "name_02": "Stedi Inc"
+                    },
+                    "party_location_N3": [
+                      {
+                        "address_information_01": "123 Main St",
+                        "address_information_02": "Unit 12"
+                      }
+                    ],
+                    "geographic_location_N4": {
+                      "city_name_01": "Seattle",
+                      "state_or_province_code_02": "WA",
+                      "postal_code_03": "98121",
+                      "country_code_04": "US"
+                    }
+                  }
+                ],
+                "date_time_G62": [
+                  {
+                    "date_qualifier_01": "requested_ship_date_pickup_date_10",
+                    "date_02": "20201109"
+                  }
+                ],
+                "warehouse_carrier_information_W66": {
+                  "shipment_method_of_payment_01": "customer_pickup_backhaul_PB",
+                  "transportation_method_type_code_02": "private_parcel_service_U",
+                  "standard_carrier_alpha_code_10": "FDEG"
+                }
+              },
+              "detail": {
+                "transaction_set_line_number_LX_loop": [
+                  {
+                    "transaction_set_line_number_LX": {
+                      "assigned_number_01": "1"
+                    },
+                    "line_item_detail_warehouse_W01_loop": [
+                      {
+                        "line_item_detail_warehouse_W01": {
+                          "quantity_01": "5",
+                          "unit_or_basis_for_measurement_code_02": "each_EA",
+                          "upc_case_code_03": "000619002280",
+                          "product_service_id_qualifier_04": "stock_keeping_unit_sku_SK",
+                          "product_service_id_05": "NOTEBOOK"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "summary": {
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "21",
+                  "transaction_set_control_number_02": "0001"
+                }
+              },
+              "set": "940"
+            }
+          ],
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "1",
+            "group_control_number_02": "575103"
+          },
+          "release": "005010"
+        }
+      ],
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "000575106"
+      },
+      "delimiters": {
+        "element": "*",
+        "segment": "~",
+        "sub_element": "+",
+        "repetition": "^"
+      }
+    }
+  ],
+  "__version": "jedi@2.0"
+}
