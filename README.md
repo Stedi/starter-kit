@@ -27,6 +27,6 @@ Now you are ready to authenticate with the Stedi API. In all API calls to Stedi 
 - [EDI Reference](https://edi.stedi.com/)
 
 ## Get in touch
-- [Send us an email](mailto:team@stedi.com) to talk to our customer development team
+- [Contact us](https://www.stedi.com/contact) to talk to the Stedi team
 - [Create an issue](https://github.com/Stedi/starter-kit/issues) in this repo if you encounter a bug
 - [Start a discussion](https://github.com/Stedi/starter-kit/discussions) in this repo if you have any feedback on how we can improve this resource
