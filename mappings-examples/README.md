@@ -8,7 +8,7 @@ Once the Mapping is deployed in your Stedi account, you can either (1) [start ca
 
 ## Questions? Get in touch!
 
-Email [team@stedi.com](mailto:team@stedi.com) if you have any questions!
+Submit a question for the Stedi team [here](https://www.stedi.com/contact). 
 
 ## Links to further reading
 
