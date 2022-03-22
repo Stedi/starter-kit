@@ -1,6 +1,9 @@
-<p align="center">
-  <a href="https://stedi.com">
-    <img src = "./images/stedi-logo.svg" width = 200px>
+<p>
+  <a href="https://stedi.com/#gh-light-mode-only" target="_blank">
+    <img src="https://user-images.githubusercontent.com/26285898/159564343-556255d5-1df9-4d16-a649-66e9fef0d5bc.png">
+  </a>
+  <a href="https://stedi.com/#gh-dark-mode-only" target="_blank">
+    <img src="https://user-images.githubusercontent.com/26285898/159564339-9d0db215-ee15-4ea7-a4c2-a597246a826c.png">
   </a>
 </p>
 
