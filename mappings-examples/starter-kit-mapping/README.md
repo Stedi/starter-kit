@@ -13,4 +13,4 @@ More detail about how this Mapping was created can be found in the blog post [In
 
 Once you have created a [Stedi account](https://terminal.stedi.com/sign-up?email=), you can deploy this Mapping by clicking on the button below:
 
-[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/source-JEDI.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/target-JSON.json)
+[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/mapping.json&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/source-JEDI.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/starter-kit-mapping/target-JSON.json&referrer=starter-kit)
