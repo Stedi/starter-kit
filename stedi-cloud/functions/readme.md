@@ -9,10 +9,10 @@ Stedi Functions lets you develop and run JavaScript or TypeScript code on the St
 Once the Function is triggered, it executes your code and shuts down automatically afterwards. Functions can run anywhere between 1 milisecond and 29 seconds and you are only charged for the duration of the execution. 
 
 ```mermaid
-flowchart LR
-  id1[Event on Stedi]-. triggers .-> id2;
-  id2[Stedi Function]-. can request .->id3[Any Stedi or Internet API];
-``` 
+flowchart LR;
+id1[Event on Stedi]-. triggers .-> id2;
+id2[Stedi Function]-. can request .->id3[Any Stedi or Internet API];
+```
 
 Today, Functions can respond to requests coming from the Stedi API or Stedi Terminal.  We plan to add additional inputs for event triggers in the future. Your Function can make any request to a Stedi or external API.
 
