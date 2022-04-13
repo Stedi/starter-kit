@@ -70,7 +70,7 @@ Let's go ahead and open the 'deploy.sh' file in a text editor. There are two thi
 - On line 4, ensure that your valid Stedi API key is entered. You can create a new API key here; https://terminal.stedi.com/apikeys
 - On line 5, make sure that the function name is "webrequest" (or whatever name you gave the Function just created).
 
-Save the file and return to your Bash terminal. Now that your Stedi credentials are set up, you can test if they can succesfully see and describe your function. Try running '$ bash deploy.sh describe' - it should return something like this:
+Save the file and return to your Bash terminal. Now that your Stedi credentials are set up, you can test if they can succesfully see and describe your function. Try running `$ bash deploy.sh describe` - it should return something like this:
 
 ```bash
 describe function webrequest
@@ -92,7 +92,7 @@ Since we do want to make an outbound web request with the Function, we should ta
 
 <screenshot-code>
 
-The code is only locally present on our machine, so we need to deploy it to Stedi Cloud. We can do this by running the 'bash deploy.sh update' command. Since the Function is already created, we need to issue the 'update' instead of a 'create' command here. The response should look as follows:
+The code is only locally present on our machine, so we need to deploy it to Stedi Cloud. We can do this by running the `bash deploy.sh update` command. Since the Function is already created, we need to issue the 'update' instead of a 'create' command here. The response should look as follows:
 
 ```bash
 starting build
@@ -113,7 +113,7 @@ built package for webrequest, ready to deploy
 completed PUT for webrequest function
 ```
 
-The Function should now be succesfully updated and we should try to invoke it. Since we already have the helper script installed, we can do this by running '$ bash deploy.sh invoke'. The response should look as follows:
+The Function should now be succesfully updated and we should try to invoke it. Since we already have the helper script installed, we can do this by running `$ bash deploy.sh invoke`. The response should look as follows:
 
 ```bash
 invoke function webrequest
