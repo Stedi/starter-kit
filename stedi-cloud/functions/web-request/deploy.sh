@@ -19,13 +19,13 @@ buildfunction() {
         mkdir -p ./build
     fi
 
-    echo "starting build"
+    echo -e "\nstarting build\n"
 
     # build using npx, create zip file
     npx esbuild --bundle --target=node14 --platform=node ./handler.ts > build/index.js
     cd build && zip package -r ./* && cd ..
 
-    echo -e "built package ${FUNCTION_NAME}, ready to deploy"
+    echo -e "\nbuilt package for ${FUNCTION_NAME}, ready to deploy\n"
 }
 
 deletefunction() {
@@ -36,7 +36,7 @@ deletefunction() {
       ${VERBOSE} \
       --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
-    echo -e "deleted function ${FUNCTION_NAME}"
+    echo -e "deleted ${FUNCTION_NAME} function" 
 
 }
 
@@ -63,9 +63,9 @@ createupdatefunction() {
     --data-raw "{
         \"function_name\": \"${FUNCTION_NAME}\",
         \"package\": \"$(openssl base64 -A -in build/package.zip)\"
-    }"
+    }" | jq .
 
-    echo -e "${HTTPMETHOD} function ${FUNCTION_NAME}"
+    echo -e "completed ${HTTPMETHOD} for ${FUNCTION_NAME} function"
 
 }
 
@@ -102,7 +102,7 @@ then
 
 
 # describe (read) function
-elif [[ $1 == "read" ]] || [[ $1 == "r" ]] || [[ $1 == "d" ]]
+elif [[ $1 == "read" ]] || [[ $1 == "describe" ]] || [[ $1 == "r" ]] || [[ $1 == "d" ]]
 then
 
     echo -e "\ndescribe function ${FUNCTION_NAME}\n"
