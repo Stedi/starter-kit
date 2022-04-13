@@ -2,7 +2,7 @@
 
 Welcome to the `hello world` tutorial of Stedi Functions. In this guide, we will deploy a simple Function so you can learn how the service works. 
 
-In the second part, we will also write a Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed within the free Stedi trial: https://www.stedi.com/products/pricing.
+In the second part, we will also write a basic Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed within the free Stedi trial: https://www.stedi.com/products/pricing.
 
 
 ## Getting Started 
