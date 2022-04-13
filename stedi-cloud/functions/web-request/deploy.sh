@@ -10,6 +10,7 @@ VERBOSE="-s"
 
 ########## do not edit anything below this line ##########
 
+# build function
 buildfunction() {
 
     # remove old package and create build directory
@@ -28,6 +29,7 @@ buildfunction() {
     echo -e "\nbuilt package for ${FUNCTION_NAME}, ready to deploy\n"
 }
 
+# delete function
 deletefunction() {
 
     echo -e "deleting function ${FUNCTION_NAME}"
@@ -40,6 +42,7 @@ deletefunction() {
 
 }
 
+# create and update function
 createupdatefunction() {
 
     buildfunction
@@ -132,7 +135,7 @@ then
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw '{
-        "type": "event"
+        "topic": "Electronic_data_interchange"
     }' | jq .
 
 

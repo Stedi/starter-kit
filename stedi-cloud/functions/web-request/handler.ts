@@ -5,17 +5,22 @@ exports.handler = async (event: Input) => {
   
   let output;
   
+  // make a GET request to Wikipedia using Axios
   try {
     const response = await axios.get(
-      "https://en.wikipedia.org/w/api.php?action=query&titles=Electronic_data_interchange&prop=extracts&format=json&exintro=1",
+      "https://en.wikipedia.org/w/api.php?action=query&titles=" + event.topic + "&prop=extracts&format=json&exintro=1",
     );
+
+    // stringify the response data
     output = JSON.stringify(response.data, null, 4);
     console.log(output);
 
+  // catch on error
   } catch (e) {
     console.log(e);
     output = JSON.stringify(e);
 
+  // return 200 OK response
   }
   return {
     statusCode: 200,
@@ -24,10 +29,7 @@ exports.handler = async (event: Input) => {
   };
 };
 
+
 interface Input {
-  input_format?: string;
-  output_format?: string;
-  input?: string;
-  output_options?: object;
-  validation_options?: object;
+  topic?: string;
 }
