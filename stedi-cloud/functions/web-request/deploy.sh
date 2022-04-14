@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# set your API key here, or alternatively export it in the shell from which you run this script:
+# Set your Stedi API key here, or alternatively export it in the shell from which you run this script:
 STEDI_API_KEY="<replace-me>"
 FUNCTION_NAME="webrequest"
 STEDI_ENDPOINT='https://functions.cloud.stedi.com/2021-11-16/functions'
 
-# -s for silent, -v for debug
+# Set -s for silent, -v for debug of 'curl' requests
 VERBOSE="-s"
 
 ########## do not edit anything below this line ##########
@@ -13,14 +13,14 @@ VERBOSE="-s"
 # build function
 buildfunction() {
 
-    # remove old package and create build directory
-    if test -d "build/"
+    # remove old package and (re)create build directory
+    if test -d "./build/"
     then
         rm -rf ./build
         mkdir -p ./build
     fi
 
-    echo -e "\nstarting build\n"
+    echo -e "\nstarting npx build for ${FUNCTION_NAME}\n"
 
     # build using npx, create zip file
     npx esbuild --bundle --target=node14 --platform=node ./handler.ts > build/index.js
@@ -32,13 +32,13 @@ buildfunction() {
 # delete function
 deletefunction() {
 
-    echo -e "deleting function ${FUNCTION_NAME}"
+    echo -e "\ndeleting function ${FUNCTION_NAME}'\n"
 
     curl --location --request DELETE "${STEDI_ENDPOINT}/${FUNCTION_NAME}" \
       ${VERBOSE} \
       --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
-    echo -e "deleted ${FUNCTION_NAME} function" 
+    echo -e "\ndeleted ${FUNCTION_NAME} function\n" 
 
 }
 
@@ -63,12 +63,12 @@ createupdatefunction() {
     ${VERBOSE} \
     --header 'Content-Type: application/json' \
     --header "Authorization: Key ${STEDI_API_KEY}" \
-    --data-raw "{
-        \"function_name\": \"${FUNCTION_NAME}\",
-        \"package\": \"$(openssl base64 -A -in build/package.zip)\"
-    }" | jq .
+    --data-raw '{
+        "function_name": "${FUNCTION_NAME}",
+        "package": "$(openssl base64 -A -in build/package.zip)"
+    }' | jq .
 
-    echo -e "completed ${HTTPMETHOD} for ${FUNCTION_NAME} function"
+    echo -e "\ncompleted ${HTTPMETHOD} for ${FUNCTION_NAME} function\n"
 
 }
 
@@ -143,15 +143,15 @@ then
 elif [[ $1 == "logs" ]] || [[ $1 == "lo" ]]
 then
 
-    echo -e "view logs for ${FUNCTION_NAME}"
+    echo -e "\nview logs for ${FUNCTION_NAME} $2\n"
 
     # view logs for function
-    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions" \
+    curl --location --request GET "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions/$2" \
     ${VERBOSE} \
     --header 'Content-Type: application/json' \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw '{
-        \"name\": \"Stedi Functions\"
+        "name": "Stedi Functions"
     }' | jq .
 
 else
@@ -163,14 +163,15 @@ else
 
     Options:
 
-        build: build package
-        delete: delete function
-        create: create function
-        update: update function
-        read: describe function
-        list: list all functions
-        logs: view logs for function
-        invoke: invoke function
+        build                Build package for ZIP deploy
+        delete               Delete an existing Function
+        create               Create a new Function
+        update               Update an existing Function
+        read                 Describe Function
+        list                 List all Functions in your account
+        logs                 View all logs for a Function
+        logs <log-id>        Get a specific log for a Function 
+        invoke <json-bodu>   Invoke function with a JSON event payload
         "
 
 fi 

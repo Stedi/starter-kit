@@ -1,13 +1,20 @@
 # Hello World function
 
+
+*Level: Beginner*
+
+*Duration: 20 minutes*
+
+*Language: TypeScript*
+
 Welcome to the `hello world` tutorial of Stedi Functions. In this guide, we will deploy a simple Function so you can learn how the service works. 
 
-In the second part, we will also write a basic Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed within the free Stedi trial: https://www.stedi.com/products/pricing.
+In the second part, we will also write a basic Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed [within the free Stedi tier](https://www.stedi.com/products/pricing).
 
 
 ## Getting Started 
 
-In order to get started, you need need a Stedi account and be logged in to our Terminal; https://terminal.stedi.com/
+In order to get started, you need need a Stedi account and be logged in to [Stedi Terminal]( https://terminal.stedi.com/).
 
 Next, go to the Functions section of Terminal. Click "Create Function" on the top right of the screen and give it a cool name (like "hello world"). The create Function command may take a few seconds to complete.
 
@@ -26,11 +33,14 @@ exports.handler = async function (event, context) {
 };
 ```
 
+## Testing the sample Function
+
 To get a feeling for how functions behave, we encourage to simply test this sample Function by pressing "Execute" on the top right of the screen. The Function will invoke and after a few seconds, you should see the output results of the execution and what was submitted to the Function logs. 
 
 Within these logs, you can also see how long the execution took to complete and a few other details about the invoke: 
 
-```START RequestId: 86068548-ef56-407f-a72b-82627c82aa09 Version: $LATEST
+```console
+START RequestId: 86068548-ef56-407f-a72b-82627c82aa09 Version: $LATEST
 2022-04-13T15:22:53.618Z	86068548-ef56-407f-a72b-82627c82aa09	INFO	EVENT: {}
 END RequestId: 86068548-ef56-407f-a72b-82627c82aa09
 REPORT RequestId: 86068548-ef56-407f-a72b-82627c82aa09	Duration: 3.12 ms	Billed Duration: 4 ms	Memory Size: 1024 MB	Max Memory Used: 56 MB	Init Duration: 200.67 ms
@@ -46,9 +56,11 @@ Below is a description of what these log fields mean:
 
 <screenshot-execute-hello-world>
 
-# Writing our own function
+## Writing our own function
 
 Now let's try something more interesting and write our own Function from scratch! Before we do that, it's helpful to explain how an input event is handled by Functions and how you should program this. 
+
+### Function handler
 
 You may have noticed in the first example that the first line of code starts with: 
 
@@ -62,6 +74,9 @@ This is referred to as the Function handler method, and will be the entry point 
 
 We _always_ need to submit both objects to our handler as inputs, but we can also leverage these objects in the code itself.  
 
+
+### Function return values
+
 There is another requirement for our Function to work - it always needs to return an output using a `return` (even an empty `{}` output is fine, as long as it returns something). This is the signal for the Function to know running of your code is complete and that it can stop the Function. You could see the same in the very first code example we ran at the bottom:
 
 `return {
@@ -69,6 +84,8 @@ There is another requirement for our Function to work - it always needs to retur
   };`
 
 For the rest, it's up to you to decide what your function does in code.
+
+### Create a new Function
 
 Now that we went over some rules, go ahead and create a new Stedi Function in Terminal, which you can call "Greeter Function" if you like. In this function, we take the input from the event handler, add a simple string and return it back to the client. The function is only a few lines long; 
 
@@ -93,3 +110,7 @@ The easiest way to test this is by going to the "edit execution payload" button 
 ```
 
 The "name" input from this document will map to $event.name in the function. In this way, we can dynamically feed input data to our Lambda invoke. While we used the execution event in this sample, you can also submit this data through the Stedi API. 
+
+### Conclusion
+
+This concludes the hello world tutorial. If you are eager to learn more, we encourage to [take a look at the 'web request' tutorial](https://github.com/Stedi/starter-kit/tree/function-samples/stedi-cloud/functions/web-request) next.
