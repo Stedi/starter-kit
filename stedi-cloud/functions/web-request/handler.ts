@@ -8,7 +8,7 @@ exports.handler = async (event: Input) => {
   // make a GET request to Wikipedia using Axios
   try {
     const response = await axios.get(
-      "https://en.wikipedia.org/w/api.php?action=query&titles=" + event.topic + "&prop=extracts&format=json&exintro=1",
+      "https://en.wikipedia.org/w/api.php?action=query&titles=" + event.topic + "&prop=extracts&format=json&exintro=0",
     );
 
     // stringify the response data
@@ -28,7 +28,6 @@ exports.handler = async (event: Input) => {
     body: output
   };
 };
-
 
 interface Input {
   topic?: string;

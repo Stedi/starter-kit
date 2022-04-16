@@ -1,12 +1,10 @@
 # Web Request Function
 
-*Level: Advanced*
+Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will deploy a Function packaged with your own libraries to make an external web request. 
 
-*Duration: 30 minutes*
-
-*Language: TypeScript*
-
-Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will deploy a Function packaged with your own libraries to make an external web request. The tutorial should take you 30 minutes to finish and can be completed within Stedi's free tier. 
+* Level: Advanced
+* Duration: 30 minutes
+* Language: TypeScript
 
 Here is a high level picture of how the components we will use in this guide fit together:
 
@@ -16,7 +14,7 @@ id1[Event occurs on Stedi]-. triggers .-> id2;
 id2[Stedi Function runs your code]-. makes request .->id3[External  API];
 ```
 
-We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. 
+We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned through the request and logged in the Stedi Function logs.
 
 Before we begin, we encourage to take a quick look at our ["hello world" tutorial](https://github.com/Stedi/starter-kit/tree/function-samples/stedi-cloud/functions/hello-world). We build on the same concepts that were explained there in this guide. One big difference is that we will also use your local CLI to run a few commands to build and package our function. 
 
@@ -55,22 +53,23 @@ We will use the ZIP based method using a Bash script included in this repository
 
 With that in mind, please go ahead and create a new Stedi Function in Terminal and name it `webrequest`. After creation the Function will contain a standard, inline code example (the same one as in the "hello world" tutorial we looked at earlier). 
 
-### Step 2: Clone repository and configure deploy script
+### Step 2: Clone this repository and configure deploy script
 
 In order to make an outbound web request, we should include the Axios library in the ZIP file we will create. Axios is a popular HTTP client that makes it easy to make HTTP requests and makes it easier to make web requests. 
 
-For the next steps, you will need to access your local (Bash) terminal. First off, clone our GitHub repository to a folder your local machine.
+For the next steps, you will need to access your local (Bash) terminal. First off, clone our GitHub repository to a folder your local machine and go to the 'stedi-cloud/functions/web-request' folder.
 
 ```console
 $ git clone https://github.com/Stedi/starter-kit.git
 $ cd starter-kit/stedi-cloud/functions/web-request
 ```
 
-Once the command has completed, you should see the following files in the local folder:
+Now you should see the following files in the local folder:
 
 ```console
 .
-├── deploy.sh       
+├── deploy.sh   
+├── event.json
 ├── index.ts       
 └── package.json   
 ```
@@ -98,27 +97,27 @@ Let's explain what the purpose of these files is;
         list                 List all Functions in your account
         logs                 View all logs for a Function
         logs <log-id>        Get a specific log for a Function 
-        invoke <json-bodu>   Invoke function with a JSON event payload
+        invoke               Invoke function with the './events.json' payload
 
     Examples:
 
         ./deploy.sh create
         ./deploy.sh update
 
-        ./deploy.sh invoke {"name" : "Stedi"}
+        ./deploy.sh invoke 
         ./deploy.sh logs a834a72d-685c-439f-a7a3-6e1187d99b66
 
 ```
 
 Let's go ahead and open the `deploy.sh` file in a text editor. There are two things we need to pay attention to in this file:
 
-- On line 4, ensure that your valid Stedi API key is entered. You can create a new API key here; https://terminal.stedi.com/apikeys
+- On line 4, ensure that your valid Stedi API key is entered. You can create a new Stedi API key here; https://terminal.stedi.com/apikeys
 
-- On line 5, make sure that the function name is "webrequest" (or whatever name you gave the Function just created, as long as they match up).
+- On line 5, make sure that the function name is "webrequest" (or whatever name you gave the Function just created, as long as they are the same).
 
 Save the file and return to your Bash terminal. 
 
-You can test if they can succesfully see and describe your function. Try running `$ bash deploy.sh describe` - it should return something like this if the API key is correctly set:
+You can test if they can succesfully see and describe your function. Try running a "describe" command - it should return something like this if the API key is correctly set:
 
 ```console
 $ bash deploy.sh describe
@@ -137,7 +136,7 @@ describe function webrequest
 }
 ```
 
-You can see a few interesting properties in the API response. First off, we can see that the Function is using the default `code` that's included upon creation. We can also see details about when the function was created and last updated. 
+You can see a few interesting properties in the API response. First off, we can see that the Function is using the default `code` that's included upon creation. We can also see details about when the function was created and last updated. Finally, information about log retention and the log group name are displayed. 
 
 ### Step 4: Build and deploy the Function
 
@@ -147,11 +146,13 @@ Finally, we have the `package.json` file. This is a standard NodeJS package file
 
 <screenshot-code>
 
-The code is only locally present on our machine, so we need to deploy it to Stedi Cloud. We can do this by running the `bash deploy.sh update` command. Since the Function is already created on Stedi, we need to issue the 'update' command to push our local code. The response should look as follows:
+The code is only locally present on our machine, so we need to deploy it to Stedi Cloud. We can do this by running an "update" command. 
 
 ```console
 $ bash deploy.sh update
 ```
+
+The response should look as follows:
 
 ```bash
 starting build
@@ -172,11 +173,25 @@ built package for webrequest, ready to deploy
 completed PUT for webrequest function
 ```
 
-The Function should now be succesfully updated on Stedi Cloud and we can try to invoke it. We can do this by running `$ bash deploy.sh invoke`. The response should look as follows:
+The Function should now be succesfully updated on Stedi Cloud and we can try to invoke it. 
+
+In order to invoke a Function, we need to submit a payload to the Function through the local `event.json` document. By default, it has the following topic set:
+
+```json
+{
+    "topic": "Electronic_data_interchange"
+}
+
+```
+
+We can invoke the Function with this payload by running the following command:
 
 ```console
 $ bash deploy.sh invoke
 ```
+
+The CLI response should look as follows:
+
 ```bash
 invoke function webrequest
 

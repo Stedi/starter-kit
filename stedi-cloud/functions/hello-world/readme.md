@@ -1,15 +1,12 @@
 # Hello World function
 
-
-*Level: Beginner*
-
-*Duration: 20 minutes*
-
-*Language: TypeScript*
-
 Welcome to the `hello world` tutorial of Stedi Functions. In this guide, we will deploy a simple Function so you can learn how the service works. 
 
-In the second part, we will also write a basic Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed [within the free Stedi tier](https://www.stedi.com/products/pricing).
+* Level: Beginner
+* Duration: 20 minutes
+* Language: TypeScript
+
+In the second part of the tutorial, we will also write a basic Function from scratch to learn the concepts better. The full tutorial should take you roughly 20 minutes to complete and can be completed [within the free Stedi tier](https://www.stedi.com/products/pricing).
 
 
 ## Getting Started 

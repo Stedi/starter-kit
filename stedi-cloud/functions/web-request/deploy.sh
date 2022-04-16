@@ -10,6 +10,8 @@ VERBOSE="-s"
 
 ########## do not edit anything below this line ##########
 
+HTTPMETHOD=""
+
 # build function
 buildfunction() {
 
@@ -57,16 +59,18 @@ createupdatefunction() {
 
     fi
 
-    echo -e ${url}
+    echo -e ${API_PATH}
 
     curl --location --request ${HTTPMETHOD} "${API_PATH}/" \
     ${VERBOSE} \
     --header 'Content-Type: application/json' \
     --header "Authorization: Key ${STEDI_API_KEY}" \
-    --data-raw '{
-        "function_name": "${FUNCTION_NAME}",
-        "package": "$(openssl base64 -A -in build/package.zip)"
-    }' | jq .
+    --data-raw "{
+        \"function_name\": \"${FUNCTION_NAME}\",
+        \"package\": \"$(openssl base64 -A -in build/package.zip)\",
+        \"environment_variables\": {},
+        \"log_retention_in_days\": 1
+    }" | jq .
 
     echo -e "\ncompleted ${HTTPMETHOD} for ${FUNCTION_NAME} function\n"
 
@@ -127,20 +131,20 @@ then
 
 elif [[ $1 == "invoke" ]] || [[ $1 == "i" ]]
 then
+
+    PAYLOAD=`cat event.json`
     
-    echo -e "\ninvoke function ${FUNCTION_NAME}\n"
+    echo -e "\ninvoke function ${FUNCTION_NAME} with payload ${PAYLOAD}\n"
 
     # invoke function
-    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions" \
+    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions/" \
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" \
-    --data-raw '{
-        "topic": "Electronic_data_interchange"
-    }' | jq .
+    --data-raw "${PAYLOAD}" | jq .
 
 
 # invoke function (create execution)
-elif [[ $1 == "logs" ]] || [[ $1 == "lo" ]]
+elif [[ $1 == "logs" ]]
 then
 
     echo -e "\nview logs for ${FUNCTION_NAME} $2\n"
@@ -149,10 +153,7 @@ then
     curl --location --request GET "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions/$2" \
     ${VERBOSE} \
     --header 'Content-Type: application/json' \
-    --header "Authorization: Key ${STEDI_API_KEY}" \
-    --data-raw '{
-        "name": "Stedi Functions"
-    }' | jq .
+    --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
 else
 
@@ -171,7 +172,7 @@ else
         list                 List all Functions in your account
         logs                 View all logs for a Function
         logs <log-id>        Get a specific log for a Function 
-        invoke <json-bodu>   Invoke function with a JSON event payload
+        invoke               Invoke function with the './events.json' payload
         "
 
 fi 
