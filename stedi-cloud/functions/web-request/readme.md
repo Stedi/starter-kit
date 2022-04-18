@@ -51,7 +51,7 @@ We will use the ZIP based method using a Bash script included in this repository
 
 ### Step 1: Create a new Function in Stedi Terminal
 
-With that in mind, please go ahead and create a new Stedi Function in Terminal and name it `webrequest`. After creation the Function will contain a standard, inline code example (the same one as in the "hello world" tutorial we looked at earlier). 
+With that in mind, please go ahead and create a new Stedi Function in Terminal and name it `WebRequest`. After creation the Function will contain a standard, inline code example (the same one as in the "hello world" tutorial we looked at earlier). 
 
 ### Step 2: Clone this repository and configure deploy script
 

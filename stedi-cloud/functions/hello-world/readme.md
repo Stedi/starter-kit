@@ -13,13 +13,17 @@ In the second part of the tutorial, we will also write a basic Function from scr
 
 In order to get started, you need need a Stedi account and be logged in to [Stedi Terminal]( https://terminal.stedi.com/).
 
-Next, go to the Functions section of Terminal. Click "Create Function" on the top right of the screen and give it a cool name (like "hello world"). The create Function command may take a few seconds to complete.
+Next, go to the Functions section of Terminal. Click "Create Function" on the top right of the screen and give it a cool name (like "HelloWorld"). The create Function command may take a few seconds to complete.
 
-<screenshot-create-function>
+<img src="images/1_create_function.png" width = 300 alt="Terminal Create Function" />
 
 Once the Function is created, you will see a screen that already contains a very simple example Function written in plain JavaScript. This Function does nothing too special, it only prints the Log Group that will be used to store log results. 
 
+<img src="images/2_helloworld_code.png" width = 500 alt="Terminal Create Function Code" />
+
+
 Don't worry if you struggle to follow exactly what happens in the code, we will go in more detail later. 
+
 
 ```js
 exports.handler = async function (event, context) {
@@ -33,6 +37,10 @@ exports.handler = async function (event, context) {
 ## Testing the sample Function
 
 To get a feeling for how functions behave, we encourage to simply test this sample Function by pressing "Execute" on the top right of the screen. The Function will invoke and after a few seconds, you should see the output results of the execution and what was submitted to the Function logs. 
+
+By default, an empty input is submitted to the Function invocation. We can see or modify this input by clicking on the "Edit execution payload" button.
+
+<img src="images/3_execution_payload.png" width = 500 alt="Terminal Edit Payload" />
 
 Within these logs, you can also see how long the execution took to complete and a few other details about the invoke: 
 
@@ -84,7 +92,8 @@ For the rest, it's up to you to decide what your function does in code.
 
 ### Create a new Function
 
-Now that we went over some rules, go ahead and create a new Stedi Function in Terminal, which you can call "Greeter Function" if you like. In this function, we take the input from the event handler, add a simple string and return it back to the client. The function is only a few lines long; 
+Now that we went over some rules, go ahead and create a new Stedi Function in Terminal, which you can call "GreeterFunction". In this Function, we take the input from the event handler, add a simple string and return it back to the client. The function is only a few lines long; 
+
 
 ```js
 exports.handler = async function (event, context) {
@@ -95,6 +104,9 @@ exports.handler = async function (event, context) {
   return greeter;
 };
 ```
+
+
+<img src="images/4_greeterfunction_code.png" width = 500 alt="Terminal Create Greeter Function" />
 
 Feel free to copy/paste this code into the new Function editor and press save. What's different with this Function is that we can submit an input to it, which will be received by the event handler. 
 
