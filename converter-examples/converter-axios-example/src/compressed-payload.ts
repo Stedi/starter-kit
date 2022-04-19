@@ -21,8 +21,10 @@ const exampleFn = async () => {
       payloadGzipped,
       config
     );
-    const output = JSON.stringify(response.data, null, 2);
-    console.log(output);
+    const output = JSON.stringify(response.data.output, null, 2);
+    const outputFilePath = "/tmp/sample.json";
+    fs.writeFileSync(outputFilePath, output, "utf8");
+    console.log(`The converted output file is available at: ${outputFilePath}`);
   } catch (e) {
     console.log(e);
   }
