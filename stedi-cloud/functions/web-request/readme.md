@@ -241,4 +241,4 @@ view logs for webrequest
 
 ### Conclusion
 
-This concludes our webrequest tutorial on Functions. We hope you enjoyed the experience and will build great solutions with Stedi Cloud!
+This concludes our webrequest tutorial on Functions. We hope you enjoyed the experience and will build great solutions with Stedi Cloud! For questions, reach out to us [here](https://www.stedi.com/contact). 
