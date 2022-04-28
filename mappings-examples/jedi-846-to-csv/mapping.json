@@ -1,0 +1,6 @@
+{
+  "name": "EDI to CSV",
+  "type": "only_mapped_keys",
+  "mapping": "{\n  \"input\": output\n    .interchanges[0]\n    .groups[0]\n    .transaction_sets[0]\n    .detail\n    .item_identification_LIN_loop\n    .{ \"SKU\": item_identification_LIN.product_service_id_03, \"Units\": quantity_information_QTY_loop[0].quantity_information_QTY.quantity_02 }[]\n}",
+  "lookup_tables": []
+}
