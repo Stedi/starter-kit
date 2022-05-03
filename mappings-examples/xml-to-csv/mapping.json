@@ -1,0 +1,6 @@
+{
+  "name": "xml-to-csv",
+  "type": "only_mapped_keys",
+  "mapping": "{ \"output\": output.participants.participant.{ \"participant\": name, \"mood\": mood, \"favorite adjective\": favoriteAdjective }[] }",
+  "lookup_tables": []
+}
