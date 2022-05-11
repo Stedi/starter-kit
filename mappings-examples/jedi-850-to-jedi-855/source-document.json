@@ -1,0 +1,156 @@
+{
+  "interchanges": [
+    {
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "duns_dun_bradstreet_01",
+        "interchange_sender_id_06": "040132628ESPR",
+        "interchange_id_qualifier_07": "phone_telephone_companies_12",
+        "interchange_receiver_id_08": "8002228811",
+        "interchange_date_09": "220423",
+        "interchange_time_10": "1754",
+        "repetition_separator_11": "U",
+        "interchange_control_version_number_12": "00501",
+        "interchange_control_number_13": "000000529",
+        "acknowledgment_requested_14": "no_interchange_acknowledgment_requested_0",
+        "interchange_usage_indicator_15": "production_data_P",
+        "component_element_separator_16": ">"
+      },
+      "groups": [
+        {
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "purchase_order_850_PO",
+            "application_senders_code_02": "040132628ESPR",
+            "application_receivers_code_03": "8002228811",
+            "date_04": "20220423",
+            "time_05": "1754",
+            "group_control_number_06": "000000529",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "005010"
+          },
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "850",
+                  "transaction_set_control_number_02": "0001"
+                },
+                "beginning_segment_for_purchase_order_BEG": {
+                  "transaction_set_purpose_code_01": "original_00",
+                  "purchase_order_type_code_02": "dropship_DS",
+                  "purchase_order_number_03": "2697447",
+                  "date_05": "20220423"
+                },
+                "administrative_communications_contact_PER": [
+                  {
+                    "contact_function_code_01": "order_contact_OC",
+                    "name_02": "JOHN DOE",
+                    "communication_number_qualifier_03": "telephone_TE",
+                    "communication_number_04": "1111111111"
+                  }
+                ],
+                "carrier_details_routing_sequence_transit_time_TD5": [
+                  {
+                    "transportation_method_type_code_04": "mutually_defined_ZZ",
+                    "routing_05": "FHD"
+                  }
+                ],
+                "party_identification_N1_loop": [
+                  {
+                    "party_identification_N1": {
+                      "entity_identifier_code_01": "ship_from_SF",
+                      "name_02": "ABCD",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "ABCD"
+                    }
+                  },
+                  {
+                    "party_identification_N1": {
+                      "entity_identifier_code_01": "ship_to_ST",
+                      "name_02": "JOHN DOE",
+                      "identification_code_qualifier_03": "assigned_by_buyer_or_buyers_agent_92",
+                      "identification_code_04": "DROPSHIP CUSTOMER"
+                    },
+                    "party_location_N3": [
+                      {
+                        "address_information_01": "123 MAIN ST"
+                      }
+                    ],
+                    "geographic_location_N4": [
+                      {
+                        "city_name_01": "Havre",
+                        "state_or_province_code_02": "MT",
+                        "postal_code_03": "59501",
+                        "country_code_04": "US"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "detail": {
+                "baseline_item_data_PO1_loop": [
+                  {
+                    "baseline_item_data_PO1": {
+                      "assigned_identification_01": "1",
+                      "quantity_02": "1.00",
+                      "unit_or_basis_for_measurement_code_03": "each_EA",
+                      "unit_price_04": "114.17",
+                      "product_service_id_qualifier_06": "vendors_sellers_catalog_number_VC",
+                      "product_service_id_07": "207940",
+                      "product_service_id_qualifier_08": "stock_keeping_unit_sku_SK",
+                      "product_service_id_09": "207940"
+                    },
+                    "product_item_description_PID_loop": [
+                      {
+                        "product_item_description_PID": {
+                          "item_description_type_01": "free_form_F",
+                          "description_05": "Colorful Rug"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "summary": {
+                "transaction_totals_CTT_loop": [
+                  {
+                    "transaction_totals_CTT": {
+                      "number_of_line_items_01": "1"
+                    },
+                    "monetary_amount_information_AMT": {
+                      "amount_qualifier_code_01": "total_transaction_amount_TT",
+                      "monetary_amount_02": "114.17"
+                    }
+                  }
+                ],
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "12",
+                  "transaction_set_control_number_02": "0001"
+                }
+              },
+              "set": "850"
+            }
+          ],
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "1",
+            "group_control_number_02": "000000529"
+          },
+          "release": "005010"
+        }
+      ],
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "000000529"
+      },
+      "delimiters": {
+        "element": "*",
+        "segment": "~",
+        "sub_element": ">"
+      }
+    }
+  ],
+  "__version": "jedi@2.0"
+}
