@@ -14,7 +14,7 @@ id1[Event occurs on Stedi]-. triggers .-> id2;
 id2[Stedi Function runs your code]-. makes request .->id3[External  API];
 ```
 
-We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned through the request and logged in the Stedi Function logs.
+We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned in request response.
 
 Before we begin, we encourage to take a quick look at our ["hello world" tutorial](https://github.com/Stedi/starter-kit/tree/function-samples/stedi-cloud/functions/hello-world). We build on the same concepts that were explained there in this guide. One big difference is that we will also use your local CLI to run a few commands to build and package our function. 
 
@@ -78,7 +78,7 @@ Let's explain what the purpose of these files is;
 
 `deploy.sh` is a helper script to deploy ZIP based Functions from your local (Bash) terminal a bit easier. We intend to have a full SDK and CLI tools for this in the future and we will update this guide once those are available. 
 
- You can use it to perform CRUDL operations on your Functions to see or modify their configuration and code. In addition, you can also invoke Functions and read their logs through this method. 
+ You can use it to perform CRUDL operations on your Functions to see or modify their configuration and code. In addition, you can also invoke Functions.
  
  The deploy script has the following options available:
 
@@ -95,17 +95,13 @@ Let's explain what the purpose of these files is;
         update               Update an existing Function
         read                 Describe Function
         list                 List all Functions in your account
-        logs                 View all logs for a Function
-        logs <log-id>        Get a specific log for a Function 
         invoke               Invoke function with the './events.json' payload
 
     Examples:
 
         ./deploy.sh create
         ./deploy.sh update
-
         ./deploy.sh invoke 
-        ./deploy.sh logs a834a72d-685c-439f-a7a3-6e1187d99b66
 
 ```
 
@@ -136,7 +132,7 @@ describe function webrequest
 }
 ```
 
-You can see a few interesting properties in the API response. First off, we can see that the Function is using the default `code` that's included upon creation. We can also see details about when the function was created and last updated. Finally, information about log retention and the log group name are displayed. 
+You can see a few interesting properties in the API response. First off, we can see that the Function is using the default `code` that's included upon creation. We can also see details about when the function was created and last updated.  
 
 ### Step 4: Build and deploy the Function
 
@@ -214,30 +210,6 @@ You might be wondering now - how can I use Stedi Functions to solve my usecases?
 ### Creating, updating and deleting Functions
 
 Since it's likely you will need to include some libraries in your Functions, we generally recommend to use the deploy script or the Stedi API to develop. You could create a new Function using `bash deploy.sh create`, which will create a new Function on Stedi and push your local code to it. After that, you can use the `bash deploy.sh update` command to push incremental updates to your code. 
-
-### Reading Function logs
-
-You can also use the script or our API to read logs from your Functions. These logs are automatically captured whenever your Function is invoked and can help you to find and debug any issues with your code. You can view all logs for a function using `bash deploy.sh logs`. This will return a list of executions as follows:
-
-```console
-$ bash deploy logs
-```
-```bash
-view logs for webrequest
-
-{
-  "items": [
-    {
-      "created_at": "2022-04-14T17:11:29.212Z",
-      "function_execution_id": "6c253bb0-8382-4882-8e4d-60708675612e"
-    },
-    {
-      "created_at": "2022-04-13T22:33:56.220Z",
-      "function_execution_id": "fc063c1f-4141-4ec9-a4cf-412e6d6956ed"
-    }
-  ]
-}
-```
 
 ### Conclusion
 

@@ -3,7 +3,7 @@
 # Set your Stedi API key here, or alternatively export it in the shell from which you run this script:
 STEDI_API_KEY="<replace-me>"
 FUNCTION_NAME="webrequest"
-STEDI_ENDPOINT='https://functions.cloud.stedi.com/2021-11-16/functions'
+STEDI_ENDPOINT='https://functions.cloud.us.stedi.com/2021-11-16/functions'
 
 # Set -s for silent, -v for debug of 'curl' requests
 VERBOSE="-s"
@@ -66,10 +66,9 @@ createupdatefunction() {
     --header 'Content-Type: application/json' \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw "{
-        \"function_name\": \"${FUNCTION_NAME}\",
+        \"functionName\": \"${FUNCTION_NAME}\",
         \"package\": \"$(openssl base64 -A -in build/package.zip)\",
-        \"environment_variables\": {},
-        \"log_retention_in_days\": 1
+        \"environmentVariables\": {}
     }" | jq .
 
     echo -e "\ncompleted ${HTTPMETHOD} for ${FUNCTION_NAME} function\n"
@@ -137,23 +136,10 @@ then
     echo -e "\ninvoke function ${FUNCTION_NAME} with payload ${PAYLOAD}\n"
 
     # invoke function
-    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions/" \
+    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/invocations/" \
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw "${PAYLOAD}" | jq .
-
-
-# invoke function (create execution)
-elif [[ $1 == "logs" ]]
-then
-
-    echo -e "\nview logs for ${FUNCTION_NAME} $2\n"
-
-    # view logs for function
-    curl --location --request GET "${STEDI_ENDPOINT}/${FUNCTION_NAME}/executions/$2" \
-    ${VERBOSE} \
-    --header 'Content-Type: application/json' \
-    --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
 else
 
@@ -170,9 +156,6 @@ else
         update               Update an existing Function
         read                 Describe Function
         list                 List all Functions in your account
-        logs                 View all logs for a Function
-        logs <log-id>        Get a specific log for a Function 
         invoke               Invoke function with the './events.json' payload
         "
-
 fi 

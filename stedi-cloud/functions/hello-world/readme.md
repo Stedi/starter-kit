@@ -17,7 +17,7 @@ Next, go to the Functions section of Terminal. Click "Create Function" on the to
 
 <img src="images/1_create_function.png" width = 300 alt="Terminal Create Function" />
 
-Once the Function is created, you will see a screen that already contains a very simple example Function written in plain JavaScript. This Function does nothing too special, it only prints the Log Group that will be used to store log results. 
+Once the Function is created, you will see a screen that already contains a very simple example Function written in plain JavaScript. This Function does nothing too special, it only prints the input event to the Function. 
 
 <img src="images/2_helloworld_code.png" width = 500 alt="Terminal Create Function Code" />
 
@@ -27,22 +27,20 @@ Don't worry if you struggle to follow exactly what happens in the code, we will 
 
 ```js
 exports.handler = async function (event, context) {
-  console.log("EVENT: " + JSON.stringify(event, null, 2));
-  return {
-    logStreamName: context.logStreamName
-  };
+  console.log("EVENT: " + JSON.stringify(event));
+  return { event };
 };
 ```
 
 ## Testing the sample Function
 
-To get a feeling for how functions behave, we encourage to simply test this sample Function by pressing "Execute" on the top right of the screen. The Function will invoke and after a few seconds, you should see the output results of the execution and what was submitted to the Function logs. 
+To get a feeling for how functions behave, we encourage to simply test this sample Function by pressing "Execute" on the top right of the screen. The Function will invoke and after a few seconds, you should see the output results of the invocation. 
 
 By default, an empty input is submitted to the Function invocation. We can see or modify this input by clicking on the "Edit execution payload" button.
 
 <img src="images/3_execution_payload.png" width = 500 alt="Terminal Edit Payload" />
 
-Within these logs, you can also see how long the execution took to complete and a few other details about the invoke: 
+Within the output logs, you can also see how long the invocation took to complete and a few other details about the invoke: 
 
 ```console
 START RequestId: 86068548-ef56-407f-a72b-82627c82aa09 Version: $LATEST
@@ -56,7 +54,7 @@ Below is a description of what these log fields mean:
 - *Duration*: The exact duration of the request.
 - *Billed Duration*: The billed duration of the request
 - *Memory size*: Memory your Function had available, default on 1024MB
-- *Memory used*: Memory your function consumed during execution.
+- *Memory used*: Memory your function consumed during invocation.
 - *Init duration*: Time it took to prepare and start the function (also known as the "cold start").
 
 <screenshot-execute-hello-world>
@@ -73,7 +71,7 @@ You may have noticed in the first example that the first line of code starts wit
 
 This is referred to as the Function handler method, and will be the entry point where our code starts. There are two mandatory inputs for the handler function:
 
-- `event` contains the input event for the execution (i.e. from the Stedi API call or from Stedi Terminal). You can control the information that goes into the event object. 
+- `event` contains the input event for the invocation (i.e. from the Stedi API call or from Stedi Terminal). You can control the information that goes into the event object. 
 
 - `context` contains information about the invocation, Function and execution environment. This information is automatically provided by Stedi Functions.
 
