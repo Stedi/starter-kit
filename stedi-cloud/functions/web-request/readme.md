@@ -1,6 +1,6 @@
 # Web Request Function
 
-Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will deploy a Function packaged with your own libraries to make an external web request. 
+Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will deploy a Function packaged with your own libraries to make an external API request. 
 
 * Level: Advanced
 * Duration: 30 minutes
@@ -10,8 +10,10 @@ Here is a high level picture of how the components we will use in this guide fit
 
 ```mermaid
 flowchart LR;
-id1[Event occurs on Stedi]-. triggers .-> id2;
-id2[Stedi Function runs your code]-. makes request .->id3[External  API];
+id1(Event occurs on Stedi)-. triggers .-> id2;
+id2(Stedi Function runs your code)-. makes request .->id3(External  API);
+classDef className fill:#fff,stroke:#333,stroke-width:4px
+class id1,id2,id3 className;
 ```
 
 We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned in request response.
@@ -47,15 +49,76 @@ We offer two methods to create Stedi Functions:
 
 - **ZIP based code editting**, where you bundle an archive with your code and upload it to Stedi through our API. You can bundle up to 5MB of code this way and include any libraries or SDK's that you need for your Function. You do need to bundle and upload this code using the CLI, editting the Function through Terminal is not possible this way. 
 
-We will use the ZIP based method using a Bash script included in this repository.
+We will use the ZIP based method using a Bash script included in this repository. In our demo setup, we will make a request to a public Wikipedia API to retrieve the contents of an article about EDI. This does not require us to do anything complex with API keys or credentials, so it's easy to test and use.
+
+After the invocation completed, you will see the full Wikipedia text in the request response.
+
+
+```mermaid
+flowchart LR;
+id1(We the Function over API)-. starts .-> id2;
+id2(Stedi Function with our code)-. makes request .->id3(Wikipedia  API);
+classDef className fill:#fff,stroke:#333,stroke-width:4px
+class id1,id2,id3 className;
+```
+
+As input to the Function, we will use the following payload. You can change the topic to any other Wikipedia article you want to retrieve. 
+
+```json
+{
+  "topic": "Electronic_data_interchange"
+}
+```
+
+The response of the Function that will be returned looks as follows;
+
+<details>
+  <summary>Click to expand</summary>
+
+  ```json
+  {
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "batchcomplete": "",
+    "warnings": {
+      "extracts": {
+        "*": "HTML may be malformed and/or unbalanced and may omit inline images. Use at your own risk. Known problems are listed at https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:TextExtracts#Caveats."
+      }
+    },
+    "query": {
+      "normalized": [
+        {
+          "from": "Electronic_data_interchange",
+          "to": "Electronic data interchange"
+        }
+      ],
+      "pages": {
+        "9790": {
+          "pageid": 9790,
+          "ns": 0,
+          "title": "Electronic data interchange",
+          "extract": "<p><b>Electronic data interchange</b> (<b>EDI</b>) is the concept of businesses electronically communicating information that was traditionally communicated on paper, such as purchase orders and invoices. Technical standards for EDI exist to facilitate parties transacting such instruments without having to make special arrangements.\n</p><p>EDI has existed at least since the early 70s, and there are many EDI standards (including X12, EDIFACT, ODETTE, etc.), some of which address the needs of specific industries or regions.  It also refers specifically to a family of standards.  In 1996, the National Institute of Standards and Technology defined electronic data interchange as \"the computer-to-computer interchange of a standardised format for data exchange. EDI implies a sequence of messages between two parties, either of whom may serve as originator or recipient. The formatted data representing the documents may be transmitted from originator to recipient via telecommunications or physically transported on electronic storage media.\" It distinguished mere electronic communication or data exchange, specifying that \"in EDI, the usual processing of received messages is by computer only. Human intervention in the processing of a received message is typically intended only for error conditions, for quality review, and for special situations. For example, the transmission of binary or textual data is not EDI as defined here unless the data are treated as one or more data elements of an EDI message and are not normally intended for human interpretation as part of online data processing.\" In short, EDI can be defined as the transfer of structured data, by agreed message standards, from one computer system to another without human intervention.\n</p>"
+        }
+      }
+    }
+  }
+}
+```
+  
+</details>
+<br>
+Now, let's get started deploying our Function to Stedi. 
 
 ### Step 1: Create a new Function in Stedi Terminal
 
-With that in mind, please go ahead and create a new Stedi Function in Terminal and name it `WebRequest`. After creation the Function will contain a standard, inline code example (the same one as in the "hello world" tutorial we looked at earlier). 
+Please go ahead and create a new Stedi Function in Terminal and name it `WebRequest`. After creation the Function will contain a standard, inline code example (the same one as in the "hello world" tutorial we looked at earlier). 
 
 ### Step 2: Clone this repository and configure deploy script
 
-In order to make an outbound web request, we should include the Axios library in the ZIP file we will create. Axios is a popular HTTP client that makes it easy to make HTTP requests and makes it easier to make web requests. 
+In order to make an outbound web request, we should include the Axios library in the ZIP file we will create. Axios is a popular HTTP client that makes it easy to make HTTP requests.
 
 For the next steps, you will need to access your local (Bash) terminal. First off, clone our GitHub repository to a folder your local machine and go to the 'stedi-cloud/functions/web-request' folder.
 
@@ -186,21 +249,9 @@ We can invoke the Function with this payload by running the following command:
 $ bash deploy.sh invoke
 ```
 
-The CLI response should look as follows:
+The CLI response should look like the one we showed at the start of this tutorial.
 
-```bash
-invoke function webrequest
-
-{
-  "statusCode": 200,
-  "headers": {
-    "Content-Type": "application/json"
-  },
-  "body": "<some long text>"
-}
-```
-
-We can also invoke the Function through Stedi Terminal, but in most cases it's easier to programatically invoke it using our API. 
+We can also invoke the Function through Stedi Terminal, but in most cases it's easier to programatically invoke it using our API.  
 
 
 ## Tips and tricks for development

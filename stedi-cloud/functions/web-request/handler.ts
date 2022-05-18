@@ -8,11 +8,9 @@ exports.handler = async (event: Input) => {
   // make a GET request to Wikipedia using Axios
   try {
     const response = await axios.get(
-      "https://en.wikipedia.org/w/api.php?action=query&titles=" + event.topic + "&prop=extracts&format=json&exintro=0",
+      "https://en.wikipedia.org/w/api.php?action=query&titles=" + event.topic + "&prop=extracts&format=json&exintro=1",
     );
-
-    // stringify the response data
-    output = JSON.stringify(response.data, null, 4);
+    output = response.data
     console.log(output);
 
   // catch on error

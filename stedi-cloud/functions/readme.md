@@ -10,8 +10,11 @@ Once the Function is started through a trigger, it executes your code and shuts 
 
 ```mermaid
 flowchart LR;
-id1[Event occurs on Stedi]-. triggers .-> id2;
-id2[Stedi Function runs your code]-. can request .->id3[Any Stedi or Internet API];
+id1(Event occurs on Stedi)-. triggers .-> id2;
+id2(Stedi Function runs your code)-. can make HTTP request to .->id3(Any Internet API);
+
+classDef className fill:#fff,stroke:#333,stroke-width:4px
+class id1,id2,id3 className;
 ```
 
 Today, Functions can respond to requests coming from the Stedi API or Stedi Terminal.  We plan to add additional inputs for event triggers in the future. Your Function can make any request to a Stedi or any external API.
