@@ -1,6 +1,6 @@
 {
-  "name": "@stedi/example-converter",
-  "description": "Stedi Converter Example",
+  "name": "@stedi/example-edi-core",
+  "description": "Stedi EDI Core Example",
   "repository": {
     "type": "git",
     "url": "git://github.com/stedi/starter-kit.git"
@@ -8,10 +8,8 @@
   "license": "ISC",
   "author": "engineering@stedi.com",
   "scripts": {
-    "csv-to-json": "npx ts-node src/csv-to-json.ts",
-    "json-to-csv": "npx ts-node src/json-to-csv.ts",
-    "xml-to-json": "npx ts-node src/xml-to-json.ts",
-    "compressed-payload": "npx ts-node src/compressed-payload.ts",
+    "edi-to-jedi": "npx ts-node src/edi-to-jedi.ts",
+    "jedi-to-edi": "npx ts-node src/jedi-to-edi.ts",
     "fix": "prettier -w .",
     "check": "tsc --noEmit && prettier -c ."
   },
