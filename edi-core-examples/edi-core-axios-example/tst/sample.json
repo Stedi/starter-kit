@@ -1,0 +1,78 @@
+{
+  "interchanges": [
+    {
+      "groups": [
+        {
+          "transaction_sets": [
+            {
+              "heading": {
+                "transaction_set_header_ST": {
+                  "transaction_set_identifier_code_01": "326",
+                  "transaction_set_control_number_02": "0000"
+                },
+                "vessel_identification_V1_loop": [
+                  {
+                    "vessel_identification_V1": { "vessel_code_01": "12" },
+                    "port_or_terminal_R4_loop": [
+                      {
+                        "port_or_terminal_R4": {
+                          "port_or_terminal_function_code_01": "final_port_of_discharge_operational_1"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "transaction_set_trailer_SE": {
+                  "number_of_included_segments_01": "2",
+                  "transaction_set_control_number_02": "0000"
+                }
+              }
+            }
+          ],
+          "functional_group_header_GS": {
+            "functional_identifier_code_01": "ocean_shipment_information_304_311_317_319_322_323_324_325_326_361_SO",
+            "application_senders_code_02": "00",
+            "application_receivers_code_03": "00",
+            "date_04": "20210902",
+            "time_05": "1200",
+            "group_control_number_06": "987654321",
+            "responsible_agency_code_07": "accredited_standards_committee_x12_X",
+            "version_release_industry_identifier_code_08": "008010"
+          },
+          "functional_group_trailer_GE": {
+            "number_of_transaction_sets_included_01": "1",
+            "group_control_number_02": "987654321"
+          }
+        }
+      ],
+      "delimiters": {
+        "element": "*",
+        "segment": "~",
+        "sub_element": ":",
+        "repetition": "/"
+      },
+      "interchange_control_header_ISA": {
+        "authorization_information_qualifier_01": "no_authorization_information_present_no_meaningful_information_in_i02_00",
+        "authorization_information_02": "",
+        "security_information_qualifier_03": "no_security_information_present_no_meaningful_information_in_i04_00",
+        "security_information_04": "",
+        "interchange_id_qualifier_05": "mutually_defined_ZZ",
+        "interchange_sender_id_06": "",
+        "interchange_id_qualifier_07": "mutually_defined_ZZ",
+        "interchange_receiver_id_08": "",
+        "interchange_date_09": "210902",
+        "interchange_time_10": "1200",
+        "repetition_separator_11": "/",
+        "interchange_control_version_number_code_12": "00801",
+        "interchange_control_number_13": "123456789",
+        "acknowledgment_requested_code_14": "interchange_acknowledgment_requested_ta1_1",
+        "interchange_usage_indicator_code_15": "test_data_T",
+        "component_element_separator_16": ":"
+      },
+      "interchange_control_trailer_IEA": {
+        "number_of_included_functional_groups_01": "1",
+        "interchange_control_number_02": "123456789"
+      }
+    }
+  ]
+}
