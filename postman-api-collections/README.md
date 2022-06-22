@@ -40,7 +40,7 @@ Buckets is an object service that lets you store any kind of document on the Ste
 
 You can access the Buckets control plane through the Stedi API in the Postman collection to create and manage Buckets. For dataplane access (uploading and downloading objects), you can use the Stedi SDK.
 
-You can find the API documentation for the Converter service [here](https://www.stedi.com/docs/api/buckets). 
+You can find the API documentation for the Bucket service [here](https://www.stedi.com/docs/api/buckets). 
 
 
 ## Converter
@@ -56,7 +56,7 @@ You can find the API documentation for the Converter service [here](https://www.
 
 Functions is a compute service that lets you run code without provisioning or managing servers. With Functions, Stedi runs your code on high-availability compute infrastructure that automatically scales up and down according to your usage.
 
-You can find the API documentation for the Converter service [here](https://www.stedi.com/docs/api/functions). 
+You can find the API documentation for the Functions service [here](https://www.stedi.com/docs/api/functions). 
 
 
 ## EDI Core
