@@ -8,13 +8,7 @@ Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will
 
 Here is a high level picture of how the components we will use in this guide fit together:
 
-```mermaid
-flowchart LR;
-id1(Event occurs on Stedi)-. triggers .-> id2;
-id2(Stedi Function runs your code)-. makes request .->id3(External  API);
-classDef className fill:#fff,stroke:#333,stroke-width:4px
-class id1,id2,id3 className;
-```
+<img src="../../images/functions/functions_overview.png" alt="diagram" style="width: 80%;">
 
 We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned in request response.
 
@@ -52,15 +46,6 @@ We offer two methods to create Stedi Functions:
 We will use the ZIP based method using a Bash script included in this repository. In our demo setup, we will make a request to a public Wikipedia API to retrieve the contents of an article about EDI. This does not require us to do anything complex with API keys or credentials, so it's easy to test and use.
 
 After the invocation completed, you will see the full Wikipedia text in the request response.
-
-
-```mermaid
-flowchart LR;
-id1(We the Function over API)-. starts .-> id2;
-id2(Stedi Function with our code)-. makes request .->id3(Wikipedia  API);
-classDef className fill:#fff,stroke:#333,stroke-width:4px
-class id1,id2,id3 className;
-```
 
 As input to the Function, we will use the following payload. You can change the topic to any other Wikipedia article you want to retrieve. 
 
