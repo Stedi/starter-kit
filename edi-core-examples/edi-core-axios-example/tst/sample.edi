@@ -1,0 +1,13 @@
+ISA*00*          *00*          *ZZ*STEDI          *ZZ*ACME           *210901*1234*U*00801*000000001*0*T*>~
+GS*PO*SENDERGS*007326879*20210901*1234*1*X*008020~
+ST*850*000000001~
+BEG*24*SP*PO-00001**20210901~
+N1*2L*STEDI INC.~
+REF*K6*A composable platform for building flexible EDI systems~
+PER*SR**EA*team@stedi.com~
+PO1**1*2P*0.0075*PE*GE*EDI Core~
+PO1**1*C0*0.001*PE*GE*Mappings~
+CTT*2~
+SE*9*000000001~
+GE*1*1~
+IEA*1*000000001~

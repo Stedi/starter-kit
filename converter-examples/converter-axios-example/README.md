@@ -19,6 +19,12 @@ Keys)
 export STEDI_API_KEY="..."
 ```
 
+Alternatively you can rename `.env.example` file to `.env` and set the API key in it.
+
+```shell
+STEDI_API_KEY=API_KEY_GOES_HERE
+```
+
 ## Run examples
 
 Convert [CSV to JSON](https://www.stedi.com/docs/api/converter#convert-csvToJson)

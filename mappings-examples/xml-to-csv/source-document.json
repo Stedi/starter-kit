@@ -1,0 +1,18 @@
+{
+  "output": {
+    "participants": {
+      "participant": [
+        {
+          "name": "Iliana",
+          "mood": "rambunctious",
+          "favoriteAdjective": "onomatopoetic"
+        },
+        {
+          "name": "Dragomir",
+          "mood": "morose",
+          "favoriteAdjective": "megalomaniacal"
+        }
+      ]
+    }
+  }
+}

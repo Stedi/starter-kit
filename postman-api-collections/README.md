@@ -61,9 +61,7 @@ You can find the API documentation for the Converter service [here](https://www.
 
 ## EDI Core
 
-EDI Core translates X12 EDI documents to JSON and vice versa. Stedi has its own JSON representation of EDI, called JEDI. JEDI is easier to work with than X12 EDI because most modern programming languages and tools have built-in support for JSON.
-
-Our Postman examples contain prepopulated EDI and JEDI documents that you can use for testing. 
+EDI Core translates X12 EDI documents to JSON and vice versa. Stedi has its own JSON representation of EDI, called JEDI. JEDI is easier to work with than X12 EDI because most modern programming languages and tools have built-in support for JSON. Our Postman examples contain prepopulated EDI and JEDI documents that you can use for testing. 
 
 You can find the API documentation for the EDI Core service [here](https://www.stedi.com/docs/api/edi-core). 
 
