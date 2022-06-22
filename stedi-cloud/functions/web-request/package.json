@@ -1,0 +1,17 @@
+{
+    "name": "webrequest-sample",
+    "version": "1.0.0",
+    "description": "",
+    "main": "handler.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Stedi",
+    "dependencies": {
+        "axios": "0.26.1",
+        "esbuild": "^0.14.36"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.23"
+    }
+}
