@@ -8,7 +8,8 @@ Welcome to the 'web request' tutorial of Stedi Functions. In this guide, we will
 
 Here is a high level picture of how the components we will use in this guide fit together:
 
-<img src="../../images/functions/functions_overview.png" alt="diagram" style="width: 80%;">
+<img src = "https://raw.githubusercontent.com/Stedi/starter-kit/main/images/functions/functions-overview.png">
+
 
 We will create a new Stedi Function which will contain all neccesary libraries to make an external web request (i.e. to make an API call). At the end, we can trigger this Function using the API or through Stedi Terminal to execute. The reply from the API will be returned in request response.
 
