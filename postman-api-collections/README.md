@@ -16,12 +16,8 @@ We will be adding requests for other Stedi services as they get released.
 
 To begin, [create a free Stedi account](https://terminal.stedi.com/sign-up) and create a [Stedi API Key](https://www.stedi.com/docs/authentication). 
 
-Next, you can view and import the Postman collection to start accessing the API. By clicking on the button below, you can import it in your Postman workspace (either online or with your local client). 
 
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/210c95e35c5d80d1d715?action=collection%2Fimport)
-
-You can also review the API collection online  [on Postman's Documenter page](https://documenter.getpostman.com/view/17843480/UzBpLRXe).
+You can view the API collection online [on Postman's Documenter page](https://documenter.getpostman.com/view/17843480/UzBpLRXe). From there, you can easily import it into the Postman web or desktop client. 
  
 
 ### API key configuration
