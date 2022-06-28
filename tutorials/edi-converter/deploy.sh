@@ -2,8 +2,11 @@
 
 # Set your Stedi API key here, or alternatively export it in the shell from which you run this script:
 STEDI_API_KEY="<replace-me>"
-FUNCTION_NAME="webrequest"
-STEDI_ENDPOINT='https://functions.cloud.us.stedi.com/2021-11-16/functions'
+FUNCTION_NAME="ConverterFunction"
+BUCKET_NAME="0acfc21d-e8e6-4e08-9191-fbe994ea2ef1-sftp"
+
+STEDI_FUNCTION_ENDPOINT='https://functions.cloud.us.stedi.com/2021-11-16/functions'
+STEDI_BUCKET_ENDPOINT='https://buckets.cloud.us.stedi.com/2022-05-05/buckets'
 
 # Set -s for silent, -v for debug of 'curl' requests
 VERBOSE="-s"
@@ -36,7 +39,7 @@ deletefunction() {
 
     echo -e "\ndeleting function ${FUNCTION_NAME}'\n"
 
-    curl --location --request DELETE "${STEDI_ENDPOINT}/${FUNCTION_NAME}" \
+    curl --location --request DELETE "${STEDI_FUNCTION_ENDPOINT}/${FUNCTION_NAME}" \
       ${VERBOSE} \
       --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
@@ -50,12 +53,12 @@ createupdatefunction() {
     buildfunction
     
     # for create function
-    API_PATH="${STEDI_ENDPOINT}"
+    API_PATH="${STEDI_FUNCTION_ENDPOINT}"
 
     # on update function, add function name to API path
     if [ ${HTTPMETHOD} == "PUT" ]
     then
-        API_PATH="${STEDI_ENDPOINT}/${FUNCTION_NAME}/"
+        API_PATH="${STEDI_FUNCTION_ENDPOINT}/${FUNCTION_NAME}/"
 
     fi
 
@@ -68,7 +71,9 @@ createupdatefunction() {
     --data-raw "{
         \"functionName\": \"${FUNCTION_NAME}\",
         \"package\": \"$(openssl base64 -A -in build/package.zip)\",
-        \"environmentVariables\": {}
+        \"environmentVariables\": {
+            \"STEDI_API_KEY\": \"${STEDI_API_KEY}\"
+        }
     }" | jq .
 
     echo -e "\ncompleted ${HTTPMETHOD} for ${FUNCTION_NAME} function\n"
@@ -113,7 +118,7 @@ then
 
     echo -e "\ndescribe function ${FUNCTION_NAME}\n"
 
-    curl --location --request GET "${STEDI_ENDPOINT}/${FUNCTION_NAME}" \
+    curl --location --request GET "${STEDI_FUNCTION_ENDPOINT}/${FUNCTION_NAME}" \
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
@@ -123,7 +128,7 @@ then
     
     echo -e "\nlist all functions\n"
 
-    curl --location --request GET "${STEDI_ENDPOINT}" \
+    curl --location --request GET "${STEDI_FUNCTION_ENDPOINT}" \
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
@@ -136,10 +141,29 @@ then
     echo -e "\ninvoke function ${FUNCTION_NAME} with payload ${PAYLOAD}\n"
 
     # invoke function
-    curl --location --request POST "${STEDI_ENDPOINT}/${FUNCTION_NAME}/invocations/" \
+    curl --location --request POST "${STEDI_FUNCTION_ENDPOINT}/${FUNCTION_NAME}/invocations/" \
     ${VERBOSE} \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw "${PAYLOAD}" | jq .
+
+elif [[ $1 == "bucketconfig" ]]
+then
+
+    echo -e "\ncreate bucket config\n"
+    echo -e "${STEDI_BUCKET_ENDPOINT}/${BUCKET_NAME}"
+    
+    curl --location --request PUT "${STEDI_BUCKET_ENDPOINT}/${BUCKET_NAME}" \
+    ${VERBOSE} \
+    --header "Authorization: Key ${STEDI_API_KEY}" \
+    --data-raw "{
+        \"bucketName\": ${BUCKET_NAME},
+        \"notifications\": {
+            \"events\": [
+                \"s3:ObjectCreated:Put\"
+            ],
+            \"functionName\": ${FUNCTION_NAME}
+        }
+    }" | jq .
 
 else
 
@@ -154,6 +178,7 @@ else
         delete               Delete an existing Function
         create               Create a new Function
         update               Update an existing Function
+        bucketconfig         Create a trigger between Bucket upload and a Function
         read                 Describe Function
         list                 List all Functions in your account
         invoke               Invoke function with the './events.json' payload

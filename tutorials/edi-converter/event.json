@@ -1,0 +1,14 @@
+{
+    "Records": [
+        {
+            "s3": {
+                "bucket": {
+                    "name": "0acfc21d-e8e6-4e08-9191-fbe994ea2ef1-sftp"
+                },
+                "object": {
+                    "key": "input/850.txt"
+                }
+            }
+        }
+    ]
+}
