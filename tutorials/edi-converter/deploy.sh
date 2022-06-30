@@ -143,6 +143,7 @@ then
     # invoke function
     curl --location --request POST "${STEDI_FUNCTION_ENDPOINT}/${FUNCTION_NAME}/invocations/" \
     ${VERBOSE} \
+    --header 'Accept: application/octet-stream' \
     --header "Authorization: Key ${STEDI_API_KEY}" \
     --data-raw "${PAYLOAD}" | jq .
 
