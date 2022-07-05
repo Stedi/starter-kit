@@ -1,0 +1,32 @@
+{
+  "name": "@stedi/example-converter",
+  "description": "Stedi Converter Example",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stedi/starter-kit.git"
+  },
+  "license": "ISC",
+  "author": "engineering@stedi.com",
+  "scripts": {
+    "control-number-example": "npx ts-node src/control-number-example.ts",
+    "fix": "prettier -w .",
+    "check": "tsc --noEmit && prettier -c ."
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "volta": {
+    "node": "16.11.1",
+    "npm": "8.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "prettier": "^2.5.1"
+  }
+}
