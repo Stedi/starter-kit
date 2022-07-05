@@ -18,10 +18,7 @@ HTTPMETHOD=""
 buildfunction() {
 
     # remove old package and (re)create build directory
-    if test -d "./build/"
-    then
-        rm -rf ./build
-    fi
+    rm -rf ./build
     mkdir -p ./build
 
     echo -e "\nstarting npx build for ${FUNCTION_NAME}\n"
