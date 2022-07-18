@@ -1,3 +1,3 @@
 # jedi-850-to-jedi-855
 
-[![Run on Stedi](./../RunOnStedi.svg)](https://terminal.stedi.com/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/mapping.json&referrer=starter-kit&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/source-document.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/target-document.json)
+[![Run on Stedi](./../RunOnStedi.svg)](https://stedi.com/app/mappings/import?mapping=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/mapping.json&referrer=starter-kit&source_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/source-document.json&target_json=https://raw.githubusercontent.com/Stedi/starter-kit/main/mappings-examples/jedi-850-to-jedi-855/target-document.json)
