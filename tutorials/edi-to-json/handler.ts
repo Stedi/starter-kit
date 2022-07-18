@@ -1,21 +1,10 @@
 import { BucketsClient, GetObjectCommand, PutObjectCommand } from "@stedi/sdk-client-buckets";
-import { Readable } from "stream";
 import axios from "axios";
+import consumers from 'stream/consumers';
 
 // Create a new buckets client
 const bucketClient = new BucketsClient({region: "us"});
 
-// Function to convert a response stream to a buffer
-function readBody(stream: Readable) {
-  return new Promise<Buffer>((resolve, reject) => {
-    const chunks: Buffer[] = [];
-    stream.on("data", (chunk) => chunks.push(chunk));
-    stream.once("end", () => resolve(Buffer.concat(chunks)));
-    stream.once("error", reject);
-  });
-}
-
-// Create encoder for string to uint8 array
 var enc = new TextEncoder(); 
 
 // EDI Core translate request
@@ -53,7 +42,7 @@ async function putBucketObject(bucketObjectKey: string, bucketName: string, buck
 
   const putBucketData = await bucketClient.send(new PutObjectCommand({
     bucketName: bucketName,
-    key: "output/" + bucketObjectKey.split('/').at(-1),
+    key: "output/" + bucketObjectKey.split('/').at(-1) + "-" + Date.now() + ".json",
     body: enc.encode(bucketObjectBody)
   }));
 
@@ -78,7 +67,7 @@ async function getBucketObject(bucketName: string, bucketObjectKey: string) {
     }));
 
     // Read the bucket object body
-    const bucketObjectBody = await readBody(getBucketData.body);
+    const bucketObjectBody = await consumers.text(getBucketData.body);
 
     // Log the bucket object body
     console.log(`GET bucket object ${bucketObjectKey}`);
