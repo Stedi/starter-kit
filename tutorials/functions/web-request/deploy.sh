@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Set your Stedi API key here, or alternatively export it in the shell from which you run this script:
 STEDI_API_KEY="<replace-me>"
 FUNCTION_NAME="webrequest"
@@ -15,11 +17,8 @@ HTTPMETHOD=""
 buildfunction() {
 
     # remove old package and (re)create build directory
-    if test -d "./build/"
-    then
-        rm -rf ./build
-        mkdir -p ./build
-    fi
+    rm -rf ./build
+    mkdir -p ./build
 
     echo -e "\nstarting npx build for ${FUNCTION_NAME}\n"
 
@@ -39,7 +38,7 @@ deletefunction() {
       ${VERBOSE} \
       --header "Authorization: Key ${STEDI_API_KEY}" | jq .
 
-    echo -e "\ndeleted ${FUNCTION_NAME} function\n" 
+    echo -e "\ndeleted ${FUNCTION_NAME} function\n"
 
 }
 
@@ -47,7 +46,7 @@ deletefunction() {
 createupdatefunction() {
 
     buildfunction
-    
+
     # for create function
     API_PATH="${STEDI_ENDPOINT}"
 
@@ -79,7 +78,7 @@ if [[ $1 == "build" ]] || [[ $1 == "b" ]]
 then
 
     buildfunction
-    
+
 
 # delete function
 elif [[ $1 == "delete" ]]
@@ -94,7 +93,7 @@ then
     # set POST for create
     HTTPMETHOD=POST
 
-    createupdatefunction   
+    createupdatefunction
 
 # update existing function
 elif [[ $1 == "update" ]] || [[ $1 == "u" ]]
@@ -119,7 +118,7 @@ then
 # list all functions
 elif [[ $1 == "list" ]] || [[ $1 == "li" ]]
 then
-    
+
     echo -e "\nlist all functions\n"
 
     curl --location --request GET "${STEDI_ENDPOINT}" \
@@ -131,7 +130,7 @@ elif [[ $1 == "invoke" ]] || [[ $1 == "i" ]]
 then
 
     PAYLOAD=`cat event.json`
-    
+
     echo -e "\ninvoke function ${FUNCTION_NAME} with payload ${PAYLOAD}\n"
 
     # invoke function
@@ -144,7 +143,7 @@ else
 
     echo -e "
     Usage:
-    
+
         ./deploy.sh [OPTION]
 
     Options:
@@ -157,4 +156,4 @@ else
         list                 List all Functions in your account
         invoke               Invoke function with the './events.json' payload
         "
-fi 
+fi
