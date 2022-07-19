@@ -1,0 +1,17 @@
+{
+    "name": "bucket-operations-sample",
+    "version": "1.0.0",
+    "description": "",
+    "main": "handler.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Stedi",
+    "devDependencies": {
+        "@types/node": "^18.0.0"
+    },
+    "dependencies": {
+        "@stedi/sdk-client-buckets": "^0.0.12",
+        "axios": "^0.27.2"
+    }
+}

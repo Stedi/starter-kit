@@ -14,7 +14,6 @@ VERBOSE="-s"
 
 HTTPMETHOD=""
 
-# build function
 buildfunction() {
 
     # remove old package and (re)create build directory
