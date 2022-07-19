@@ -42,7 +42,7 @@ async function putBucketObject(bucketObjectKey: string, bucketName: string, buck
 
   const putBucketData = await bucketClient.send(new PutObjectCommand({
     bucketName: bucketName,
-    key: "output/" + bucketObjectKey.split('/').at(-1) + "-" + Date.now() + ".json",
+    key: `output/${bucketObjectKey.split('/').at(-1)}-${Date.now()}.json`,
     body: enc.encode(bucketObjectBody)
   }));
 
@@ -54,9 +54,9 @@ async function putBucketObject(bucketObjectKey: string, bucketName: string, buck
 // GET the bucket object
 async function getBucketObject(bucketName: string, bucketObjectKey: string) {
 
-  var bodyOutput;
-  var statusCode;
-  var statusError;
+  let bodyOutput;
+  let statusCode;
+  let statusError;
 
   // Get the bucket object from bucket client
   try {
@@ -97,12 +97,13 @@ export async function handler(event, _context) {
 
   // If the S3 object key does not start with "input/", return an error
   if (!bucketObjectKey.startsWith("input/")) {
-    const msg = "Bucket name " + bucketObjectKey + " does not start with input/";
+    const msg = `Bucket object ${bucketObjectKey} does not start with input/, quitting`;
+    
     console.log(msg);
     return msg;
 
   } else {
-    console.log("Bucket name " + bucketName + " starts with input, proceeding");
+    console.log(`Bucket object ${bucketObjectKey} start with input/, proceeding`);
 
   }
 
